@@ -3,4 +3,4 @@
 Ania Kubow
 Chris Beaney
 Zeeshan Goburdhun
-Camila Buenaventura Marquez
+Camila Buenaventura Márquez
