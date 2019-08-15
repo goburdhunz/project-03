@@ -11,17 +11,17 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('api/burgers')
+    axios.get('api')
       .then(res => this.setState({ burgers: res.data}))
-        console.log(res.data)
 
   }
 
   render() {
+    console.log(this.state.burgers)
     return (
 
       <div>
-        <section className="hero is-primary is-bold is-medium">
+        <section className="hero is-primary is-bold is-small">
           <div className="hero-head">
             <nav className="navbar">
               <div className="container">
@@ -89,9 +89,9 @@ class Home extends React.Component {
                     key={burger._id}
                     className="column is-half-tablet is-one-quarter-desktop"
                   >
-                    <Link to={`/burgers/${burger._id}`}>
-                      <Card name={burger.name} image={burger.image} rating={burger.rating} restaurant={burger.restaurant} />
-                    </Link>
+                    //<Link to={`/burgers/${burger._id}`}>
+                      <Card name={burger.name} image={burger.image} rating={burger.rating} />
+                    //</Link>
                   </div>
                 )}
               </div>

@@ -25,7 +25,7 @@ class BurgersIndex extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('api/burgers')
+    axios.get('api/')
       .then(res => this.setState({ burgers: res.data}))
         console.log(res.data)
   }
@@ -38,6 +38,10 @@ class BurgersIndex extends React.Component {
     console.log(formData)
   }
 
+  handleKeyUp(e) {
+    this.setState({ searchTerm: e.target.value })
+  }
+
   handleCheckbox(e) {
     const formData = { ...this.state.formData, [e.target.name]: e.target.checked }
     this.setState({ formData })
@@ -45,10 +49,6 @@ class BurgersIndex extends React.Component {
 
   handleChangePrice(e) {
     this.setState({ sortTerm: e.target.value })
-  }
-
-  handleKeyUp(e) {
-    this.setState({ searchTerm: e.target.value })
   }
 
   filterBurgers() {
@@ -137,9 +137,11 @@ class BurgersIndex extends React.Component {
                 </div>
               </form>
             </div>
+
+
             <div className="column">
               <div className="columns is-multiline">
-                {this.state.filterBurgers().map(burger =>
+                {this.state.burgers.map(burger =>
                   <div
                     key={burger._id}
                     className="column is-half-tablet is-one-quarter-desktop"
