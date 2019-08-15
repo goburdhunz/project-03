@@ -1,0 +1,12 @@
+const mongoose = require('mongoose')
+mongoose.Promise = require('bluebird')
+const Burger = require('../models/Burger')
+const burgerData = require('./data/burgerData')
+const { dbURI } = require('../config/environment')
+
+mongoose.connect(dbURI, { useNewUrlParser: true })
+  .then(() => mongoose.connection.db.dropDatabase())
+  .then(() => Burger.create(burgerData))
+  .then(() => console.log('Successfully sesame seeded!'))
+  .catch((err) => console.log(err))
+  .finally(() => mongoose.connection.close())
