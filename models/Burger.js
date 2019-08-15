@@ -26,7 +26,7 @@ const burgerSchema = new mongoose.Schema({
   description: {type: String},
   isVegan: {type: Boolean, default: false},
   isVegetarian: {type: Boolean, default: false},
-  restaurant: {restaurantSchema},
+  restaurant: [restaurantSchema],
   comments: [commentSchema]
 })
 
