@@ -13,7 +13,7 @@ class Home extends React.Component {
   componentDidMount() {
     axios.get('api/burgers')
       .then(res => this.setState({ burgers: res.data}))
-    console.log(res.data)
+        console.log(res.data)
 
   }
 
