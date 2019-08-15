@@ -8,6 +8,14 @@ const commentSchema = new mongoose.Schema({
   timestamps: true
 })
 
+const restaurantSchema = new mongoose.Schema({
+  name: {type: String, required: true},
+  address: {type: String, required: true},
+  latitude: {type: Number},
+  longitude: {type: Number},
+  website: {type: String}
+})
+
 
 const burgerSchema = new mongoose.Schema({
   name: {type: String, required: true},
@@ -21,3 +29,5 @@ const burgerSchema = new mongoose.Schema({
   restaurant: {restaurantSchema},
   comments: [commentSchema]
 })
+
+module.exports = mongoose.model('Burger', burgerSchema)
