@@ -1,6 +1,6 @@
 # project-03
 
-Ania Kubow
+Ania Kubów
 Chris Beaney
 Zeeshan Goburdhun
 Camila Buenaventura Márquez
