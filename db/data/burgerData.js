@@ -282,44 +282,48 @@ module.exports = [{
 },
 
 {
-  name: 'Pastrami Swiss',
+  name: 'Black Palace',
   rating: 3.5,
-  image: '',
+  image: 'https://secureservercdn.net/160.153.137.153/y98.8e1.myftpupload.com/wp-content/uploads/2016/02/IMG_9484-800x445.jpg',
   ingredients: [
-    '',
-    '',
-    '',
-    ''
+    'beef',
+    'cheese',
+    'grilled onions',
+    'pickles',
+    'french mustard',
+    'ketchup'
   ],
-  price: 9.50,
-  description: '',
+  price: 9.00,
+  description: 'Two beef patties, pastrami, swiss cheese, sauerkraut & russian dressing',
   restaurant: {
-    name: '',
-    address: '',
-    latitude: 51,
-    longitude: -0,
-    website: ''
+    name: 'Meat Liquor',
+    address: '6 St Chad\'s Place, London, WC1X 9HH',
+    latitude: 51.5305558,
+    longitude: -0.1218897,
+    website: 'https://meatliquor.com'
   }
 },
 
 {
-  name: '',
-  rating: 4,
-  image: '',
+  name: 'Original Burger',
+  rating: 4.5,
+  image: 'https://www.burgerandlobster.com/Images/placeholder.jpg?anchor=center&mode=crop&heightratio=0.66&width=1600&rnd=131472915860000000',
   ingredients: [
-    '',
-    '',
-    '',
-    ''
+    'beef',
+    'lettuce',
+    'tomato',
+    'pickles',
+    'onions',
+    'secret sauce'
   ],
-  price: 12.00,
-  description: '',
+  price: 11.50,
+  description: 'Nebraskan beef patty with lettuce, tomato, house-made pickles, onions and Burger & Lobster\'s secret burger sauce.',
   restaurant: {
-    name: '',
-    address: '',
-    latitude: 51,
-    longitude: -0,
-    website: ''
+    name: 'Burger and Lobster',
+    address: '1 Bread Street, London EC4M 9BE',
+    latitude: 51.5135521,
+    longitude: -0.0967106,
+    website: 'burgerandlobster.com'
   }
 }
 
