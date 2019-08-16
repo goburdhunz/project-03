@@ -85,7 +85,7 @@ module.exports = [{
   isVegetarian: true,
   restaurant: {
     name: 'Biff\'s Jack Shack',
-    address: '',
+    address: '10 burger lane',
     latitude: 51.5234906,
     longitude: -0.0785956,
     website: 'https://biffsjackshack.com'
