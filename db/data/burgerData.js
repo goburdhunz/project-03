@@ -282,8 +282,8 @@ module.exports = [{
 },
 
 {
-  name: '',
-  rating: 4,
+  name: 'Pastrami Swiss',
+  rating: 3.5,
   image: '',
   ingredients: [
     '',
@@ -291,7 +291,7 @@ module.exports = [{
     '',
     ''
   ],
-  price: 12.00,
+  price: 9.50,
   description: '',
   restaurant: {
     name: '',
