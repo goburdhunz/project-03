@@ -24,7 +24,7 @@ class BurgersIndex extends React.Component {
       filterData: {
         searchTerm: '',
         sortTerm: 'price|asc',
-        isVegan: false,
+        isVegan: true,
         isVegetarian: false,
         ingredients: []
       },
@@ -74,8 +74,8 @@ class BurgersIndex extends React.Component {
     const [field, order] = this.state.filterData.sortTerm.split('|')
     const filterBurgers = _.filter(this.state.burgers, burger => {
       return (re.test(burger.name) || re.test(burger.restaurant[0].name)) &&
-        burger.isVegan === this.state.filterData.isVegan
-      //  && burger.isVegetarian === this.state.filterData.isVegetarian
+        burger.isVegan === this.state.filterData.isVegan &&
+        burger.isVegetarian === this.state.filterData.isVegetarian
         // && burger.ingredients.includes(this.state.filterData.ingredients)
     })
     const sortedBurgers = _.orderBy(filterBurgers, [field], [order])
