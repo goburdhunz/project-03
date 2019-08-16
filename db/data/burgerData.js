@@ -144,6 +144,8 @@ module.exports = [{
   ingredients: ['Soya Pattie', 'Tomato', 'Veggie cheese', 'Lettuce', 'Bun' ],
   price: 1100,
   description: 'Big juicy patty smothered in bbq sauce with smoked bacon',
+  isVegan: true,
+  isVegetarian: true,
   restaurant: {
     name: 'Bucks',
     address: '12 Hamburg lane, Hamburg',
@@ -211,7 +213,6 @@ module.exports = [{
     longitude: -0.0272613,
     website: 'https://motherflipper.co.uk/'
   }
-<<<<<<< HEAD
 },
 {
   name: 'Five Guys Hamburger',
@@ -255,6 +256,5 @@ module.exports = [{
     longitude: -0.130530,
     website: 'https://www.mcdonalds.com/'
   }
-=======
->>>>>>> 150749b0e03418e1f56a441dd05ec8e05c5879a4
+
 }]
