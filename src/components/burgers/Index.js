@@ -8,12 +8,12 @@ import _ from 'lodash'
 const animatedComponents = makeAnimated()
 
 const ingredients = [
-  { value: 'Ingredient 1', label: 'Ingredient 1' },
-  { value: 'Ingredient 2', label: 'Ingredient 2' },
-  { value: 'Ingredient 3', label: 'Ingredient 3' },
-  { value: 'Ingredient 4', label: 'Ingredient 4' },
-  { value: 'Ingredient 5', label: 'Ingredient 5' },
-  { value: 'Ingredient 6', label: 'Ingredient 6' }
+  { value: 'Bacon', label: 'Bacon' },
+  { value: 'Tomato', label: 'Tomato' },
+  { value: 'Lettuce', label: 'Lettuce' },
+  { value: 'Cheese', label: 'Cheese' },
+  { value: 'Pickles', label: 'Pickles' },
+  { value: 'Ketchup', label: 'Ketchup' }
 ]
 
 class BurgersIndex extends React.Component {
@@ -21,18 +21,16 @@ class BurgersIndex extends React.Component {
     super()
 
     this.state = {
-      formData: {rating: 3},
+      formData: {},
       burgers: [],
       searchTerm: '',
-      sortTerm: 'name|asc'
+      sortTerm: 'price|asc'
     },
     this.filterBurgers = this.filterBurgers.bind(this)
     this.handleKeyUp = this.handleKeyUp.bind(this)
-    this.handleChangeRating = this.handleChangeRating.bind(this)
     this.handleChangeOrder = this.handleChangeOrder.bind(this)
     this.handleChangeIngredients = this.handleChangeIngredients.bind(this)
     this.handleCheckbox = this.handleCheckbox.bind(this)
-    this.handleChangePrice = this.handleChangePrice.bind(this)
   }
 
   componentDidMount() {
@@ -49,7 +47,8 @@ class BurgersIndex extends React.Component {
   }
 
   handleKeyUp(e) {
-    this.setState({ searchTerm: e.target.value })
+    const formData = { ...this.state.formData, searchTerm: e.target.value }
+    this.setState({ formData })
   }
 
   handleCheckbox(e) {
@@ -62,27 +61,23 @@ class BurgersIndex extends React.Component {
     this.setState({ formData})
   }
 
-  handleChangePrice(e) {
-    this.setState({ sortTerm: e.target.value })
-  }
-
   handleChangeOrder(e) {
-    this.setState({ sortTerm: e.target.value })
+    const formData = { ...this.state.formData, sortTerm: e.target.value }
+    this.setState({ formData})
   }
 
   filterBurgers() {
     const re = new RegExp(this.state.searchTerm, 'i')
     const [field, order] = this.state.sortTerm.split('|')
-    const filterBurgers = _.filter(this.state.wines, wine => {
-      return re.test(wine.name)
+    const filterBurgers = _.filter(this.state.burgers, burger => {
+      return re.test(burger.name) || re.test(burger.restaurant[0].name)
     })
     const sortedBurgers = _.orderBy(filterBurgers, [field], [order])
     return sortedBurgers
   }
-
   render() {
-    console.log(this.state.burgers)
-    console.log(this.state.formData)
+    console.log('filterBurgers:', this.filterBurgers())
+    console.log('formData:', this.state.formData)
 
     const { selectedIngredients } = this.state
     return (
@@ -100,20 +95,6 @@ class BurgersIndex extends React.Component {
                       className="input"
                       onKeyUp={this.handleKeyUp}/>
                   </div>
-                </div>
-
-                {/* RATING */}
-                <div className="field">
-                  <label className="label">Rating (1 - 5)</label>
-                  <input
-                    name="rating"
-                    className="input"
-                    type="range"
-                    min="1"
-                    max="5"
-                    onChange={this.handleChangeRating}
-                    value={this.state.formData.rating}
-                  />
                 </div>
 
                 {/* INGREDIENTS */}
@@ -163,8 +144,8 @@ class BurgersIndex extends React.Component {
                     <select onChange={this.handleChangeOrder}>
                       <option value="price|asc">Price Low first</option>
                       <option value="price|desc">Price High first</option>
-                      <option value="rating|asc">Name A-Z</option>
-                      <option value="rating|desc">Name Z-A</option>
+                      <option value="rating|asc">Lower Rating first</option>
+                      <option value="rating|desc">Higher Rating first</option>
                     </select>
                   </div>
                 </div>
@@ -174,7 +155,7 @@ class BurgersIndex extends React.Component {
 
             <div className="column">
               <div className="columns is-multiline">
-                {this.state.burgers.map(burger =>
+                {this.filterBurgers().map(burger =>
                   <div
                     key={burger._id}
                     className="column is-half-tablet is-one-quarter-desktop"
@@ -184,7 +165,7 @@ class BurgersIndex extends React.Component {
                         name={burger.name}
                         image={burger.image}
                         rating={burger.rating}
-                        restaurant={burger.restaurant}/>
+                        restaurant={burger.restaurant[0].name}/>
                     </Link>
                   </div>
                 )}
