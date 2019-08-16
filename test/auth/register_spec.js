@@ -1,4 +1,4 @@
-/* global api, describe, it, expect, afterEach */
+/* global api, xdescribe, it, expect, afterEach */
 const User = require('../../models/User')
 
 const testData = {
@@ -8,7 +8,7 @@ const testData = {
   passwordConfirmation: 'pass'
 }
 
-describe('POST /register', () => {
+xdescribe('POST /register', () => {
 
   afterEach(done => {
     User.remove({})
