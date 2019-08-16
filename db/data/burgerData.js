@@ -108,9 +108,9 @@ module.exports = [{
   }
 },
 {
-  name: 'BBQ Bacon Burger',
+  name: 'Cheese and Bacon Burger',
   rating: 5,
-  image: 'https://files.webbuilder.hosteurope.de/eb/9f/eb9f74db-a75a-4921-8e43-ce03e0c024d8.JPG',
+  image: 'https://media-cdn.tripadvisor.com/media/photo-s/15/13/a7/c2/bucks-burgers.jpg',
   ingredients: ['Bacon', 'Tomato', 'Bbq sauce', 'Beef', 'Lettuce', 'Bun' ],
   price: 1100,
   description: 'Big juicy patty smothered in bbq sauce with smoked bacon',
@@ -123,9 +123,9 @@ module.exports = [{
   }
 },
 {
-  name: 'BBQ Bacon Burger',
+  name: 'Bacon and guacamole Burger',
   rating: 2,
-  image: 'https://files.webbuilder.hosteurope.de/eb/9f/eb9f74db-a75a-4921-8e43-ce03e0c024d8.JPG',
+  image: 'https://s3-media3.fl.yelpcdn.com/bphoto/I0eBdkpbxwee89Im6PVlwg/o.jpg',
   ingredients: ['Bacon', 'Tomato', 'Bbq sauce', 'Beef', 'Lettuce', 'Bun' ],
   price: 1100,
   description: 'Big juicy patty smothered in bbq sauce with smoked bacon',
@@ -138,10 +138,10 @@ module.exports = [{
   }
 },
 {
-  name: 'BBQ Bacon Burger',
+  name: 'Veggie Burger',
   rating: 3,
-  image: 'https://files.webbuilder.hosteurope.de/eb/9f/eb9f74db-a75a-4921-8e43-ce03e0c024d8.JPG',
-  ingredients: ['Bacon', 'Tomato', 'Bbq sauce', 'Beef', 'Lettuce', 'Bun' ],
+  image: 'https://s3-media3.fl.yelpcdn.com/bphoto/FQNotpFP4KD0F6LXPAOCNQ/o.jpg',
+  ingredients: ['Soya Pattie', 'Tomato', 'Veggie cheese', 'Lettuce', 'Bun' ],
   price: 1100,
   description: 'Big juicy patty smothered in bbq sauce with smoked bacon',
   restaurant: {
