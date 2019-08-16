@@ -13,7 +13,7 @@ const Card = ({ name, image, rating, restaurant }) => {
       </div>
       <div className="card-content">
         <h2 className="content">{rating} 🍔🍔🍔🍔🍔</h2>
-        <h2 className="content">{restaurant.name}</h2>
+        <h2 className="content">{restaurant}</h2>
       </div>
     </div>
   )
