@@ -143,8 +143,7 @@ module.exports = [{
   image: 'https://s3-media3.fl.yelpcdn.com/bphoto/FQNotpFP4KD0F6LXPAOCNQ/o.jpg',
   ingredients: ['Soya Pattie', 'Tomato', 'Veggie cheese', 'Lettuce', 'Bun' ],
   price: 1100,
-  description: 'Big juicy patty smothered in bbq sauce with smoked bacon',
-  isVegan: true,
+  description: 'Big juicy patty smothered in bbq sauce with smoked veggie bacon',
   isVegetarian: true,
   restaurant: {
     name: 'Bucks',
