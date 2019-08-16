@@ -211,48 +211,4 @@ module.exports = [{
     longitude: -0.0272613,
     website: 'https://motherflipper.co.uk/'
   }
-},
-{
-  name: 'Five Guys Hamburger',
-  rating: 4.5,
-  image: 'http://delight.us/wp-content/uploads/2013/02/fiveguysburger.jpg',
-  ingredients: ['Beef Patty', 'Mayo', 'Lettuce', 'Pickles', 'Tomatoes', 'Grilled Onions', 'Grilled Mushrooms', 'Ketchup', 'Mustard', 'Relish', 'Onions', 'Jalapeño Peppers', 'Green Peppers', 'Bun' ],
-  price: 5.50,
-  description: 'Two fresh, hand formed patties hot off the grill and placed on a soft, toasted bun. Choose as many toppings as you want.',
-  restaurant: {
-    name: 'Five Guys',
-    address: '71 Upper St, The Angel, London N1 0NY',
-    latitude: 51.534530,
-    longitude: -0.104790,
-    website: 'http://www.fiveguys.com'
-  }
-},{
-  name: 'Ari Gold Burger',
-  rating: 3,
-  image: 'https://i.pinimg.com/originals/66/66/56/6666566c074c908d1ac9f027f147a486.jpg',
-  ingredients: ['Beef Patty', 'Cheese', 'Lettuce', 'Tomato', 'Pickled Onions', 'Ketchup', 'Smokey P&B Mayo', 'Brioche' ],
-  price: 8.75,
-  description: 'The Ari Gold Cheeseburger consists of a beautiful beef patty positively smothered in American cheese, a smokey mayo, pickled red onion, slices of juicy tomato and some crisp lettuce leaves.',
-  restaurant: {
-    name: 'Patty & Bun',
-    address: '54 James St, Marylebone, London W1U 1HE',
-    latitude: 51.515740,
-    longitude: -0.150850,
-    website: 'https://www.pattyandbun.co.uk'
-  }
-},{
-  name: 'Big Mac',
-  rating: 2,
-  image: 'https://beef2live.com/images/668/author/995/2016/8/big_mac_fun_facts_1_636063544989118436.jpg',
-  ingredients: ['Beef Patty', 'Special Sauce', 'Cheese', 'Pickles', 'Onion', 'Lettuce', 'Bun' ],
-  price: 3.50,
-  description: 'The Big Mac consists of two 1.6 oz (45.4 g) beef patties, "special sauce" (a variant of Thousand Island dressing), iceberg lettuce, American cheese, pickles, and onions, served in a three-part sesame seed bun.',
-  restaurant: {
-    name: 'McDonalds',
-    address: '48 Leicester Square, London WC2H 7LU',
-    latitude: 51.510160,
-    longitude: -0.130530,
-    website: 'https://www.mcdonalds.com/'
-  }
-
 }]
