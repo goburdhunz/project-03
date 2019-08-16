@@ -162,7 +162,7 @@ class BurgersIndex extends React.Component {
                 {this.filterBurgers().map(burger =>
                   <div
                     key={burger._id}
-                    className="column is-half-tablet is-one-quarter-desktop"
+                    className="column is-half-tablet is-one-third-desktop"
                   >
                     <Link to={`/burgers/${burger._id}`}>
                       <Card
