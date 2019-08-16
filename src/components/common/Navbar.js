@@ -9,8 +9,19 @@ class Navbar extends React.Component {
     this.state = {
       navbarOpen: false
     }
+
+    this.toggleNavbar = this.toggleNavbar.bind(this)
   }
 
+  toggleNavbar() {
+    this.setState({ navbarOpen: !this.state.navbarOpen })
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.location.pathname !== this.props.location.pathname) {
+      this.setState({ navbarOpen: false })
+    }
+  }
 
   render() {
     return (
@@ -22,22 +33,22 @@ class Navbar extends React.Component {
                 <Link to ="/" className="navbar-item">
                   <img src="https://i.imgur.com/uxpLh1c.png" alt="Logo"/>
                 </Link>
-                <span className="navbar-burger burger" data-target="navbarMenuHeroA">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
+                <a
+                  role="button"
+                  className={`navbar-burger ${this.state.navbarOpen ? 'is-active' : ''}`}
+                  onClick={this.toggleNavbar}
+                >
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                </a>
               </div>
-              <div id="navbarMenuHeroA" className="navbar-menu">
+              <div className={`navbar-menu ${this.state.navbarOpen ? 'is-active' : ''}`}>
                 <div className="navbar-end">
-                  <Link to ="/register" className="navbar-item">
-                   Register
-                  </Link>
+                  <a onClick={this.logout} className="navbar-item">Logout</a>
+                  <Link to="/register" className="navbar-item">Register</Link>
                   <span className="navbar-item">
-                    <a className="button is-primary is-inverted">
-                      <span className="icon">
-                        <i className="fab fa-github"></i>
-                      </span>
+                    <a className="button is-primary is-danger">
                       <span>Login</span>
                     </a>
                   </span>
@@ -46,7 +57,6 @@ class Navbar extends React.Component {
             </div>
           </nav>
         </div>
-
         <div className="hero-body">
           <div className="container">
             <h1 className="title">
