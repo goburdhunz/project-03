@@ -211,10 +211,6 @@ module.exports = [{
     longitude: -0.0272613,
     website: 'https://motherflipper.co.uk/'
   }
-<<<<<<< HEAD
-}
-]
-=======
 },
 {
   name: 'Five Guys Hamburger',
@@ -258,6 +254,4 @@ module.exports = [{
     longitude: -0.130530,
     website: 'https://www.mcdonalds.com/'
   }
-
 }]
->>>>>>> development
