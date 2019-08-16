@@ -254,4 +254,5 @@ module.exports = [{
     longitude: -0.130530,
     website: 'https://www.mcdonalds.com/'
   }
+
 }]
