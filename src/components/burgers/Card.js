@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = ({ name, image, rating }) => {
+const Card = ({ name, image, rating, restaurant }) => {
   return (
     <div className="card">
       <div className="card-image">
@@ -13,6 +13,7 @@ const Card = ({ name, image, rating }) => {
       </div>
       <div className="card-content">
         <h2 className="content">{rating} 🍔🍔🍔🍔🍔</h2>
+        <h2 className="content">{restaurant}</h2>
       </div>
     </div>
   )

@@ -18,3 +18,5 @@ app.use('/api',router)
 
 
 app.listen(4000, () => console.log('Change made on port 4000'))
+
+module.exports = app
