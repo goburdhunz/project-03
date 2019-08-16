@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link , withRouter} from 'react-router-dom'
+import { Link , withRouter, Route} from 'react-router-dom'
 
 class Navbar extends React.Component {
 
@@ -7,7 +7,8 @@ class Navbar extends React.Component {
     super()
 
     this.state = {
-      navbarOpen: false
+      navbarOpen: false,
+      tabSelected: false
     }
 
     this.toggleNavbar = this.toggleNavbar.bind(this)
@@ -17,6 +18,8 @@ class Navbar extends React.Component {
     this.setState({ navbarOpen: !this.state.navbarOpen })
   }
 
+
+
   componentDidUpdate(prevProps) {
     if(prevProps.location.pathname !== this.props.location.pathname) {
       this.setState({ navbarOpen: false })
@@ -24,6 +27,11 @@ class Navbar extends React.Component {
   }
 
   render() {
+
+    const activeClass = (route) => {
+      return this.props.location.pathname === route ? 'is-active' : null
+    }
+
     return (
       <section className="hero is-primary is-bold is-small">
         <div className="hero-head">
@@ -73,10 +81,10 @@ class Navbar extends React.Component {
           <nav className="tabs is-boxed ">
             <div className="container">
               <ul>
-                <li className="is-active"><Link to ="/">Home</Link></li>
-                <li><a>Nominate</a></li>
-                <li><Link to ="/burgers">Browse</Link></li>
-                <li><a>About</a></li>
+                <li className={activeClass('/')}><Link to ="/">Home</Link></li>
+                <li className={activeClass('/nominate')}><Link to ="/nominate">Nominate</Link></li>
+                <li className={activeClass('/burgers')}><Link to ="/burgers">Browse</Link></li>
+                <li className={activeClass('/about')}><Link to ="/about">About</Link></li>
               </ul>
             </div>
           </nav>
