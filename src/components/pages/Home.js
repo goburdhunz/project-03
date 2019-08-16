@@ -1,6 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import Card from '../burgers/Card'
+import Login from '../burgers/Login'
 import axios from 'axios'
 
 class Home extends React.Component {
@@ -43,10 +43,8 @@ class Home extends React.Component {
               </div>
             </div>
           </div>
-          <div className="column has-background-danger is-one-quarter">
-            <h1 className="title">
-              BurgerRator
-            </h1>
+          <div className="column is-one-fifth">
+            <Login/>
           </div>
         </div>
       </div>
