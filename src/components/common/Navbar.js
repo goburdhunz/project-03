@@ -53,7 +53,7 @@ class Navbar extends React.Component {
               </div>
               <div className={`navbar-menu ${this.state.navbarOpen ? 'is-active' : ''}`}>
                 <div className="navbar-end">
-                  <a onClick={this.logout} className="navbar-item">Logout</a>
+                  <a onClick={this.logout} className="navbar-item is-bold">Logout</a>
                   <Link to="/register" className="navbar-item">Register</Link>
                   <span className="navbar-item">
                     <a className="button is-primary is-danger">

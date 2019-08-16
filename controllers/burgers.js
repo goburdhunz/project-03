@@ -8,6 +8,16 @@ function indexRoute(req,res, next) {
 }
 
 
+function createRoute(req, res, next) {
+  req.body.user = req.currentUser._id
+  const burger = new Burger(req.body)
+  burger.save()
+    .then(burger => res.status(201).json(burger))
+    .catch(next)
+}
+
+
 module.exports = {
-  index: indexRoute
+  index: indexRoute,
+  create: createRoute
 }
