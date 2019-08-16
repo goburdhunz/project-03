@@ -256,4 +256,71 @@ module.exports = [{
     website: 'https://www.mcdonalds.com/'
   }
 
-}]
+},
+
+{
+  name: 'Dead Hippie Burger',
+  rating: 4,
+  image: 'https://hips.hearstapps.com/ame-prod-menshealth-assets.s3.amazonaws.com/main/assets/deadhippietemp.jpg?resize=480:*',
+  ingredients: [
+    'beef',
+    'lettuce',
+    'cheese',
+    'pickle',
+    'onion',
+    'dead hippie sauce'
+  ],
+  price: 9.50,
+  description: 'Two mustard-fried burger patties, shredded lettuce, cheese, pickles, minced onions and the infamous secret Dead Hippie sauce.',
+  restaurant: {
+    name: 'Meat Liquor',
+    address: '6 St Chad\'s Place, London, WC1X 9HH',
+    latitude: 51.5305558,
+    longitude: -0.1218897,
+    website: 'https://meatliquor.com'
+  }
+},
+
+{
+  name: '',
+  rating: 4,
+  image: '',
+  ingredients: [
+    '',
+    '',
+    '',
+    ''
+  ],
+  price: 12.00,
+  description: '',
+  restaurant: {
+    name: '',
+    address: '',
+    latitude: 51,
+    longitude: -0,
+    website: ''
+  }
+},
+
+{
+  name: '',
+  rating: 4,
+  image: '',
+  ingredients: [
+    '',
+    '',
+    '',
+    ''
+  ],
+  price: 12.00,
+  description: '',
+  restaurant: {
+    name: '',
+    address: '',
+    latitude: 51,
+    longitude: -0,
+    website: ''
+  }
+}
+
+]
