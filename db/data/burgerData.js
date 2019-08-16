@@ -255,5 +255,74 @@ module.exports = [{
     longitude: -0.130530,
     website: 'https://www.mcdonalds.com/'
   }
-
+},{
+  name: 'Cheeseburger',
+  rating: 3,
+  image: 'https://theburgerguide.com/images/burgers/700/bald-faced-stag-burger-london-united-kingdom.JPG',
+  ingredients: ['Beef', 'Cheese', 'Relish'],
+  price: 14,
+  description: 'The Cheeseburger at the Bald Faced Stag is a good sandwich to grab for lunch. While this burger does not stand out amongst the greatest in London it\'s got potential. A bakery bun, melted cheese, and a char-grilled patty make for a satisfying burger. However, the beef and bun were quite a bit too dry when I ordered my burger. The bun was very difficult to bite through and I almost had to tear through it with my teeth. This is contrary to most burger experiences that feature a pillowy soft bun. A luxury pub feel and a hearty serving of chips make this a good bite for those needing a fun lunch.',
+  restaurant: {
+    name: 'The Bald Faced Stag',
+    address: '69 High Road East Finchley',
+    latitude: 51.589584,
+    longitude: -0.1664472,
+    website: 'http://www.thebaldfacedstagn2.co.uk'
+  }
+},{
+  name: 'The Goodman Burger',
+  rating: 4,
+  image: 'http://www.thecriticalcouple.com/uploads/2/8/1/1/2811540/2849581_orig.jpg',
+  ingredients: ['Lettuce',  'Pickles', 'Tomato', 'Onion'],
+  price: 16,
+  description: 'The Goodman Burger at Goodman is a traditional steakhouse burger. I ordered my burger medium and it came with pickle, cheddar, bacon, tomato, lettuce, and grilled onion. The burger is served on a sesame seed bun. Overall, the beef is a little under seasoned but has a great taste. The main detractor of this burger is that it is too tall and it is a struggle to hold together. Goodman is a great restaurant and definitely a place to be seen. If you\'re out for a shopping trip on Regent Street and need to add some manliness into the evening stop in at Goodman for a burger and beer.',
+  restaurant: {
+    name: 'The Goodman',
+    address: '3 South Quay',
+    latitude: 51.5190883,
+    longitude: -0.088613,
+    website: 'https://www.goodmanrestaurants.com'
+  }
+},{
+  name: 'Steak Canadien',
+  rating: 4,
+  image: 'https://3.bp.blogspot.com/-8thPFlpHSW8/WCOEP4UvsBI/AAAAAAAADYQ/HTBxIHs3CgMFBkR77JCRmdYH205L054jwCLcB/s1600/hache%2Bsteak%2Bcanadien.jpg',
+  ingredients: ['Cheddar', 'Roquefort Cheese',  'Mustard Mayo', 'Beef', 'Tomato', 'Onion', 'Rocket'],
+  price: 11.5,
+  description: 'I ordered the Canadian burger at Hache. The burger comes with cured bacon and mature cheddar on a brioche roll. Hache markets themselves as being "burger connoisseurs". While my burger was quite good I don\'t think Hache\'s burgers are in the same class as other gourmet burgers. My beef was juicy and cooked medium as I ordered, however the bun was a bit over-toasted. The burger needed some liberal pours of ketchup and mustard to make up for the bun and to give it that salt/acid profile to make my mouth water.',
+  restaurant: {
+    name: 'Hache',
+    address: '147 Curtain Road, London',
+    latitude: 51.5266188,
+    longitude: -0.080363,
+    website: 'https://hacheburgers.com'
+  }
+},{
+  name: 'Kiwiburger',
+  rating: 4,
+  image: 'https://pbs.twimg.com/media/D9gbHUyWkAAB8SI.png',
+  ingredients: ['Cheddar', 'Beetroot', 'Egg', 'Pineapple', 'Mayo', 'Relish', 'Salad'],
+  price: 10.15,
+  description: 'I\'ve had multiple burgers at the GBK. This review reflects the sum of my experiences. The Gourmet Burger Kitchen tries to take the burger experience and put a spin on it. Whether it is the "Kiwiburger" or one of their other creations the focus at GBK is their toppings. This leaves the beef to play a secondary role, and with the underwhelming buns at GKB it is really up to the toppings to carry the burger. The good news that the toppings do more than their fair share, and while the beef is not the best in London it is quite good and cooked properly. Overall, the GBK is a good option to grab a unique burger.',
+  restaurant: {
+    name: 'GBK Gourmet Burger Kitchen',
+    address: '5 Horner Square',
+    latitude: 51.5196411,
+    longitude: -0.0777992,
+    website: 'https://www.gbk.co.uk'
+  }
+},{
+  name: 'Cheeseburger',
+  rating: 4,
+  image: 'https://www.hardens.com/wp-content/uploads/2019/01/meatliquor.jpg',
+  ingredients: ['Beef', 'Cheese', 'Onion', 'Pickles', 'Lettuce', 'Mustard', 'Ketchup'],
+  price: 18.50,
+  description: 'I ordered the cheeseburger at MEATliquor after a long wait outside. The burger was cooked medium, had a good bun, and was topped with melted cheese on the patty. The beef was well represented and outdid the toppings being both juicy, tender, and seared with a perfect crunch on the griddle. Toppings of lettuce, red onion, and the quality bun gave the burger a good texture, however this burger did not quite stack up to the elite despite having a lot going for it. I would highly recommend MEATliquor, but it may not be worth the wait on a very busy night.',
+  restaurant: {
+    name: 'MEATLiquor',
+    address: '15 Hoxton Market',
+    latitude: 51.5203233,
+    longitude: -0.0737711,
+    website: 'https://meatliquor.com/'
+  }
 }]
