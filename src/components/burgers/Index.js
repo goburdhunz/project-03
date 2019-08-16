@@ -21,15 +21,16 @@ class BurgersIndex extends React.Component {
     super()
 
     this.state = {
+      formData: {rating: 3},
       burgers: [],
       searchTerm: '',
-      sortTerm: 'price|desc'
+      sortTerm: 'name|asc'
     },
     this.filterBurgers = this.filterBurgers.bind(this)
     this.handleKeyUp = this.handleKeyUp.bind(this)
     this.handleChangeRating = this.handleChangeRating.bind(this)
     this.handleChangeOrder = this.handleChangeOrder.bind(this)
-    this.ChangeIngredients = this.ChangeIngredients.bind(this)
+    this.handleChangeIngredients = this.handleChangeIngredients.bind(this)
     this.handleCheckbox = this.handleCheckbox.bind(this)
     this.handleChangePrice = this.handleChangePrice.bind(this)
   }
@@ -37,7 +38,6 @@ class BurgersIndex extends React.Component {
   componentDidMount() {
     axios.get('api')
       .then(res => this.setState({ burgers: res.data}))
-        console.log(res.data)
   }
 
   handleChangeIngredients(selectedIngredients) {
@@ -81,6 +81,9 @@ class BurgersIndex extends React.Component {
   }
 
   render() {
+    console.log(this.state.burgers)
+    console.log(this.state.formData)
+
     const { selectedIngredients } = this.state
     return (
       <section className="section">
@@ -160,8 +163,8 @@ class BurgersIndex extends React.Component {
                     <select onChange={this.handleChangeOrder}>
                       <option value="price|asc">Price Low first</option>
                       <option value="price|desc">Price High first</option>
-                      <option value="name|asc">Name A-Z</option>
-                      <option value="name|desc">Name Z-A</option>
+                      <option value="rating|asc">Name A-Z</option>
+                      <option value="rating|desc">Name Z-A</option>
                     </select>
                   </div>
                 </div>
@@ -181,7 +184,7 @@ class BurgersIndex extends React.Component {
                         name={burger.name}
                         image={burger.image}
                         rating={burger.rating}
-                        restaurant={burger.restaurant.name}/>
+                        restaurant={burger.restaurant}/>
                     </Link>
                   </div>
                 )}
