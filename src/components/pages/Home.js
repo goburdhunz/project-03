@@ -90,7 +90,11 @@ class Home extends React.Component {
                     className="column is-half-tablet is-one-quarter-desktop"
                   >
                     <Link to={`/burgers/${burger._id}`}>
+<<<<<<< HEAD
                       <Card name={burger.name} image={burger.image} rating={burger.rating} restaurant={burger.restaurant[0].name} />
+=======
+                      <Card name={burger.name} image={burger.image} rating={burger.rating} restaurant={burger.restaurant}/>
+>>>>>>> af834ba9844982ad171a5ad4f86df0d72728cc05
                     </Link>
                   </div>
                 )}
