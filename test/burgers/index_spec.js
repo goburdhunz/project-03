@@ -15,7 +15,7 @@ describe('GET /burgers', () => {
   })
 
   it('should return a 200 response', done => {
-    api.get('/burgers')
+    api.get('/api/burgers')
       .end((err, res) => {
         expect(res.status).to.eq(200)
         done()
