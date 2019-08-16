@@ -15,11 +15,11 @@ mongoose.connect(dbURI, { useNewUrlParser: true })
 
 app.use(bodyParser.json())
 
-app.user(queryHandler)
+app.use(queryHandler)
 
 app.use('/api',router)
 
-app.user(errorHandler)
+app.use(errorHandler)
 
 
 app.listen(4000, () => console.log('Change made on port 4000'))
