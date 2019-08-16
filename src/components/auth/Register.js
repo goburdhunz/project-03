@@ -1,4 +1,6 @@
 import React from 'react'
+import axios from 'axios'
+import { toast } from 'react-toastify'
 
 class Register extends React.Component {
 
@@ -10,6 +12,7 @@ class Register extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(e) {
@@ -19,27 +22,34 @@ class Register extends React.Component {
 
   }
 
-  // handleSubmit(e) {
-  //   e.preventDefault()
-  // 
-  //   axios.post('api/register', this.state.formData)
-  // }
+  handleSubmit(e) {
+    e.preventDefault()
+
+    axios.post('/api/register', this.state.formData)
+      .then(res => {
+        toast.success(res.data.message)
+        // this.props.history.push('/login')
+      })
+      .catch(err => this.setState({ errors: err.response.data.errors}))
+  }
 
   render() {
     return (
       <section className="section">
         <div className="container">
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <div className="field">
               <label className="label">Username</label>
               <div className="control">
                 <input
                   className="input"
                   name="username"
+                  type="username"
                   placeholder="eg: Burgerlover2000"
                   onChange={this.handleChange}
                 />
               </div>
+              {this.state.errors.username && <small className="help is-danger">{this.state.errors.username}</small>}
             </div>
 
             <div className="field">
@@ -53,6 +63,7 @@ class Register extends React.Component {
                   onChange={this.handleChange}
                 />
               </div>
+              {this.state.errors.email && <small className="help is-danger">{this.state.errors.email}</small>}
             </div>
 
             <div className="field">
@@ -66,6 +77,7 @@ class Register extends React.Component {
                   onChange={this.handleChange}
                 />
               </div>
+              {this.state.errors.password && <small className="help is-danger">{this.state.errors.password}</small>}
             </div>
 
             <div className="field">
@@ -79,6 +91,7 @@ class Register extends React.Component {
                   onChange={this.handleChange}
                 />
               </div>
+              {this.state.errors.passwordConfirmation && <small className="help is-danger">{this.state.errors.passwordConfirmation}</small>}
             </div>
 
             <button className="button">Submit</button>
