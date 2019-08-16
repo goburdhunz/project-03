@@ -8,12 +8,12 @@ import _ from 'lodash'
 const animatedComponents = makeAnimated()
 
 const ingredients = [
-  { value: 'Ingredient 1', label: 'Ingredient 1' },
-  { value: 'Ingredient 2', label: 'Ingredient 2' },
-  { value: 'Ingredient 3', label: 'Ingredient 3' },
-  { value: 'Ingredient 4', label: 'Ingredient 4' },
-  { value: 'Ingredient 5', label: 'Ingredient 5' },
-  { value: 'Ingredient 6', label: 'Ingredient 6' }
+  { value: 'Bacon', label: 'Bacon' },
+  { value: 'Tomato', label: 'Tomato' },
+  { value: 'Lettuce', label: 'Lettuce' },
+  { value: 'Cheese', label: 'Cheese' },
+  { value: 'Pickles', label: 'Pickles' },
+  { value: 'Ketchup', label: 'Ketchup' }
 ]
 
 class BurgersIndex extends React.Component {
@@ -21,70 +21,70 @@ class BurgersIndex extends React.Component {
     super()
 
     this.state = {
-      formData: {rating: 3},
-      burgers: [],
-      searchTerm: '',
-      sortTerm: 'name|asc'
+      filterData: {
+        searchTerm: '',
+        sortTerm: 'price|asc',
+        isVegan: false,
+        isVegetarian: false,
+        ingredients: []
+      },
+      burgers: []
     },
     this.filterBurgers = this.filterBurgers.bind(this)
     this.handleKeyUp = this.handleKeyUp.bind(this)
-    this.handleChangeRating = this.handleChangeRating.bind(this)
     this.handleChangeOrder = this.handleChangeOrder.bind(this)
     this.handleChangeIngredients = this.handleChangeIngredients.bind(this)
     this.handleCheckbox = this.handleCheckbox.bind(this)
-    this.handleChangePrice = this.handleChangePrice.bind(this)
   }
 
   componentDidMount() {
-    axios.get('api')
+    axios.get('/api/burgers')
       .then(res => this.setState({ burgers: res.data}))
   }
 
   handleChangeIngredients(selectedIngredients) {
-    this.setState({ selectedIngredients })
     const ingredients = selectedIngredients.map(ingredients => ingredients.value)
-    const formData = { ...this.state.formData, ingredients: ingredients}
-    this.setState({ formData })
-    console.log(formData)
+    const filterData = { ...this.state.filterData, ingredients: ingredients}
+    this.setState({ filterData })
+    console.log(filterData)
   }
 
   handleKeyUp(e) {
-    this.setState({ searchTerm: e.target.value })
+    const filterData = { ...this.state.filterData, searchTerm: e.target.value }
+    this.setState({ filterData })
   }
 
   handleCheckbox(e) {
-    const formData = { ...this.state.formData, [e.target.name]: e.target.checked }
-    this.setState({ formData })
+    const filterData = { ...this.state.filterData, [e.target.name]: e.target.checked }
+    this.setState({ filterData })
   }
 
   handleChangeRating(e) {
-    const formData = { ...this.state.formData, [e.target.name]: e.target.value }
-    this.setState({ formData})
-  }
-
-  handleChangePrice(e) {
-    this.setState({ sortTerm: e.target.value })
+    const filterData = { ...this.state.filterData, [e.target.name]: e.target.value }
+    this.setState({ filterData})
   }
 
   handleChangeOrder(e) {
-    this.setState({ sortTerm: e.target.value })
+    const filterData = { ...this.state.filterData, sortTerm: e.target.value }
+    this.setState({ filterData})
   }
 
   filterBurgers() {
-    const re = new RegExp(this.state.searchTerm, 'i')
-    const [field, order] = this.state.sortTerm.split('|')
-    const filterBurgers = _.filter(this.state.wines, wine => {
-      return re.test(wine.name)
+    const re = new RegExp(this.state.filterData.searchTerm, 'i')
+    const [field, order] = this.state.filterData.sortTerm.split('|')
+    const filterBurgers = _.filter(this.state.burgers, burger => {
+      return (re.test(burger.name) || re.test(burger.restaurant[0].name)) &&
+        burger.isVegan === this.state.filterData.isVegan
+      //  && burger.isVegetarian === this.state.filterData.isVegetarian
+        // && burger.ingredients.includes(this.state.filterData.ingredients)
     })
     const sortedBurgers = _.orderBy(filterBurgers, [field], [order])
     return sortedBurgers
   }
-
   render() {
-    console.log(this.state.burgers)
-    console.log(this.state.formData)
+    console.log('filterBurgers:', this.filterBurgers())
+    console.log('filterData:', this.state.filterData)
 
-    const { selectedIngredients } = this.state
     return (
       <section className="section">
         <div className="container">
@@ -102,20 +102,6 @@ class BurgersIndex extends React.Component {
                   </div>
                 </div>
 
-                {/* RATING */}
-                <div className="field">
-                  <label className="label">Rating (1 - 5)</label>
-                  <input
-                    name="rating"
-                    className="input"
-                    type="range"
-                    min="1"
-                    max="5"
-                    onChange={this.handleChangeRating}
-                    value={this.state.formData.rating}
-                  />
-                </div>
-
                 {/* INGREDIENTS */}
                 <div className="field">
                   <label className="label">Ingredients</label>
@@ -127,7 +113,6 @@ class BurgersIndex extends React.Component {
                       className="basic-multi-select"
                       closeMenuOnSelect={false}
                       components={animatedComponents}
-                      value={selectedIngredients}
                       onChange={this.handleChangeIngredients}
                       options={ingredients}
                     />
@@ -141,7 +126,7 @@ class BurgersIndex extends React.Component {
                     className="checkbox"
                     type="checkbox"
                     name="isVegetarian"
-                    checked={this.state.formData.isVegetarian || false}
+                    checked={this.state.filterData.isVegetarian || false}
                     onChange={this.handleCheckbox}
                   />
                 </div>
@@ -152,7 +137,7 @@ class BurgersIndex extends React.Component {
                     className="checkbox"
                     type="checkbox"
                     name="isVegan"
-                    checked={this.state.formData.isVegan || false}
+                    checked={this.state.filterData.isVegan || false}
                     onChange={this.handleCheckbox}
                   />
                 </div>
@@ -163,8 +148,8 @@ class BurgersIndex extends React.Component {
                     <select onChange={this.handleChangeOrder}>
                       <option value="price|asc">Price Low first</option>
                       <option value="price|desc">Price High first</option>
-                      <option value="rating|asc">Name A-Z</option>
-                      <option value="rating|desc">Name Z-A</option>
+                      <option value="rating|asc">Lower Rating first</option>
+                      <option value="rating|desc">Higher Rating first</option>
                     </select>
                   </div>
                 </div>
@@ -174,17 +159,17 @@ class BurgersIndex extends React.Component {
 
             <div className="column">
               <div className="columns is-multiline">
-                {this.state.burgers.map(burger =>
+                {this.filterBurgers().map(burger =>
                   <div
                     key={burger._id}
-                    className="column is-half-tablet is-one-quarter-desktop"
+                    className="column is-half-tablet is-one-third-desktop"
                   >
                     <Link to={`/burgers/${burger._id}`}>
                       <Card
                         name={burger.name}
                         image={burger.image}
                         rating={burger.rating}
-                        restaurant={burger.restaurant}/>
+                        restaurant={burger.restaurant[0].name}/>
                     </Link>
                   </div>
                 )}

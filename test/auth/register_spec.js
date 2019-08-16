@@ -25,7 +25,7 @@ xdescribe('POST /register', () => {
   })
 
   it('should return an object', done => {
-    api.post('api/register')
+    api.post('/api/register')
       .send(testData)
       .end((err, res) => {
         expect(res.body).to.be.an('object')

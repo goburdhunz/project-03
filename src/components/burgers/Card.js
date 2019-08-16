@@ -4,7 +4,7 @@ const Card = ({ name, image, rating, restaurant }) => {
   return (
     <div className="card">
       <div className="card-image">
-        <figure className="image">
+        <figure className="image is-4by3">
           <img src={image} alt={name} />
         </figure>
       </div>

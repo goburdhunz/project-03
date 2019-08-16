@@ -30,9 +30,14 @@ class Home extends React.Component {
                 {this.state.burgers.map(burger =>
                   <div
                     key={burger._id}
-                    className="column is-half-tablet is-one-quarter-desktop"
+                    className="column is-half-tablet is-one-third-desktop"
                   >
-                    <Card name={burger.name} image={burger.image} rating={burger.rating} />
+                    <Card
+                      name={burger.name}
+                      image={burger.image}
+                      rating={burger.rating}
+                      restaurant={burger.restaurant[0].name}
+                    />
                   </div>
                 )}
               </div>
