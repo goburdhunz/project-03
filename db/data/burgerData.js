@@ -82,7 +82,6 @@ module.exports = [{
   price: 10.00,
   description: 'Vegan crispy fried jackfruit burgers, Chipotle slaw, maple chipotle hot sauce, jalapeños, american cheeze, BBQ sauce in a toasted brioche bun',
   isVegan: true,
-  isVegetarian: true,
   restaurant: {
     name: 'Biff\'s Jack Shack',
     address: '10 burger lane',
