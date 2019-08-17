@@ -24,7 +24,7 @@ class BurgersIndex extends React.Component {
       filterData: {
         searchTerm: '',
         sortTerm: 'price|asc',
-        isVegan: true,
+        isVegan: false,
         isVegetarian: false,
         ingredients: []
       },
