@@ -452,5 +452,196 @@ module.exports = [{
     longitude: -0.0783317,
     website: 'http://www.eatdirtyburger.com'
   }
-} 
+}, {
+  name: 'The MFC (Mexican Fried Chick’n)',
+  rating: 3,
+  image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/05/15/12/club-mexicana-burger-1505-jade-nina-sarkhel.jpg?w660',
+  ingredients: [
+    'Annatto',
+    'Chick’n',
+    'Mustard Mayo',
+    'Pickled Cabbage',
+    'Jalapeno',
+    'Dill'
+  ],
+  isVegan: true,
+  isVegetarian: true,
+  price: 9.5,
+  description: 'Former meat-eaters, we know there’s often that one dish that makes you crave the bad old days. If your weakness is a crispy chicken burger, totally vegan pub The Spread Eagle has the perfect substitute. Food here comes from plant-based concept Club Mexicana, which has created a fried “chick’n” burger made with ananto-glazed seitan, which comes topped with mustard mayo, pickled cabbage, jalapenos and dill.',
+  restaurant: {
+    name: 'The Spread Eagle London',
+    address: '224 Homerton High Street, E9 6AS',
+    latitude: 51.5486661,
+    longitude: -0.0429207,
+    website: 'https://www.thespreadeaglelondon.co.uk'
+  }
+}, {
+  name: 'Fritter',
+  rating: 4,
+  image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/05/15/12/honest-fitter-burger-1505.jpg?w660',
+  ingredients: [
+    'Fritter',
+    'Cheddar',
+    'Chipotle Mayo',
+    'Slaw',
+    'Onions',
+    'Pickles'
+  ],
+  isVegan: false,
+  isVegetarian: true,
+  price: 9,
+  description: 'Honest burgers is famed for doing great things with meat, making its beef patties from scratch in its own butchery. This often, however, leaves its fantastic vegetarian offerings underrated. The Fritter burger includes a Southern-fried, paprika-spiced vegetable patty, which is topped with cheddar cheese, a chipotle mayo slaw, red onion and all-important pickles. Vegans can also now tuck into a plant-based burger made with a Beyond Meat patty for £13.50.',
+  restaurant: {
+    name: 'Honest',
+    address: '12 Widegate St. London E1 7HP ',
+    latitude: 51.517983,
+    longitude: -0.0802009,
+    website: 'https://www.honestburgers.co.uk'
+  }
+}, {
+  name: 'Portobello ‘Dig It’ Mushroom Burger',
+  rating: 4,
+  image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/01/04/16/patty-burger-burger-veggie-burger.jpg?w660',
+  ingredients: [
+    'Butter',
+    'Cheese Sauce',
+    'Coleslaw',
+    'Lettuce',
+    'Tarragon Mayo',
+    'Brioche'
+  ],
+  isVegan: false,
+  isVegetarian: true,
+  price: 9,
+  description: 'Clearly, portobello mushroom burgers are ten a penny in London, but Patty & Bun’s Portobello ‘Dig It’ Mushroom burger is certainly one of the best. Served with crunchy coleslaw, garlic parsley butter and tarragon mayo, this is a hugely satisfying option from one of the best burger joints in the city.',
+  restaurant: {
+    name: 'Patty & Bun',
+    address: '19 Borough High St',
+    latitude: 51.5052552,
+    longitude: -0.0913023,
+    website: 'https://www.pattyandbun.co.uk'
+  }
+}, {
+  name: 'What’s Ur Beef?',
+  rating: 4,
+  image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/05/15/12/whatsurbeef.jpg?w660',
+  ingredients: [
+    'Black beans',
+    'Quinoa',
+    'Vegan Cheese',
+    'Onions',
+    'Mooshies Sauce',
+    'Gherkin',
+    'Lettuce'
+  ],
+  isVegan: true,
+  isVegetarian: true,
+  price: 8.50,
+  description: 'You may recognise one or two elements of the What’s Ur Beef? burger at this vegan Brick Lane burger joint: the ingredients list for this Mooshies favourite bears an uncanny resemblance to that of the Big Mac. An organic quinoa and black bean patty does a good impression of the ground beef original (there is one big one, rather than two), which comes topped with vegan cheese, gherkins and lettuce, all slathered in Mooshies’s own burger sauce.',
+  restaurant: {
+    name: 'Mooshies',
+    address: '105 Brick Lane',
+    latitude: 51.5224366,
+    longitude: -0.074008,
+    website: 'https://veganburger.org/'
+  }
+}, {
+  name: 'Veggie Burger',
+  rating: 3,
+  image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/01/04/16/bleeckers-burger-veggie.jpg?w660',
+  ingredients: [
+    'Tofu',
+    'Hot Sauce',
+    'Blue Cheese',
+    'Onions',
+    'House Sauce',
+    'Lettuce'
+  ],
+  isVegan: false,
+  isVegetarian: true,
+  price: 6.75,
+  description: 'If bean burgers and mushrooms aren’t your thing, Bleecker in Victoria offer up a great tofu option which will rival most veggie options in the city. Now, tofu isn’t always the most appetising focal point, but by serving it fried, with fresh salad and both blue cheese and hot sauces, Bleecker have managed to create something delicious and comforting. At just £6, you get plenty of bang for your buck too, making this a great option the next time you’re in SW1 (or indeed, EC4 and E1).',
+  restaurant: {
+    name: 'Bleecker Burger',
+    address: 'Old Spitalfields Market, Unit B SP 4',
+    latitude: 51.5196444,
+    longitude: -0.0777992,
+    website: 'https://www.bleecker.co.uk/'
+  }
+}, {
+  name: 'Farmacy Burger',
+  rating: 4,
+  image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2017/10/31/10/vegan-farmacy.jpg?w660',
+  ingredients: [
+    'Millet',
+    'Black Bean',
+    'Mushroom',
+    'Aquafaba Aioli',
+    'Goji Ketchup',
+    'Carrot',
+    'Celeriac remoulade',
+    'Pickles',
+    'Tomato',
+    'Carrot',
+    'Lettuce'
+  ],
+  isVegan: true,
+  isVegetarian: true,
+  price: 16.50,
+  description: 'Let food be thy medicine and medicine be thy food,” says health conscious Notting Hill restaurant Farmacy. Well, Hippocrates said it first, but once you tuck into its signature Farmacy burger, you’ll be glad you took the advice, whoever doled it out. This satisfying patty of millet, black bean and mushroom comes with aquafaba aioli and goji ketchup, and your choice of either sweet potato fries or good old potato chips. We can’t guarantee that one of these a day will keep the doctor away, but you’ll have fun testing it out. ',
+  restaurant: {
+    name: 'Farmacy',
+    address: '74 Westbourne Grove',
+    latitude: 51.5154074,
+    longitude: -0.1950003,
+    website: 'https://farmacylondon.com'
+  }
+}, {
+  name: 'Halloumi Mushroom Burger',
+  rating: 4,
+  image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/01/04/17/meatliquor-burger-veggie.jpg?w660',
+  ingredients: [
+    'Halloumi',
+    'Mushroom',
+    'Onions',
+    'Pickles',
+    'Lettuce',
+    'Ketchup',
+    'Mustard'
+  ],
+  isVegan: false,
+  isVegetarian: true,
+  price: 8.25,
+  description: 'Yes, MEATliquor love MEAT so much they put it in capital letters, but it does serve both vegetarian and vegan burgers. Its halloumi and mushroom burger will float the boat for all vegetarians wanting for a wildly unchaste dose of finger-licking fun.  Thick slabs of halloumi top a hefty portobello mushroom, and are topped with red onion, pickles, ketchup and good old French’s American mustard.',
+  restaurant: {
+    name: 'Meat Liquor',
+    address: '6 St Chad\'s Place, London, WC1X 9HH',
+    latitude: 51.5305558,
+    longitude: -0.1218897,
+    website: 'https://meatliquor.com'
+  }
+}, {
+  name: 'The Dirty Cop Out',
+  rating: 3,
+  image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/01/05/15/af396c6b-f14f-493f-9b73-c214c3072799.jpg?w660',
+  ingredients: [
+    'Garlic',
+    'Mushroom',
+    'Thyme',
+    'Cheese',
+    'Rocket',
+    'Gherkin'
+  ],
+  isVegan: false,
+  isVegetarian: true,
+  price: 7.95,
+  description: 'Walking into a restaurant that is dedicated to the delights of ground beef can be a daunting prospect for a vegetarian. At Dirty Burger you’ll get a light ribbing but also a very naughty veggie burger. The Dirty Cop Out (yes, that’s you) is a portobello mushroom topped with melted Applewood cheddar and pickles, sat on a handful of rocket and a substantial slathering of tarragon mayonnaise. If you’re in it for the ooze, then you’re in the right place. ',
+  restaurant: {
+    name: 'Dirty Burger',
+    address: '13 Bethnal Green Rd,',
+    latitude: 51.5237407,
+    longitude: -0.0783317,
+    website: 'http://www.eatdirtyburger.com'
+  }
+}  
 ]
