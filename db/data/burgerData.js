@@ -324,6 +324,133 @@ module.exports = [{
     longitude: -0.0967106,
     website: 'burgerandlobster.com'
   }
-}
-
+}, {
+  name: 'The Classic Cheeseburger',
+  rating: 3,
+  image: 'https://theburgerguide.com/images/burgers/700/1405920722-jamie-olivers-diner-burger-london-united-kingdom.JPG',
+  ingredients: [
+    'Beef',
+    'Burger Sauce',
+    'Beef Tomato',
+    'Cheddar',
+    'Onions'
+  ],
+  price: 13.50,
+  description: 'Walking by Jamie Oliver\'s Diner I noticed there was a takeaway section. I saw some glistening burger buns and what actually looked like quite tasty burgers. I stepped right up to the queue and ordered a classic cheeseburger. The burger came out quickly and was still dripping juices from having come fresh off the grill. I was very excited as I took my first bite, but shortly noticed the bun was a bit dry. I realized the burger comes unseasoned and grabbed for the ketchup and mustard for a classic flavor profile. Overall, the beef patty was a little thin to pack too much flavor and the dry bun masked a lot of the potential this burger could have had. The option to prepare the burger as you wish is reminiscent of a backyard cookout, but I wished Jamie would have served a burger with expertly prepared sauces to complement his burger.',
+  restaurant: {
+    name: 'Jamie Oliver\'s Diner',
+    address: '23 Shaftesbury Avenue',
+    latitude: 51.1556445,
+    longitude: -0.1640605,
+    website: 'https://www.jamieoliversdiner.com'
+  }
+}, {
+  name: 'The Byron Burger',
+  rating: 4,
+  image: 'https://images.ctfassets.net/yvxng0wjdenp/7yi2bpzorCqvIMlLWBuZfI/ba8b68f2c1f391d2d162c78bce1dc0b0/Truffler_YELLOWBG_2560.jpg',
+  ingredients: [
+    'Beef',
+    'Bacon',
+    'Cheddar',
+    'Lettuce',
+    'Tomato',
+    'Onions',
+    'Byron Sauce'
+  ],
+  price: 13.50,
+  description: 'The Byron Burger at Byron comes down to simple execution. The Byron Sauce is salty and tangy and the beef I ordered was cooked a juicy medium. The bun is soft and savory and complements the cured bacon. Melted mature cheddar holds it all together and a classic combination of tomato, lettuce, pickle, and red onion top it off. Finely tuned ingredients and complementary pairings of sweet, salty, and savory along with a good texture make you hope each bite is not the last.',
+  restaurant: {
+    name: 'Byron',
+    address: '33-35 Wellington Street',
+    latitude: 51.2487717,
+    longitude: -0.7660406,
+    website: 'https://www.byronhamburgers.com'
+  }
+}, {
+  name: 'The Byron Burger',
+  rating: 4,
+  image: 'https://images.ctfassets.net/yvxng0wjdenp/7yi2bpzorCqvIMlLWBuZfI/ba8b68f2c1f391d2d162c78bce1dc0b0/Truffler_YELLOWBG_2560.jpg',
+  ingredients: [
+    'Beef',
+    'Bacon',
+    'Cheddar',
+    'Lettuce',
+    'Tomato',
+    'Onions',
+    'Byron Sauce'
+  ],
+  price: 13.50,
+  description: 'The Byron Burger at Byron comes down to simple execution. The Byron Sauce is salty and tangy and the beef I ordered was cooked a juicy medium. The bun is soft and savory and complements the cured bacon. Melted mature cheddar holds it all together and a classic combination of tomato, lettuce, pickle, and red onion top it off. Finely tuned ingredients and complementary pairings of sweet, salty, and savory along with a good texture make you hope each bite is not the last.',
+  restaurant: {
+    name: 'Byron',
+    address: '33-35 Wellington Street',
+    latitude: 51.2487717,
+    longitude: -0.7660406,
+    website: 'https://www.byronhamburgers.com'
+  }
+}, {
+  name: 'Truffle Shuffle',
+  rating: 3,
+  image: 'http://meatandshake.com/wp-content/uploads/2015/07/Truffle_Shuffle_2989.jpg',
+  ingredients: [
+    'Truffle',
+    'Beef',
+    'Swiss Cheese',
+    'Honey',
+    'Onion',
+    'Balsamic Glaze',
+    'Mushrooms'
+  ],
+  price: 8.89,
+  description: 'Meat & Shake serves up a great burger experience combining gourmet burgers and some of the best shakes in London. A creative burger menu features burgers with names like Truffle Shuffle, Smoking Bandit, and the Luchador. Flavorful ingredients like smokey chipotle mayo, Gruyere, sauteed onions are used to build these burgers into tasty morsels with amazing flavor profiles. Add in a soft and tender bakery bun and premium beef patties and get ready to enjoy. We\'ll take a Smoking Bandit and a chocolate shake please!',
+  restaurant: {
+    name: 'Meat & Shake',
+    address: '47 Upper Tooting Road	',
+    latitude: 51.4345624,
+    longitude: -0.1636726,
+    website: 'http://meatandshake.com/'
+  }
+}, {
+  name: 'The Signature Dirty Burger',
+  rating: 3,
+  image: 'http://meatandshake.com/wp-content/uploads/2015/07/Truffle_Shuffle_2989.jpg',
+  ingredients: [
+    'Beef',
+    'Cheddar',
+    'Lettuce',
+    'Tomato',
+    'Gherkin',
+    'Mayo'
+  ],
+  price: 8.95,
+  description: 'The Burger here was a simple cheeseburger and that is all you can get on the menu. Simple and to the point, you knwo what you are going to get, because that is all that is available. The burger alongside, Chips or Onion Fries (or both) are the options and the only options and at £5.50 for the burger and £2.50 for either sides, it is decently priced too. The burger had cheese, tomato, bacon and a bit pf lettuce, with a lovely mustard dressing too. The taste was really really good and the smokey bacon too added to it. You order at the bar and then your order gets called out so very simplistic in this aspect too as are the surroundings ( a shack around the back of Highgate road). The burger is definitely recommended and with the onion fries which were lightly coated with pepper were delicious. This is now joint up there for me with Patty & Bun and Honest Burger. As mentioned earlier, deciding whether a place is good or not depends on many, many factors. These include the hype, the atmosphere, the ambiance (if with friends or not) and the expectancy too. Obviously the food is the most important factor but the others take it from a 7/10 to a 9/10. For example. last night, the hype, being with family and friends and having consumed 3 pints all made it a 9/10 in terms of my top burgers. Whereas, after Fridays second experience at Patty & Bun, i wasn\'t overly impressed as first time round. Maybe the hype wasn\'t there or maybe I had expected too much. Either way, i need to go back to Dirty Burger to see if it is still great.',
+  restaurant: {
+    name: 'Dirty Burger',
+    address: '13 Bethnal Green Rd,',
+    latitude: 51.5237407,
+    longitude: -0.0783317,
+    website: 'http://www.eatdirtyburger.com'
+  }
+}, {
+  name: 'The Signature Dirty Burger',
+  rating: 3,
+  image: 'http://www.eatdirtyburger.com/system/files/042018/5ac4d1e7ebeeb56584003fc8/large/Dirty_Burger_1.jpg?1522848338',
+  ingredients: [
+    'Beef',
+    'Cheddar',
+    'Lettuce',
+    'Tomato',
+    'Gherkin',
+    'Mayo'
+  ],
+  price: 8.95,
+  description: 'The Burger here was a simple cheeseburger and that is all you can get on the menu. Simple and to the point, you knwo what you are going to get, because that is all that is available. The burger alongside, Chips or Onion Fries (or both) are the options and the only options and at £5.50 for the burger and £2.50 for either sides, it is decently priced too. The burger had cheese, tomato, bacon and a bit pf lettuce, with a lovely mustard dressing too. The taste was really really good and the smokey bacon too added to it. You order at the bar and then your order gets called out so very simplistic in this aspect too as are the surroundings ( a shack around the back of Highgate road). The burger is definitely recommended and with the onion fries which were lightly coated with pepper were delicious. This is now joint up there for me with Patty & Bun and Honest Burger. As mentioned earlier, deciding whether a place is good or not depends on many, many factors. These include the hype, the atmosphere, the ambiance (if with friends or not) and the expectancy too. Obviously the food is the most important factor but the others take it from a 7/10 to a 9/10. For example. last night, the hype, being with family and friends and having consumed 3 pints all made it a 9/10 in terms of my top burgers. Whereas, after Fridays second experience at Patty & Bun, i wasn\'t overly impressed as first time round. Maybe the hype wasn\'t there or maybe I had expected too much. Either way, i need to go back to Dirty Burger to see if it is still great.',
+  restaurant: {
+    name: 'Dirty Burger',
+    address: '13 Bethnal Green Rd,',
+    latitude: 51.5237407,
+    longitude: -0.0783317,
+    website: 'http://www.eatdirtyburger.com'
+  }
+} 
 ]
