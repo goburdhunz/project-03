@@ -76,7 +76,7 @@ class BurgersIndex extends React.Component {
       return (re.test(burger.name) || re.test(burger.restaurant[0].name)) &&
         burger.isVegan === this.state.filterData.isVegan &&
         burger.isVegetarian === this.state.filterData.isVegetarian
-        // && burger.ingredients.includes(this.state.filterData.ingredients)
+        && burger.ingredients.includes(this.state.filterData.ingredients[0] && this.state.filterData.ingredients[1])
     })
     const sortedBurgers = _.orderBy(filterBurgers, [field], [order])
     return sortedBurgers
