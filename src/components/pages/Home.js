@@ -24,7 +24,7 @@ class Home extends React.Component {
 
         <div className="columns">
           <div className="column">
-            <h1 className="title">Top Rated</h1>
+            <h1 className="title toprated">Top Rated</h1>
             <div className="container">
               <div className="columns is-multiline">
                 {this.state.burgers.map(burger =>
