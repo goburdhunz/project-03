@@ -11,7 +11,11 @@ router.route('/burgers')
   .get(burgerController.index)
   .post(secureRoute, burgerController.create)
 
+router.route('/burgers/:id')
+  .get(burgerController.show)
+
 router.post('/register', authController.register)
 router.post('/login', authController.login)
+
 
 module.exports = router
