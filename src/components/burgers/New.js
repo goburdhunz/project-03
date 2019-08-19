@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Auth from '../../lib/Auth'
 
 import Select from 'react-select'
 
@@ -58,8 +59,10 @@ class New extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post('/api/burgers', this.state.formData)
-      .then(() => this.props.history.push('/burgers'))
+    axios.post('/api/burgers', this.state.formData, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(() => this.props.history.push('/burgers/'))
       .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
