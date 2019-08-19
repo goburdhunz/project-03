@@ -22,7 +22,7 @@ class BurgersShow extends React.Component {
       <section className="section">
         <div className="container">
           <div className="columns">
-            <div className="column is-one-third">
+            <div className="column is-one-half">
               <div className="card-image">
                 <figure className="image3">
                   <img src={this.state.burger.image} alt={this.state.burger.name} />
