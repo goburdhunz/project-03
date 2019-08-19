@@ -2,10 +2,15 @@
 
 .option {
   padding-bottom: 10px;
-  width: 150px;
+  width: 190px;
 }
 
 .ingredients {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.vegan {
   display: flex;
   flex-wrap: wrap;
 }

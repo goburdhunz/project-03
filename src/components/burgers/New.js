@@ -10,14 +10,16 @@ class New extends React.Component {
     super()
     this.state = {
       formData: {
-        ingredients: []
+        ingredients: [],
+        isVegan: false,
+        isVegetarian: false
       },
       errors: {}
-
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleCheckbox = this.handleCheckbox.bind(this)
     this.handleIngredientCheckbox = this.handleIngredientCheckbox.bind(this)
   }
 
@@ -76,6 +78,19 @@ class New extends React.Component {
                 onChange={this.handleChange}
               />
               {this.state.errors.name && <small className="help is-danger">{this.state.errors.name}</small>}
+            </div>
+
+            <div className="field">
+              <label className="label">Rating</label>
+              <input
+                className="input"
+                type="number"
+                name="rating"
+                placeholder="eg: 1 - 5"
+                value={this.state.formData.rating || ''}
+                onChange={this.handleChange}
+              />
+              {this.state.errors.rating && <small className="help is-danger">{this.state.errors.rating}</small>}
             </div>
 
             <div className="field">
@@ -211,6 +226,7 @@ class New extends React.Component {
                   </div>
                 </div>
               </div>
+
               <div className="option">
                 <div className="pretty p-default p-curve p-smooth p-round p-bigger">
                   <input
@@ -227,6 +243,18 @@ class New extends React.Component {
                 <div className="pretty p-default p-curve p-smooth p-round p-bigger">
                   <input
                     type="checkbox"
+                    name="Mushroom"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Mushroom</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
                     name="Gravy"
                     onChange={this.handleIngredientCheckbox}
                   />
@@ -235,18 +263,7 @@ class New extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="BBQ Sauce"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-warning">
-                    <label>BBQ Sauce</label>
-                  </div>
-                </div>
-              </div>
+
               <div className="option">
                 <div className="pretty p-default p-curve p-smooth p-round p-bigger">
                   <input
@@ -254,7 +271,7 @@ class New extends React.Component {
                     name="Bun"
                     onChange={this.handleIngredientCheckbox}
                   />
-                  <div className="state p-warning">
+                  <div className="state p-danger">
                     <label>Bun</label>
                   </div>
                 </div>
@@ -266,7 +283,7 @@ class New extends React.Component {
                     name="Brioche bun"
                     onChange={this.handleIngredientCheckbox}
                   />
-                  <div className="state p-warning">
+                  <div className="state p-danger">
                     <label>Brioche</label>
                   </div>
                 </div>
@@ -275,10 +292,62 @@ class New extends React.Component {
                 <div className="pretty p-default p-curve p-smooth p-round p-bigger">
                   <input
                     type="checkbox"
+                    name="BBQ Sauce"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-success">
+                    <label>BBQ Sauce</label>
+                  </div>
+                </div>
+              </div>
+
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Ketchup"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-success">
+                    <label>Ketchup</label>
+                  </div>
+                </div>
+              </div>
+
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Mustard"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-success">
+                    <label>Mustard</label>
+                  </div>
+                </div>
+              </div>
+
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Mayonnaise"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-success">
+                    <label>Mayonnaise</label>
+                  </div>
+                </div>
+              </div>
+
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
                     name="Weird & Wonderful"
                     onChange={this.handleIngredientCheckbox}
                   />
-                  <div className="state p-warning">
+                  <div className="state p-primary">
                     <label>Weird & Wonderful</label>
                   </div>
                 </div>
@@ -287,31 +356,45 @@ class New extends React.Component {
               {this.state.errors.ingredients && <small className="help is-danger">{this.state.errors.ingredients}</small>}
             </div>
 
+            <hr/>
 
 
+            <div className ="vegan">
+              <div className="field ingredients">
+                <div className="option">
+                  <label className="label">Vegeterian</label>
+                  <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                    <input
+                      type="checkbox"
+                      name="isVegetarian"
+                      checked={this.state.formData.isVegetarian || false}
+                      onChange={this.handleCheckbox}
+                    />
+                    <div className="state p-warning">
+                      <label> </label>
+                    </div>
+                    {this.state.errors.isVegetarian && <small className="help is-danger">{this.state.errors.isVegetarian}</small>}
+                  </div>
+                </div>
+              </div>
 
-            <div className="field">
-              <label className="label">Vegeterian?</label>
-              <input
-                className="checkbox"
-                type="checkbox"
-                name="isVegetarian"
-                checked={this.state.formData.isVegetarian || false}
-                onChange={this.handleCheckbox}
-              />
-              {this.state.errors.isVegetarian && <small className="help is-danger">{this.state.errors.isVegetarian}</small>}
-            </div>
-
-            <div className="field">
-              <label className="label">Vegan?</label>
-              <input
-                className="checkbox"
-                type="checkbox"
-                name="isVegan"
-                checked={this.state.formData.isVegan || false}
-                onChange={this.handleCheckbox}
-              />
-              {this.state.errors.isVegan && <small className="help is-danger">{this.state.errors.isVegan}</small>}
+              <div className="field ingredients">
+                <div className="option">
+                  <label className="label">Vegan</label>
+                  <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                    <input
+                      type="checkbox"
+                      name="isVegan"
+                      checked={this.state.formData.isVegan || false}
+                      onChange={this.handleCheckbox}
+                    />
+                    <div className="state p-warning">
+                      <label> </label>
+                    </div>
+                  </div>
+                </div>
+                {this.state.errors.isVegan && <small className="help is-danger">{this.state.errors.isVegan}</small>}
+              </div>
             </div>
 
             <div className="field">
