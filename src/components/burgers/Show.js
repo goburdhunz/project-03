@@ -1,14 +1,23 @@
 import React from 'react'
 import axios from 'axios'
 import Rating  from 'react-rating'
+import 'bulma'
 
-class Show extends React.Component {
+class BurgersShow extends React.Component {
+
+  constructor() {
+    super()
+    this.state = {}
+  }
+
   componentDidMount() {
     axios.get(`/api/burgers/${this.props.match.params.id}`)
       .then(res => this.setState({ burger: res.data }))
   }
 
   render() {
+    if(!this.state.burger) return null
+    console.log(this.state.burger)
     return(
       <section className="section">
         <div className="container">
@@ -41,10 +50,10 @@ class Show extends React.Component {
               </div>
             </div>
             <div className="column">
-              <div ClassName="tile is-parent">
+              <div ClassName="tile is-ancestor">
                 <article ClassName="tile is-child notification is-primary">
                   <div ClassName="content">
-                    <p ClassName="title is-1">{this.state.burger.name}</p>
+                    <header ClassName="title is-1">{this.state.burger.name}</header>
                     <p ClassName="subtitle"><span ClassName="has-text-weight-semibold">Price:</span>{this.state.burger.price}</p>
                     <p ClassName="subtitle"><span ClassName="has-text-weight-semibold">Ingredients:</span>{this.state.burger.ingredients[0]}</p>
                     <div ClassName="content">{this.state.burger.description}</div>
@@ -53,19 +62,21 @@ class Show extends React.Component {
               </div>
               <div className="columns">
                 <div className="column">
-                  <article className="media">
-                    <div className="media-content">
-                      <div className="content">
-                        <p>
-                          <strong>username</strong>
-                          {' '}
-                          <small>date created</small>
-                          <br />
-                          comment comment comment comment
-                        </p>
+                  <div className="tile is-parent">
+                    <article className="media tile is-child notification">
+                      <div className="media-content">
+                        <div className="content">
+                          <p>
+                            <strong>username</strong>
+                            {' '}
+                            <small>date created</small>
+                            <br />
+                            comment comment comment comment
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </article>
+                    </article>
+                  </div>
                 </div>
                 <div className="column">
                   <button className="button is-outlined">Book to try it!</button>
@@ -79,4 +90,4 @@ class Show extends React.Component {
     )
   }
 }
-export default Show
+export default BurgersShow
