@@ -23,6 +23,6 @@ app.use('/api',router)
 app.use(errorHandler)
 
 
-app.listen(port, () => console.log('Change made on port 4000'))
+app.listen(port, () => console.log(`Change made on port ${port}`))
 
 module.exports = app
