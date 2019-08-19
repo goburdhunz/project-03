@@ -9,7 +9,6 @@ const animatedComponents = makeAnimated()
 
 const ingredients = [
   { value: 'Bacon', label: 'Bacon' },
-  { value: 'Beef', label: 'Beef' },
   { value: 'Tomato', label: 'Tomato' },
   { value: 'Lettuce', label: 'Lettuce' },
   { value: 'Cheese', label: 'Cheese' },
@@ -77,7 +76,7 @@ class BurgersIndex extends React.Component {
       return (re.test(burger.name) || re.test(burger.restaurant[0].name)) &&
         burger.isVegan === this.state.filterData.isVegan &&
         burger.isVegetarian === this.state.filterData.isVegetarian
-        //&& burger.ingredients.includes(this.state.filterData.ingredients[0] && this.state.filterData.ingredients[1])
+        // && burger.ingredients.includes(this.state.filterData.ingredients[0] && this.state.filterData.ingredients[1])
     })
     const sortedBurgers = _.orderBy(filterBurgers, [field], [order])
     return sortedBurgers
@@ -127,7 +126,7 @@ class BurgersIndex extends React.Component {
                     className="checkbox"
                     type="checkbox"
                     name="isVegetarian"
-                    checked={this.state.filterData.isVegetarian}
+                    checked={this.state.filterData.isVegetarian || false}
                     onChange={this.handleCheckbox}
                   />
                 </div>
@@ -138,7 +137,7 @@ class BurgersIndex extends React.Component {
                     className="checkbox"
                     type="checkbox"
                     name="isVegan"
-                    checked={this.state.filterData.isVegan}
+                    checked={this.state.filterData.isVegan || false}
                     onChange={this.handleCheckbox}
                   />
                 </div>

@@ -9,7 +9,7 @@ import Register from './components/auth/Register'
 import BurgersIndex from './components/burgers/Index'
 import Navbar from './components/common/Navbar'
 import New from './components/burgers/New'
-
+// import SecureRoute from './components/common/SecureRoute'
 
 class App extends React.Component {
 
@@ -18,9 +18,9 @@ class App extends React.Component {
       <HashRouter>
         <Navbar/>
         <Switch>
+          <Route path= "/nominate" component={New}/>
           <Route path="/burgers" component={BurgersIndex} />
           <Route path= "/register" component={Register}/>
-          <Route path= "/nominate" component={New}/>
           <Route path= "/" component={Home}/>
         </Switch>
       </HashRouter>

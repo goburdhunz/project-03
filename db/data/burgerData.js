@@ -643,5 +643,92 @@ module.exports = [{
     longitude: -0.0783317,
     website: 'http://www.eatdirtyburger.com'
   }
+},
+
+{
+  name: 'The Dip Sandwich',
+  rating: 3.5,
+  image: 'https://media.gq-magazine.co.uk/photos/5d13aed793d83f3a11f8614b/master/w_1440%2cc_limit/dip-flip-gq-22aug18_b.jpg',
+  ingredients: [
+    'roast beef',
+    'bacon',
+    'tomato',
+    'american cheese',
+    'pickle',
+    'gravy'
+  ],
+  price: 9.95,
+  description: 'Dip & Flip has identified the one thing missing from the nouveau burger movement: gravy (obviously). Dip & Flip\'s signature "Dip & Flip Burger” contains a patty, cheese and sliced roast beef (lest you feel under-cowed) and comes served, in an inspired manoeuvre, with a side of thick, rich jus. It shouldn’t be allowed. But it is.',
+  restaurant: {
+    name: 'Dill & Flip',
+    address: '87 Battersea Rise, London SW11 1HW',
+    latitude: 51.4606987,
+    longitude: -1696967,
+    website: 'https://www.dipandflip.co.uk/'
+  }
+},
+
+{
+  name: 'Joe Allen Burger',
+  rating: 4,
+  image: 'https://media.gq-magazine.co.uk/photos/5d13aed683b0d22f741e7f2f/master/w_1440%2cc_limit/joe-allen-burger-gq-28aug18-pr_b.jpg',
+  ingredients: [
+    'beef',
+    'totamto',
+    'bacon',
+    'cheese',
+    'BBQ sauce'
+  ],
+  price: 11.50,
+  description: 'The tastiest burger this side of the Atlantic. All-Scottish beef, supported by a fresh slice of tomato, smokey bacon and a layer of gooey melted cheese, plus a healthy side of BBQ sauce, make for an enjoyably messy-but-non-stop-chomp.',
+  restaurant: {
+    name: 'Joe Allen',
+    address: '2 Burleigh Street, London WC2E 7PX',
+    latitude: 51.5110689,
+    longitude: -122463,
+    website: 'https://www.joeallen.co.uk'
+  }
+},
+
+{
+  name: 'Double Dirty Bacon Burger',
+  rating: 4,
+  image: 'https://66.media.tumblr.com/e523791112d34a63fec43acc48835c05/tumblr_o2i5zrgofW1tqwpmzo1_500.jpg',
+  ingredients: [
+    'beef',
+    'bacon',
+    'cheese',
+    'lettuce'
+  ],
+  price: 11.95,
+  description: 'Two of our Classic Dirty Burgers with a thick cut of maple glazed bacon',
+  restaurant: {
+    name: 'Dirty Burger',
+    address: 'Arch 54, 6 South Lambeth Road, Vauxhall SW8 1SS',
+    latitude: 51.4858303,
+    longitude: -1246067,
+    website: 'http://www.eatdirtyburger.com/'
+  }
+},
+
+{
+  name: 'Gridiron Burger',
+  rating: 4,
+  image: 'https://66.media.tumblr.com/2a621258ff7aee6db78e3f0f8c4ed968/tumblr_pwcburRHGa1tqwpmzo1_500.jpg',
+  ingredients: [
+    'beef',
+    'Ogleshield cheese',
+    'tomato',
+    'red onion'
+  ],
+  price: .00,
+  description: 'Live fire grilled burgerd topped with ogleshield cheese, tomato and red onions.',
+  restaurant: {
+    name: 'Gridiron',
+    address: 'Metropolitan, 19 Old Park Lane, London W1K 1LB',
+    latitude: 51.5049557,
+    longitude: -1521125,
+    website: 'https://www.gridironlondon.com'
+  }
 }
 ]
