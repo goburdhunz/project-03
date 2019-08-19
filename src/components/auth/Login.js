@@ -63,16 +63,17 @@ class Login extends React.Component {
       })
   }
 
-  componentDidUpdate() {
-    if(!this.state.modalIsOpen && this.props.location.search === '?auth=true') {
-      this.setState({ modalIsOpen: true })
-    }
-  }
+  // componentDidUpdate() {
+  //   if(!this.state.modalIsOpen && this.props.location.search === '?auth=true') {
+  //     this.setState({ modalIsOpen: true })
+  //   }
+  // }
+
 
   render() {
     return (
       <section className="section">
-        <button className="button is-primary is-danger" onClick={this.openModal}>Login</button>
+        {!Auth.isAuthenticated() && <button className="button is-primary is-danger" onClick={this.openModal}>Login</button>}
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -80,6 +81,7 @@ class Login extends React.Component {
           style={customStyles}
           contentLabel="Example Modal"
           shouldCloseOnEsc={true}
+          shouldCloseOnOverlayClick={true}
         >
           <h2 ref={subtitle => this.subtitle = subtitle}></h2>
           <button className="closeModal" onClick={this.closeModal}>X</button>

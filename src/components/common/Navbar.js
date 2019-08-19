@@ -60,13 +60,19 @@ class Navbar extends React.Component {
                   <span aria-hidden="true"></span>
                 </a>
               </div>
+
               <div className={`navbar-menu ${this.state.navbarOpen ? 'is-active' : ''}`}>
                 <div className="navbar-end">
-                  <button onClick={this.logout} className="navbar-item button is-primary">Logout</button>
-                  <Link to="/register" className="navbar-item">Register</Link>
+                  {Auth.isAuthenticated() && <button onClick={this.logout} className="navbar-item button is-primary">Logout</button>}
+
+                  {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">
+                    <button className="button is-primary">Register</button>
+                  </Link>}
+
                   <span className="navbar-item">
                     <Login/>
                   </span>
+
                 </div>
               </div>
             </div>
@@ -89,7 +95,7 @@ class Navbar extends React.Component {
             <div className="container">
               <ul>
                 <li className={activeClass('/')}><Link to ="/">Home</Link></li>
-                <li className={activeClass('/nominate')}><Link to ="/nominate">Nominate</Link></li>
+                <li className={activeClass('/nominate')}>{Auth.isAuthenticated() &&<Link to ="/nominate">Nominate</Link>}</li>
                 <li className={activeClass('/burgers')}><Link to ="/burgers">Browse</Link></li>
                 <li className={activeClass('/about')}><Link to ="/about">About</Link></li>
               </ul>
