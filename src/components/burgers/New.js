@@ -11,6 +11,7 @@ class New extends React.Component {
     this.state = {
       formData: {
         ingredients: [],
+        restaurant: {},
         isVegan: false,
         isVegetarian: false
       },
