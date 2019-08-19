@@ -1,6 +1,5 @@
 import React from 'react'
 import Card from '../burgers/Card'
-import Login from '../burgers/Login'
 import axios from 'axios'
 
 class Home extends React.Component {
@@ -44,7 +43,6 @@ class Home extends React.Component {
             </div>
           </div>
           <div className="column is-one-fifth">
-            <Login/>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { withRouter } from 'react-router-dom'
+import 'react-toastify/dist/ReactToastify.css'
 
 class Register extends React.Component {
 
@@ -102,4 +104,4 @@ class Register extends React.Component {
   }
 }
 
-export default Register
+export default withRouter(Register)

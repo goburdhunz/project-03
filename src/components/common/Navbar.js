@@ -1,5 +1,9 @@
 import React from 'react'
-import { Link , withRouter, Route} from 'react-router-dom'
+import { Link , withRouter} from 'react-router-dom'
+import Login from '../auth/Login'
+import Auth from '../../lib/Auth'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 class Navbar extends React.Component {
 
@@ -12,13 +16,18 @@ class Navbar extends React.Component {
     }
 
     this.toggleNavbar = this.toggleNavbar.bind(this)
+    this.logout = this.logout.bind(this)
   }
 
   toggleNavbar() {
     this.setState({ navbarOpen: !this.state.navbarOpen })
   }
 
-
+  logout() {
+    Auth.removeToken()
+    toast.success('Logged out successfully - Come back soon for more burger fun!!!')
+    this.props.history.push('/')
+  }
 
   componentDidUpdate(prevProps) {
     if(prevProps.location.pathname !== this.props.location.pathname) {
@@ -53,12 +62,10 @@ class Navbar extends React.Component {
               </div>
               <div className={`navbar-menu ${this.state.navbarOpen ? 'is-active' : ''}`}>
                 <div className="navbar-end">
-                  <a onClick={this.logout} className="navbar-item is-bold">Logout</a>
+                  <button onClick={this.logout} className="navbar-item button is-primary">Logout</button>
                   <Link to="/register" className="navbar-item">Register</Link>
                   <span className="navbar-item">
-                    <a className="button is-primary is-danger">
-                      <span>Login</span>
-                    </a>
+                    <Login/>
                   </span>
                 </div>
               </div>

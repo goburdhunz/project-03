@@ -62,7 +62,7 @@ class New extends React.Component {
     axios.post('/api/burgers', this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push('/burgers/'))
+      .then(() => this.props.history.push('/burgers'))
       .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
