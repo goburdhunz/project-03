@@ -15,11 +15,19 @@ button.closeModal {
   flex-wrap: wrap;
 
 }
+.login-button .login-portal{
+  margin: 0px;
+  padding: 0px;
+}
 
+.loginbutton, .registerbutton{
+  width:85px;
+}
 
 .vegan {
   display: flex;
   flex-wrap: wrap;
 }
+
 
 @import 'bulma'

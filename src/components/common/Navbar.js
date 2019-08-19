@@ -66,10 +66,10 @@ class Navbar extends React.Component {
                   {Auth.isAuthenticated() && <button onClick={this.logout} className="navbar-item button is-primary">Logout</button>}
 
                   {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">
-                    <button className="button is-primary">Register</button>
+                    <button className="button is-info registerbutton">Register</button>
                   </Link>}
 
-                  <span className="navbar-item">
+                  <span className="navbar-item login-button">
                     <Login/>
                   </span>
 
