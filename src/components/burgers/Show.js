@@ -22,7 +22,7 @@ class BurgersShow extends React.Component {
       <section className="section">
         <div className="container">
           <div className="columns">
-            <div className="column">
+            <div className="column is-one-half">
               <div className="card-image">
                 <figure className="image3">
                   <img src={this.state.burger.image} alt={this.state.burger.name} />
@@ -40,8 +40,8 @@ class BurgersShow extends React.Component {
               <hr />
               <div className="tile is-parent">
                 <article className="tile is-child notification is-primary ">
-                  <p className="title">Find it at</p>
-                  <a className="subtitle" href={this.state.burger.restaurant[0].website}> {this.state.burger.restaurant[0].name}</a>
+                  <p className="title ">Find it at</p>
+                  <a className="subtitle is-2" href={this.state.burger.restaurant[0].website}> {this.state.burger.restaurant[0].name}</a>
                   <p className="subtitle">{this.state.burger.restaurant[0].address}</p>
                   <figure className="image is-4by3">
                     <img src="https://i.stack.imgur.com/mPsIw.png" />
@@ -50,18 +50,19 @@ class BurgersShow extends React.Component {
               </div>
             </div>
             <div className="column">
-              <div ClassName="tile is-ancestor">
-                <article ClassName="tile is-child notification is-primary">
-                  <div ClassName="content">
-                    <header ClassName="title is-1">{this.state.burger.name}</header>
-                    <p ClassName="subtitle"><span ClassName="has-text-weight-semibold">Price:</span>{this.state.burger.price}</p>
-                    <p ClassName="subtitle"><span ClassName="has-text-weight-semibold">Ingredients:</span>{this.state.burger.ingredients[0]}</p>
-                    <div ClassName="content">{this.state.burger.description}</div>
+              <div className="tile is-ancestor">
+                <article className="tile is-child notification is-primary">
+                  <div className="content">
+                    <header className="title is-1">{this.state.burger.name}</header>
+                    <p className="subtitle"><span className="has-text-weight-semibold">Price: </span>{this.state.burger.price}</p>
+                    <p className="subtitle"><span className="has-text-weight-semibold">Ingredients:</span>
+                      {this.state.burger.ingredients.map(ingredient => ' ' + ingredient + ',')}</p>
+                    <div className="subtitle">{this.state.burger.description}</div>
                   </div>
                 </article>
               </div>
               <div className="columns">
-                <div className="column">
+                <div className="column is-half">
                   <div className="tile is-parent">
                     <article className="media tile is-child notification">
                       <div className="media-content">
@@ -79,8 +80,14 @@ class BurgersShow extends React.Component {
                   </div>
                 </div>
                 <div className="column">
-                  <button className="button is-outlined">Book to try it!</button>
-                  <button className="button is-outlined">Find a beer for a perfect match!</button>
+                  <div className="buttons are-medium">
+                    <div className="control">
+                      <button className="button is-primary is-fullwidth">Book to try it!</button>
+                    </div>
+                    <div className="control">
+                      <button className="button is-primary is-fullwidth">Find a beer for a perfect match!</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
