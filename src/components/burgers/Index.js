@@ -9,6 +9,7 @@ const animatedComponents = makeAnimated()
 
 const ingredients = [
   { value: 'Bacon', label: 'Bacon' },
+  { value: 'Beef', label: 'Beef' },
   { value: 'Tomato', label: 'Tomato' },
   { value: 'Lettuce', label: 'Lettuce' },
   { value: 'Cheese', label: 'Cheese' },
@@ -26,7 +27,7 @@ class BurgersIndex extends React.Component {
         sortTerm: 'price|asc',
         isVegan: false,
         isVegetarian: false,
-        ingredients: []
+        ingredients: [ 'Beef', 'Lettuce']
       },
       burgers: []
     },
