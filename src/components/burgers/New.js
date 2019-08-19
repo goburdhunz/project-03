@@ -2,41 +2,47 @@ import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
 
-import Select from 'react-select'
+import 'pretty-checkbox'
 
-const ingredients = [
-  { label: 'Beef', value: 'Beef' },
-  { label: 'Chicken', value: 'Chicken' },
-  { label: 'Cheese', value: 'Cheese' },
-  { label: 'Tomato', value: 'Tomato' },
-  { label: 'Lettuce', value: 'Lettuce' },
-  { label: 'Gherkin', value: 'Gherkin' },
-  { label: 'Onion', value: 'Onion' },
-  { label: 'Jalapeños', value: 'Jalapeños' },
-  { label: 'Bacon', value: 'Bacon' },
-  { label: 'Bun', value: 'Bun' },
-  { label: 'Steak', value: 'Steak' },
-  { label: 'Green pepper', value: 'Green pepper' },
-  { label: 'Gravy', value: 'Gravy' },
-  { label: 'BBQ sauce', value: 'BBQ sauce' },
-  { label: 'Brioche bun', value: 'Brioche bun' }
-]
 
 class New extends React.Component {
   constructor() {
     super()
     this.state = {
       formData: {
+<<<<<<< HEAD
         restaurant: {}
+=======
+        ingredients: []
+>>>>>>> development
       },
       errors: {}
+
     }
 
     this.handleChange = this.handleChange.bind(this)
+<<<<<<< HEAD
     this.handleRestaurantChange = this.handleRestaurantChange.bind(this)
     this.handleIngredientChange = this.handleIngredientChange.bind(this)
     this.getSelectedIngredients = this.getSelectedIngredients.bind(this)
+=======
+>>>>>>> development
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleIngredientCheckbox = this.handleIngredientCheckbox.bind(this)
+  }
+
+
+  handleIngredientCheckbox(e) {
+    const ingredients = [ ...this.state.formData.ingredients ]
+    if(e.target.checked) {
+      ingredients.push(e.target.name)
+    } else {
+      const index = ingredients.indexOf(e.target.name)
+      ingredients.splice(index, 1)
+    }
+
+    const formData = { ...this.state.formData, ingredients }
+    this.setState({ formData })
   }
 
 
@@ -58,14 +64,7 @@ class New extends React.Component {
     this.setState({ formData })
   }
 
-  handleIngredientChange(selectedIngredients) {
-    const formData = { ...this.state.formData, ingredients: (selectedIngredients || []).map(option => option.value) }
-    this.setState({ formData })
-  }
 
-  getSelectedIngredients() {
-    return ingredients.filter(ingredient => (this.state.formData.ingredients || []).includes(ingredient.value))
-  }
 
   handleSubmit(e) {
     e.preventDefault()
@@ -79,7 +78,6 @@ class New extends React.Component {
 
 
   render() {
-    console.log(this.state.formData)
     return (
       <section className="section">
         <div className="container">
@@ -103,22 +101,211 @@ class New extends React.Component {
                 className="input"
                 name="image"
                 placeholder="eg: https://istockphoto.com/photos/double-cheese-burger-picture.png"
-                value={this.state.formData.image || ''}
                 onChange={this.handleChange}
               />
               {this.state.errors.image && <small className="help is-danger">{this.state.errors.image}</small>}
             </div>
 
-            <div className="field">
-              <label className="label">Ingredients</label>
-              <Select
-                name="ingredients"
-                options={ingredients}
-                isMulti
-                onChange={this.handleIngredientChange}
-              />
+            <label className="label">Ingredients</label>
+            <div className="field ingredients">
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Beef"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Beef</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Chicken"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Chicken</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Cheese"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Cheese</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Tomato"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Tomato</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Lettuce"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Lettuce</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Gherkin"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Gherkin</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Onion"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Onion</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Jalapeños"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Jalapeños</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Bacon"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Bacon</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Steak"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Steak</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Green pepper"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Green pepper</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Gravy"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Gravy</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="BBQ Sauce"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>BBQ Sauce</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Bun"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Bun</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Brioche bun"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Brioche</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                  <input
+                    type="checkbox"
+                    name="Weird & Wonderful"
+                    onChange={this.handleIngredientCheckbox}
+                  />
+                  <div className="state p-warning">
+                    <label>Weird & Wonderful</label>
+                  </div>
+                </div>
+              </div>
+
               {this.state.errors.ingredients && <small className="help is-danger">{this.state.errors.ingredients}</small>}
             </div>
+
+
+
 
             <div className="field">
               <label className="label">Vegeterian?</label>
