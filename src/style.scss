@@ -1,0 +1,11 @@
+@import '~pretty-checkbox/src/pretty-checkbox.scss';
+
+.option {
+  padding-bottom: 10px;
+  width: 150px;
+}
+
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+}
