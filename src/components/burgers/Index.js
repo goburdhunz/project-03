@@ -8,12 +8,13 @@ import _ from 'lodash'
 const animatedComponents = makeAnimated()
 
 const ingredients = [
-  { value: 'Bacon', label: 'Bacon' },
-  { value: 'Tomato', label: 'Tomato' },
-  { value: 'Lettuce', label: 'Lettuce' },
-  { value: 'Cheese', label: 'Cheese' },
-  { value: 'Pickles', label: 'Pickles' },
-  { value: 'Ketchup', label: 'Ketchup' }
+  { value: 'bacon', label: 'Bacon' },
+  { value: 'beef', label: 'Beef' },
+  { value: 'tomato', label: 'Tomato' },
+  { value: 'lettuce', label: 'Lettuce' },
+  { value: 'cheese', label: 'Cheese' },
+  { value: 'pickles', label: 'Pickles' },
+  { value: 'ketchup', label: 'Ketchup' }
 ]
 
 class BurgersIndex extends React.Component {
@@ -24,8 +25,6 @@ class BurgersIndex extends React.Component {
       filterData: {
         searchTerm: '',
         sortTerm: 'price|asc',
-        isVegan: false,
-        isVegetarian: false,
         ingredients: []
       },
       burgers: []
@@ -70,21 +69,21 @@ class BurgersIndex extends React.Component {
   }
 
   filterBurgers() {
+
     const re = new RegExp(this.state.filterData.searchTerm, 'i')
     const [field, order] = this.state.filterData.sortTerm.split('|')
     const filterBurgers = _.filter(this.state.burgers, burger => {
-      return (re.test(burger.name) || re.test(burger.restaurant[0].name)) &&
-        burger.isVegan === this.state.filterData.isVegan &&
-        burger.isVegetarian === this.state.filterData.isVegetarian
-        // && burger.ingredients.includes(this.state.filterData.ingredients[0] && this.state.filterData.ingredients[1])
+      return (this.state.filterData.ingredients.length ? _.intersection(burger.ingredients, this.state.filterData.ingredients).length : true) &&
+        (re.test(burger.ingredients) || re.test(burger.name) || re.test(burger.restaurant[0].name)) &&
+        ((this.state.filterData.isVegan && burger.isVegan) ||
+        (this.state.filterData.isVegetarian && burger.isVegetarian) ||
+        (!this.state.filterData.isVegan && !this.state.filterData.isVegetarian))
     })
+
     const sortedBurgers = _.orderBy(filterBurgers, [field], [order])
     return sortedBurgers
   }
   render() {
-    console.log('filterBurgers:', this.filterBurgers())
-    console.log('filterData:', this.state.filterData)
-
     return (
       <section className="section">
         <div className="container">
