@@ -1,3 +1,7 @@
+
+button.closeModal {
+  margin-left: 180px;
+
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
 
 .option {
@@ -8,6 +12,7 @@
 .ingredients {
   display: flex;
   flex-wrap: wrap;
+
 }
 
 .vegan {

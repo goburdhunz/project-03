@@ -18,6 +18,7 @@ class New extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleRestaurantChange = this.handleRestaurantChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleCheckbox = this.handleCheckbox.bind(this)
     this.handleIngredientCheckbox = this.handleIngredientCheckbox.bind(this)
@@ -43,6 +44,12 @@ class New extends React.Component {
     this.setState({ formData})
   }
 
+  handleRestaurantChange(e) {
+    const restaurant = { ...this.state.formData.restaurant, [e.target.name]: e.target.value }
+    const formData = { ...this.state.formData, restaurant }
+    this.setState({ formData })
+  }
+
   handleCheckbox(e) {
     const formData = { ...this.state.formData, [e.target.name]: e.target.checked }
     this.setState({ formData })
@@ -56,13 +63,12 @@ class New extends React.Component {
     axios.post('/api/burgers', this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push('/burgers/'))
+      .then(() => this.props.history.push('/burgers'))
       .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
 
   render() {
-    console.log(this.state)
     return (
       <section className="section">
         <div className="container">
@@ -426,10 +432,10 @@ class New extends React.Component {
               <label className="label">Restaurant</label>
               <input
                 className="input"
-                name="restaurant"
+                name="name"
                 placeholder="eg: The Burger Joint"
-                value={this.state.formData.restaurant || ''}
-                onChange={this.handleChange}
+                value={this.state.formData.restaurant.name || ''}
+                onChange={this.handleRestaurantChange}
               />
               {this.state.errors.restaurant && <small className="help is-danger">{this.state.errors.restaurant}</small>}
             </div>
@@ -440,8 +446,8 @@ class New extends React.Component {
                 className="input"
                 name="address"
                 placeholder="eg: 56 Lettuce street, WC1 4TT"
-                value={this.state.formData.address || ''}
-                onChange={this.handleChange}
+                value={this.state.formData.restaurant.address || ''}
+                onChange={this.handleRestaurantChange}
               />
               {this.state.errors.address && <small className="help is-danger">{this.state.errors.address}</small>}
             </div>
@@ -452,8 +458,8 @@ class New extends React.Component {
                 className="input"
                 name="website"
                 placeholder="eg: www.theburgerjoint.com"
-                value={this.state.formData.website || ''}
-                onChange={this.handleChange}
+                value={this.state.formData.restaurant.website || ''}
+                onChange={this.handleRestaurantChange}
               />
               {this.state.errors.website && <small className="help is-danger">{this.state.errors.website}</small>}
             </div>
