@@ -26,11 +26,14 @@ class New extends React.Component {
   constructor() {
     super()
     this.state = {
-      formData: {},
+      formData: {
+        restaurant: {}
+      },
       errors: {}
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleRestaurantChange = this.handleRestaurantChange.bind(this)
     this.handleIngredientChange = this.handleIngredientChange.bind(this)
     this.getSelectedIngredients = this.getSelectedIngredients.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -41,6 +44,14 @@ class New extends React.Component {
     const formData = { ...this.state.formData, [e.target.name]: e.target.value }
     this.setState({ formData})
   }
+
+  // START NEW STUFF
+  handleRestaurantChange(e) {
+    const restaurant = { ...this.state.formData.restaurant, [e.target.name]: e.target.value }
+    const formData = { ...this.state.formData, restaurant }
+    this.setState({ formData })
+  }
+  // END NEW STUFF
 
   handleCheckbox(e) {
     const formData = { ...this.state.formData, [e.target.name]: e.target.checked }
@@ -68,6 +79,7 @@ class New extends React.Component {
 
 
   render() {
+    console.log(this.state.formData)
     return (
       <section className="section">
         <div className="container">
@@ -161,10 +173,10 @@ class New extends React.Component {
               <label className="label">Restaurant</label>
               <input
                 className="input"
-                name="restaurant"
+                name="name"
                 placeholder="eg: The Burger Joint"
-                value={this.state.formData.restaurant || ''}
-                onChange={this.handleChange}
+                value={this.state.formData.restaurant.name || ''}
+                onChange={this.handleRestaurantChange}
               />
               {this.state.errors.restaurant && <small className="help is-danger">{this.state.errors.restaurant}</small>}
             </div>
@@ -175,8 +187,8 @@ class New extends React.Component {
                 className="input"
                 name="address"
                 placeholder="eg: 56 Lettuce street, WC1 4TT"
-                value={this.state.formData.address || ''}
-                onChange={this.handleChange}
+                value={this.state.formData.restaurant.address || ''}
+                onChange={this.handleRestaurantChange}
               />
               {this.state.errors.address && <small className="help is-danger">{this.state.errors.address}</small>}
             </div>
@@ -187,8 +199,8 @@ class New extends React.Component {
                 className="input"
                 name="website"
                 placeholder="eg: www.theburgerjoint.com"
-                value={this.state.formData.website || ''}
-                onChange={this.handleChange}
+                value={this.state.formData.restaurant.website || ''}
+                onChange={this.handleRestaurantChange}
               />
               {this.state.errors.website && <small className="help is-danger">{this.state.errors.website}</small>}
             </div>
