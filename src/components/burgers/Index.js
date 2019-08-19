@@ -74,7 +74,7 @@ class BurgersIndex extends React.Component {
     const [field, order] = this.state.filterData.sortTerm.split('|')
     const filterBurgers = _.filter(this.state.burgers, burger => {
       return (this.state.filterData.ingredients.length ? _.intersection(burger.ingredients, this.state.filterData.ingredients).length : true) &&
-        (re.test(burger.name) || re.test(burger.restaurant[0].name)) &&
+        (re.test(burger.ingredients) || re.test(burger.name) || re.test(burger.restaurant[0].name)) &&
         ((this.state.filterData.isVegan && burger.isVegan) ||
         (this.state.filterData.isVegetarian && burger.isVegetarian) ||
         (!this.state.filterData.isVegan && !this.state.filterData.isVegetarian))

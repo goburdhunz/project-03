@@ -1,4 +1,5 @@
 import React from 'react'
+import Rating  from 'react-rating'
 
 const Card = ({ name, image, rating, restaurant }) => {
   return (
@@ -12,7 +13,15 @@ const Card = ({ name, image, rating, restaurant }) => {
         <div className="card-header-title">{name}</div>
       </div>
       <div className="card-content">
-        <h2 className="content">{rating} 🍔🍔🍔🍔🍔</h2>
+        <h2 className="content">
+          <Rating
+            emptySymbol= {<img src="https://i.imgur.com/B46NL0v.png" className="icon"/>}
+            fullSymbol= {<img src="https://i.imgur.com/lminuDH.png" className="icon"/>}
+            fractions={2}
+            initialRating={rating}
+            readonly
+          />
+        </h2>
         <h2 className="content">{restaurant}</h2>
       </div>
     </div>
