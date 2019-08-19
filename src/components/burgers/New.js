@@ -10,23 +10,15 @@ class New extends React.Component {
     super()
     this.state = {
       formData: {
-<<<<<<< HEAD
-        restaurant: {}
-=======
+        restaurant: {},
         ingredients: []
->>>>>>> development
       },
       errors: {}
 
     }
 
     this.handleChange = this.handleChange.bind(this)
-<<<<<<< HEAD
     this.handleRestaurantChange = this.handleRestaurantChange.bind(this)
-    this.handleIngredientChange = this.handleIngredientChange.bind(this)
-    this.getSelectedIngredients = this.getSelectedIngredients.bind(this)
-=======
->>>>>>> development
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleIngredientCheckbox = this.handleIngredientCheckbox.bind(this)
   }
@@ -51,13 +43,11 @@ class New extends React.Component {
     this.setState({ formData})
   }
 
-  // START NEW STUFF
   handleRestaurantChange(e) {
     const restaurant = { ...this.state.formData.restaurant, [e.target.name]: e.target.value }
     const formData = { ...this.state.formData, restaurant }
     this.setState({ formData })
   }
-  // END NEW STUFF
 
   handleCheckbox(e) {
     const formData = { ...this.state.formData, [e.target.name]: e.target.checked }
