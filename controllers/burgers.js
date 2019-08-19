@@ -9,8 +9,6 @@ function indexRoute(req,res, next) {
 
 function showRoute(req, res, next) {
   Burger.findById(req.params.id)
-    .populate({ path: 'user', select: '-email' })
-    .populate({ path: 'comments.user', select: '-email' })
     .then(burger => {
       if(!burger) return res.sendStatus(404)
       return res.json(burger)

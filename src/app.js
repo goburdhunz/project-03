@@ -7,6 +7,7 @@ import { HashRouter, Route , Switch} from 'react-router-dom'
 import Home from './components/pages/Home'
 import Register from './components/auth/Register'
 import BurgersIndex from './components/burgers/Index'
+import BurgersShow from './components/stations/Show'
 import Navbar from './components/common/Navbar'
 import New from './components/burgers/New'
 // import SecureRoute from './components/common/SecureRoute'
@@ -19,6 +20,7 @@ class App extends React.Component {
         <Navbar/>
         <Switch>
           <Route path= "/nominate" component={New}/>
+          <Route path="/burgers/:id" component={StationsShow} />
           <Route path="/burgers" component={BurgersIndex} />
           <Route path= "/register" component={Register}/>
           <Route path= "/" component={Home}/>
