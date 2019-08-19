@@ -24,9 +24,21 @@ function createRoute(req, res, next) {
     .catch(next)
 }
 
+function updateRoute(req, res, next) {
+  Burger.findById(req.params.id)
+    .then(burger => {
+      if(!burger) return res.sendStatus(404)
+      return burger.set(req.body)
+    })
+    .then(burger => burger.save())
+    .then(burger => res.json(burger))
+    .catch(next)
+}
+
 
 module.exports = {
   index: indexRoute,
   create: createRoute,
-  show: showRoute
+  show: showRoute,
+  update: updateRoute
 }
