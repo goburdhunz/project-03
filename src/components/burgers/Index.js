@@ -27,7 +27,7 @@ class BurgersIndex extends React.Component {
         sortTerm: 'price|asc',
         isVegan: false,
         isVegetarian: false,
-        ingredients: [ 'Beef', 'Lettuce']
+        ingredients: []
       },
       burgers: []
     },
@@ -77,7 +77,7 @@ class BurgersIndex extends React.Component {
       return (re.test(burger.name) || re.test(burger.restaurant[0].name)) &&
         burger.isVegan === this.state.filterData.isVegan &&
         burger.isVegetarian === this.state.filterData.isVegetarian
-        && burger.ingredients.includes(this.state.filterData.ingredients[0] && this.state.filterData.ingredients[1])
+        //&& burger.ingredients.includes(this.state.filterData.ingredients[0] && this.state.filterData.ingredients[1])
     })
     const sortedBurgers = _.orderBy(filterBurgers, [field], [order])
     return sortedBurgers
@@ -127,7 +127,7 @@ class BurgersIndex extends React.Component {
                     className="checkbox"
                     type="checkbox"
                     name="isVegetarian"
-                    checked={this.state.filterData.isVegetarian || false}
+                    checked={this.state.filterData.isVegetarian}
                     onChange={this.handleCheckbox}
                   />
                 </div>
@@ -138,7 +138,7 @@ class BurgersIndex extends React.Component {
                     className="checkbox"
                     type="checkbox"
                     name="isVegan"
-                    checked={this.state.filterData.isVegan || false}
+                    checked={this.state.filterData.isVegan}
                     onChange={this.handleCheckbox}
                   />
                 </div>
