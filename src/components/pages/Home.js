@@ -2,6 +2,10 @@ import React from 'react'
 import Card from '../burgers/Card'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import ReactMapboxGL, { Marker, ZoomControl } from 'react-mapbox-gl'
+
+const Map = ReactMapboxGL({ accessToken: process.env.MAPBOX_TOKEN })
+
 
 class Home extends React.Component {
   constructor() {
@@ -22,15 +26,17 @@ class Home extends React.Component {
 
       <div>
 
-        <div className="columns">
-          <div className="column">
-            <h1 className="title toprated">Top Rated</h1>
-            <div className="homepage-container">
+        <div className="homepage-container">
+
+          <div className="columns">
+            <div className=" column is-two-thirds-tablet is-two-thirds-widescreen is-two-thirds-desktop top-burgers">
+              <br/>
+              <h1 className="title">Top Rated</h1>
               <div className="columns is-multiline">
                 {this.state.burgers.map(burger =>
                   <div
                     key={burger._id}
-                    className="column is-half-tablet is-three-quarter-desktop"
+                    className="column"
                   >
                     <Link to={`/burgers/${burger._id}`}>
                       <Card
@@ -44,7 +50,15 @@ class Home extends React.Component {
                 )}
               </div>
             </div>
+
+            <div className="column side-map">
+
+
+
+
+            </div>
           </div>
+
         </div>
       </div>
     )
