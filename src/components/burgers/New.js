@@ -454,6 +454,18 @@ class New extends React.Component {
             </div>
 
             <div className="field">
+              <label className="label">Postcode</label>
+              <input
+                className="input"
+                name="postcode"
+                placeholder="eg:WC1 4TT"
+                value={this.state.formData.restaurant.postcode|| ''}
+                onChange={this.handleRestaurantChange}
+              />
+              {this.state.errors.postcode && <small className="help is-danger">{this.state.errors.postcode}</small>}
+            </div>
+
+            <div className="field">
               <label className="label">Website</label>
               <input
                 className="input"

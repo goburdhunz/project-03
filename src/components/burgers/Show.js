@@ -30,8 +30,8 @@ class BurgersShow extends React.Component {
               </div>
               <h2 className="title is-2">
                 <Rating
-                  emptySymbol= {<img src="https://i.imgur.com/B46NL0v.png" className="icon"/>}
-                  fullSymbol= {<img src="https://i.imgur.com/lminuDH.png" className="icon"/>}
+                  emptySymbol= {<img src="https://i.imgur.com/B46NL0v.png" className="icon is-1"/>}
+                  fullSymbol= {<img src="https://i.imgur.com/lminuDH.png" className="icon is-1"/>}
                   fractions={2}
                   initialRating={this.state.burger.rating}
                   readonly

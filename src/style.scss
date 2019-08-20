@@ -13,7 +13,6 @@ button.closeModal {
 .ingredients {
   display: flex;
   flex-wrap: wrap;
-
 }
 .login-button .login-portal{
   margin: 0px;
@@ -34,5 +33,8 @@ h1.title.toprated {
   flex-wrap: wrap;
 }
 
+.rating-show {
+  font-size: 150px;
+}
 
 @import 'bulma'
