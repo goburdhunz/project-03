@@ -18,5 +18,7 @@ router.route('/burgers/:id')
 router.post('/register', authController.register)
 router.post('/login', authController.login)
 
+router.post('/burgers/:id/comments', secureRoute, burgerController.commentCreate)
+router.delete('/burgers/:id/comments/:commentId', secureRoute, burgerController.commentDelete)
 
 module.exports = router
