@@ -71,7 +71,7 @@ class New extends React.Component {
 
   render() {
     return (
-      <section className="section">
+      <section className="section-new-page">
         <form onSubmit={this.handleSubmit}>
 
           <div className="new-page">

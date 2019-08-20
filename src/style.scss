@@ -5,11 +5,18 @@ button.closeModal {
 
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
 
+.homepage-container {
+  display: flex;
+  margin: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
 
-.section {
+.section-new-page {
   display: flex;
   max-width: 750px;
   margin: auto;
+  padding-top: 30px;
 }
 
 .option {
@@ -36,6 +43,7 @@ button.closeModal {
   margin-left: 5px;
   margin-top: 5px;
 }
+
 
 .price-field {
   margin-left: 20px;
