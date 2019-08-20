@@ -45,8 +45,8 @@ class BurgersShow extends React.Component {
               <div className="tile is-parent">
                 <article className="tile is-child notification is-primary ">
                   <p className="title ">Find it at</p>
-                  <a className="subtitle is-2" href={this.state.burger.restaurant[0].website} rel="noopener noreferrer" target="_blank"> {this.state.burger.restaurant[0].name}</a>
-                  <p className="subtitle">{this.state.burger.restaurant[0].address}</p>
+                  <a className="subtitle is-2" href={this.state.burger.restaurant.website} rel="noopener noreferrer" target="_blank"> {this.state.burger.restaurant.name}</a>
+                  <p className="subtitle">{this.state.burger.restaurant.address}</p>
 
                   <Map
                     style="mapbox://styles/mapbox/streets-v9"
@@ -54,12 +54,12 @@ class BurgersShow extends React.Component {
                       height: '350px',
                       width: '350px'
                     }}
-                    center = {[this.state.burger.restaurant[0].longitude, this.state.burger.restaurant[0].latitude]}
+                    center = {[this.state.burger.restaurant.longitude, this.state.burger.restaurant.latitude]}
                     zoom = {[13]}
                     scrollZoom = {true}
                   >
                     <Marker
-                      coordinates={[this.state.burger.restaurant[0].longitude, this.state.burger.restaurant[0].latitude]}
+                      coordinates={[this.state.burger.restaurant.longitude, this.state.burger.restaurant.latitude]}
                       anchor="bottom">
                       <img src='https://i.imgur.com/WGtyz8g.png' width='100px' height='100px'/>
                     </Marker>
