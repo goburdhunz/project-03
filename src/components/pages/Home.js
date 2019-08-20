@@ -52,7 +52,7 @@ class Home extends React.Component {
             </div>
 
             <div className="column side-map">
-              <h2 clssName="subtitle">Find our top rated</h2>
+              <h2 className="subtitle">Find our top rated</h2>
               <br/>
               <Map
                 style="mapbox://styles/mapbox/streets-v9"
