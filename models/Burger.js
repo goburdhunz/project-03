@@ -11,6 +11,7 @@ const commentSchema = new mongoose.Schema({
 const restaurantSchema = new mongoose.Schema({
   name: {type: String, required: true},
   address: {type: String, required: true},
+  postcode: {type: String, required: true},
   latitude: {type: Number},
   longitude: {type: Number},
   website: {type: String}
