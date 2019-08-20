@@ -15,9 +15,7 @@ class New extends React.Component {
         isVegan: false,
         isVegetarian: false
       },
-      errors: {
-        // restaurant: {}
-      }
+      errors: {}
     }
 
     this.handleChange = this.handleChange.bind(this)

@@ -1,8 +1,14 @@
 import React from 'react'
 import axios from 'axios'
 import Rating  from 'react-rating'
+
 import Comment from '../common/Comment'
 import Auth from '../../lib/Auth'
+import ReactMapboxGL, { Marker, ZoomControl } from 'react-mapbox-gl'
+import 'bulma'
+
+
+const Map = ReactMapboxGL({ accessToken: process.env.MAPBOX_TOKEN })
 
 class BurgersShow extends React.Component {
 
@@ -76,9 +82,28 @@ class BurgersShow extends React.Component {
                   <p className="title ">Find it at</p>
                   <a className="subtitle is-2" href={this.state.burger.restaurant.website} rel="noopener noreferrer" target="_blank"> {this.state.burger.restaurant.name}</a>
                   <p className="subtitle">{this.state.burger.restaurant.address}</p>
-                  <figure className="image is-4by3">
-                    <img src="https://i.stack.imgur.com/mPsIw.png" />
-                  </figure>
+
+                  <Map
+                    style="mapbox://styles/mapbox/streets-v9"
+                    containerStyle={{
+                      height: '350px',
+                      width: '350px'
+                    }}
+                    center = {[this.state.burger.restaurant.longitude, this.state.burger.restaurant.latitude]}
+                    zoom = {[13]}
+                    scrollZoom = {true}
+                  >
+                    <Marker
+                      coordinates={[this.state.burger.restaurant.longitude, this.state.burger.restaurant.latitude]}
+                      anchor="bottom">
+                      <img src='https://i.imgur.com/WGtyz8g.png' width='100px' height='100px'/>
+                    </Marker>
+                    <ZoomControl
+                      isEnabled = 'true' />
+
+                  </Map>
+
+
                 </article>
               </div>
             </div>
