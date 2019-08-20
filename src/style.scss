@@ -13,7 +13,6 @@ button.closeModal {
 .ingredients {
   display: flex;
   flex-wrap: wrap;
-
 }
 
 h1.title.toprated {
@@ -24,6 +23,10 @@ h1.title.toprated {
 .vegan {
   display: flex;
   flex-wrap: wrap;
+}
+
+.rating-show {
+  font-size: 150px;
 }
 
 @import 'bulma'
