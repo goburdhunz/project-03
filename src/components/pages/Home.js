@@ -43,7 +43,7 @@ class Home extends React.Component {
                         name={burger.name}
                         image={burger.image}
                         rating={burger.rating}
-                        restaurant={burger.restaurant[0].name}
+                        restaurant={burger.restaurant.name}
                       />
                     </Link>
                   </div>

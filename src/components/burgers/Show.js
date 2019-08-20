@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Rating  from 'react-rating'
-import ReactMapboxGL, { Layer, Marker, ZoomControl } from 'react-mapbox-gl'
+import ReactMapboxGL, { Marker, ZoomControl } from 'react-mapbox-gl'
 import 'bulma'
 
 const Map = ReactMapboxGL({ accessToken: process.env.MAPBOX_TOKEN })

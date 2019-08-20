@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Select from 'react-select'
+import CreatableSelect from 'react-select/creatable'
 import makeAnimated from 'react-select/animated'
 import Card from './Card'
 import axios from 'axios'
@@ -27,6 +28,12 @@ const ingredients = [
   { value: 'Ketchup', label: 'Ketchup' },
   { value: 'Mustard', label: 'Mustard' },
   { value: 'Mayonnaise', label: 'Mayonnaise' }
+]
+const order = [
+  { value: 'price|asc', label: 'Price Low first' },
+  { value: 'price|desc', label: 'Price High first' },
+  { value: 'rating|asc', label: 'Lower Rating first' },
+  { value: 'ating|desc', label: 'Higher Rating first' }
 ]
 
 class BurgersIndex extends React.Component {
@@ -94,7 +101,7 @@ class BurgersIndex extends React.Component {
     const [field, order] = this.state.filterData.sortTerm.split('|')
     const filterBurgers = _.filter(this.state.burgers, burger => {
       return (this.state.filterData.ingredients.length ? _.intersection(burger.ingredients, this.state.filterData.ingredients).length : true) &&
-        (re.test(burger.name) || re.test(burger.restaurant[0].name)) && (reIng.test(burger.ingredients))  &&
+        (re.test(burger.name) || re.test(burger.restaurant.name)) && (reIng.test(burger.ingredients))  &&
         ((this.state.filterData.isVegan && burger.isVegan) ||
         (this.state.filterData.isVegetarian && burger.isVegetarian) ||
         (!this.state.filterData.isVegan && !this.state.filterData.isVegetarian))
@@ -116,8 +123,21 @@ class BurgersIndex extends React.Component {
                   <div className="control">
                     <input
                       placeholder="Search"
-                      className="input"
+                      className="input  is-fullwidth is-primary"
                       onKeyUp={this.handleKeyUp}/>
+                  </div>
+                </div>
+
+                {/* ORDER BY */}
+                <div className="field">
+                  <label className="label">Order by:</label>
+                  <div className="select is-fullwidth is-primary">
+                    <select onChange={this.handleChangeOrder}>
+                      <option value="price|asc">Price Low first</option>
+                      <option value="price|desc">Price High first</option>
+                      <option value="rating|asc">Lower Rating first</option>
+                      <option value="rating|desc">Higher Rating first</option>
+                    </select>
                   </div>
                 </div>
 
@@ -129,7 +149,6 @@ class BurgersIndex extends React.Component {
                       isMulti
                       isSearchable
                       name="ingredients"
-                      className="basic-multi-select"
                       closeMenuOnSelect={false}
                       components={animatedComponents}
                       onChange={this.handleChangeIngredients}
@@ -140,7 +159,7 @@ class BurgersIndex extends React.Component {
                     <div className="control">
                       <input
                         placeholder="Search for weird and wonderful ingredients"
-                        className="input"
+                        className="input  is-fullwidth is-primary"
                         onKeyUp={this.handleKeyUpIngredients}/>
                     </div>
                   </div>
@@ -150,7 +169,7 @@ class BurgersIndex extends React.Component {
                 <div className="field">
                   <label className="label">Vegetarian?</label>
                   <input
-                    className="checkbox"
+                    className="checkboxis-primary"
                     type="checkbox"
                     name="isVegetarian"
                     checked={this.state.filterData.isVegetarian || false}
@@ -161,24 +180,12 @@ class BurgersIndex extends React.Component {
                 <div className="field">
                   <label className="label">Vegan?</label>
                   <input
-                    className="checkbox"
+                    className="checkbox is-primary"
                     type="checkbox"
                     name="isVegan"
                     checked={this.state.filterData.isVegan || false}
                     onChange={this.handleCheckbox}
                   />
-                </div>
-                {/* ORDER BY */}
-                <div className="field">
-                  <label className="label">Order by:</label>
-                  <div className="select is-fullwidth">
-                    <select onChange={this.handleChangeOrder}>
-                      <option value="price|asc">Price Low first</option>
-                      <option value="price|desc">Price High first</option>
-                      <option value="rating|asc">Lower Rating first</option>
-                      <option value="rating|desc">Higher Rating first</option>
-                    </select>
-                  </div>
                 </div>
               </form>
             </div>
@@ -196,7 +203,7 @@ class BurgersIndex extends React.Component {
                         name={burger.name}
                         image={burger.image}
                         rating={burger.rating}
-                        restaurant={burger.restaurant[0].name}/>
+                        restaurant={burger.restaurant.name}/>
                     </Link>
                   </div>
                 )}
