@@ -15,7 +15,7 @@ const Comment = ({user, createdAt, content, handledelete, _id,    userRating}) =
             <br />
             {content}
           </p>
-          <p className="title is-2 has-text-centered">
+          <span className="title is-2 has-text-centered">
             <Rating
               emptySymbol= {<img src="https://i.imgur.com/931P2ih.png" className="image is-24x24"/>}
               fullSymbol= {<img src="https://i.imgur.com/f00MSST.png" className="image is-24x24"/>}
@@ -23,7 +23,7 @@ const Comment = ({user, createdAt, content, handledelete, _id,    userRating}) =
               initialRating={userRating}
               readonly
             />
-          </p>
+          </span>
         </div>
       </div>
       {Auth.isAuthenticated() && <div className="media-right">
