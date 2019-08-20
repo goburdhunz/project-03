@@ -24,8 +24,8 @@ class App extends React.Component {
   render() {
     return (
       <HashRouter>
+        <ToastContainer position="top-center" hideProgressBar={true} />
         <Navbar/>
-        <ToastContainer position="bottom-right" hideProgressBar={true} />
         <Switch>
 
           <SecureRoute path= "/nominate" component={New}/>
