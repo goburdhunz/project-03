@@ -42,8 +42,8 @@ class BurgersShow extends React.Component {
               <div className="tile is-parent">
                 <article className="tile is-child notification is-primary ">
                   <p className="title ">Find it at</p>
-                  <a className="subtitle is-2" href={this.state.burger.restaurant[0].website} rel="noopener noreferrer" target="_blank"> {this.state.burger.restaurant[0].name}</a>
-                  <p className="subtitle">{this.state.burger.restaurant[0].address}</p>
+                  <a className="subtitle is-2" href={this.state.burger.restaurant.website} rel="noopener noreferrer" target="_blank"> {this.state.burger.restaurant.name}</a>
+                  <p className="subtitle">{this.state.burger.restaurant.address}</p>
                   <figure className="image is-4by3">
                     <img src="https://i.stack.imgur.com/mPsIw.png" />
                   </figure>
