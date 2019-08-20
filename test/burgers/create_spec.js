@@ -101,7 +101,6 @@ describe('POST /burgers', () => {
       .send(testData)
 
       .end((err, res) => {
-        console.log(res.body)
         expect(res.body.name).to.eq(testData.name)
         expect(res.body.restaurant._id).to.eq(testData.restaurant._id)
         expect(res.body.restaurant.name).to.eq(testData.restaurant.name)
