@@ -23,7 +23,7 @@ class BurgersShow extends React.Component {
       <section className="section">
         <div className="container">
           <div className="columns">
-            <div className="column is-one-half">
+            <div className="column is-one-half has-text-centered">
               <div className="card-image">
                 <figure className="image3">
                   <img src={this.state.burger.image} alt={this.state.burger.name} />
@@ -42,7 +42,7 @@ class BurgersShow extends React.Component {
               <div className="tile is-parent">
                 <article className="tile is-child notification is-primary ">
                   <p className="title ">Find it at</p>
-                  <a className="subtitle is-2" href={this.state.burger.restaurant[0].website}> {this.state.burger.restaurant[0].name}</a>
+                  <a className="subtitle is-2" href={this.state.burger.restaurant[0].website} rel="noopener noreferrer" target="_blank"> {this.state.burger.restaurant[0].name}</a>
                   <p className="subtitle">{this.state.burger.restaurant[0].address}</p>
                   <figure className="image is-4by3">
                     <img src="https://i.stack.imgur.com/mPsIw.png" />
