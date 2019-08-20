@@ -720,7 +720,7 @@ module.exports = [{
     'Tomato',
     'Onion'
   ],
-  price: .00,
+  price: 20.00,
   description: 'Live fire grilled burgerd topped with ogleshield cheese, tomato and red onions.',
   restaurant: {
     name: 'Gridiron',
