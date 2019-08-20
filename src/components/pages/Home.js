@@ -25,12 +25,12 @@ class Home extends React.Component {
         <div className="columns">
           <div className="column">
             <h1 className="title toprated">Top Rated</h1>
-            <div className="container">
+            <div className="homepage-container">
               <div className="columns is-multiline">
                 {this.state.burgers.map(burger =>
                   <div
                     key={burger._id}
-                    className="column is-half-tablet is-one-third-desktop"
+                    className="column is-half-tablet is-three-quarter-desktop"
                   >
                     <Link to={`/burgers/${burger._id}`}>
                       <Card
