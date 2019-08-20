@@ -96,7 +96,7 @@ module.exports = [{
   rating: 5,
   image: 'https://files.webbuilder.hosteurope.de/22/39/2239de11-803c-4837-a86b-f27fbb4a4fa3.jpg',
   ingredients: ['Bacon', 'Tomato', 'Bbq sauce', 'Beef', 'Lettuce', 'Bun' ],
-  price: 1100,
+  price: 11.00,
   description: 'Big juicy patty smothered in bbq sauce with smoked bacon',
   restaurant: {
     name: 'Bucks',
@@ -111,7 +111,7 @@ module.exports = [{
   rating: 5,
   image: 'https://media-cdn.tripadvisor.com/media/photo-s/15/13/a7/c2/bucks-burgers.jpg',
   ingredients: ['Bacon', 'Tomato', 'Bbq sauce', 'Beef', 'Lettuce', 'Bun' ],
-  price: 1100,
+  price: 11.00,
   description: 'Big juicy patty smothered in bbq sauce with smoked bacon',
   restaurant: {
     name: 'Bucks',
@@ -126,7 +126,7 @@ module.exports = [{
   rating: 2,
   image: 'https://s3-media3.fl.yelpcdn.com/bphoto/I0eBdkpbxwee89Im6PVlwg/o.jpg',
   ingredients: ['Bacon', 'Tomato', 'Bbq sauce', 'Beef', 'Lettuce', 'Bun' ],
-  price: 1100,
+  price: 11.00,
   description: 'Big juicy patty smothered in bbq sauce with smoked bacon',
   restaurant: {
     name: 'Bucks',
@@ -141,7 +141,7 @@ module.exports = [{
   rating: 3,
   image: 'https://s3-media3.fl.yelpcdn.com/bphoto/FQNotpFP4KD0F6LXPAOCNQ/o.jpg',
   ingredients: ['Soya Pattie', 'Tomato', 'Cheese', 'Lettuce', 'Bun' ],
-  price: 1100,
+  price: 11.00,
   description: 'Big juicy patty smothered in bbq sauce with veggine cheese and smoked veggie bacon',
   isVegetarian: true,
   restaurant: {
