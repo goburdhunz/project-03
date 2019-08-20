@@ -29,8 +29,8 @@ class App extends React.Component {
         <Navbar/>
         <Switch>
 
+          <SecureRoute path="/burgers/:id/edit" component={BurgersEdit} />
           <SecureRoute path= "/nominate" component={New}/>
-          <Route path="/burgers/:id/edit" component={BurgersEdit} />
           <Route path="/burgers/:id" component={BurgersShow} />
           <Route path= "/nominate" component={New}/>
 

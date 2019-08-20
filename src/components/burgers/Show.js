@@ -4,6 +4,7 @@ import Rating  from 'react-rating'
 
 import Comment from '../common/Comment'
 import Auth from '../../lib/Auth'
+import { Link } from 'react-router-dom'
 import ReactMapboxGL, { Marker, ZoomControl } from 'react-mapbox-gl'
 import 'bulma'
 
@@ -171,6 +172,15 @@ class BurgersShow extends React.Component {
                 <button className="button is-info">Submit</button>
               </form>}
 
+              <hr />
+              {Auth.isAuthenticated() && <div className="buttons">
+                <Link
+                  className="button"
+                  to={`/burgers/${this.state.burger._id}/edit`}
+                >Edit</Link>
+
+                <button className="button is-danger">Delete</button>
+              </div>}
 
             </div>
           </div>

@@ -26,7 +26,7 @@ class Edit extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/stations/${this.props.match.params.id}`)
+    axios.get(`/api/burgers/${this.props.match.params.id}`)
       .then(res => this.setState({ formData: res.data }))
   }
 
