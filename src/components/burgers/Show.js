@@ -12,11 +12,18 @@ class BurgersShow extends React.Component {
     super()
     this.state = {
     }
+
+    this.normalisePrice = this.normalisePrice.bind(this)
   }
 
   componentDidMount() {
     axios.get(`/api/burgers/${this.props.match.params.id}`)
       .then(res => this.setState({ burger: res.data }))
+  }
+
+  normalisePrice(price) {
+    const priceResult = parseFloat(price).toFixed(2)
+    return priceResult
   }
 
   render() {
@@ -77,7 +84,7 @@ class BurgersShow extends React.Component {
                 <article className="tile is-child notification is-primary">
                   <div className="content">
                     <header className="title is-1">{this.state.burger.name}</header>
-                    <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £ {this.state.burger.price}</p>
+                    <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £ {this.normalisePrice(this.state.burger.price)}</p>
                     <p className="subtitle"><span className="has-text-weight-semibold">Ingredients:</span>
                       {this.state.burger.ingredients.map(ingredient => ' ' + ingredient + ',')}</p>
                     <p className="subtitle"><span className="has-text-weight-semibold">Vegetarian: </span>
