@@ -7,7 +7,8 @@ class BurgersShow extends React.Component {
 
   constructor() {
     super()
-    this.state = {}
+    this.state = {
+    }
   }
 
   componentDidMount() {
@@ -22,16 +23,16 @@ class BurgersShow extends React.Component {
       <section className="section">
         <div className="container">
           <div className="columns">
-            <div className="column is-one-half">
+            <div className="column is-one-half has-text-centered">
               <div className="card-image">
                 <figure className="image3">
                   <img src={this.state.burger.image} alt={this.state.burger.name} />
                 </figure>
               </div>
-              <h2 className="title is-2">
+              <h2 className="title is-2 has-text-centered">
                 <Rating
-                  emptySymbol= {<img src="https://i.imgur.com/B46NL0v.png" className="icon is-1"/>}
-                  fullSymbol= {<img src="https://i.imgur.com/lminuDH.png" className="icon is-1"/>}
+                  emptySymbol= {<img src="https://i.imgur.com/931P2ih.png" className="image is-48x48"/>}
+                  fullSymbol= {<img src="https://i.imgur.com/f00MSST.png" className="image is-48x48"/>}
                   fractions={2}
                   initialRating={this.state.burger.rating}
                   readonly
@@ -41,7 +42,7 @@ class BurgersShow extends React.Component {
               <div className="tile is-parent">
                 <article className="tile is-child notification is-primary ">
                   <p className="title ">Find it at</p>
-                  <a className="subtitle is-2" href={this.state.burger.restaurant.website}> {this.state.burger.restaurant.name}</a>
+                  <a className="subtitle is-2" href={this.state.burger.restaurant.website} rel="noopener noreferrer" target="_blank"> {this.state.burger.restaurant.name}</a>
                   <p className="subtitle">{this.state.burger.restaurant.address}</p>
                   <figure className="image is-4by3">
                     <img src="https://i.stack.imgur.com/mPsIw.png" />
@@ -54,9 +55,15 @@ class BurgersShow extends React.Component {
                 <article className="tile is-child notification is-primary">
                   <div className="content">
                     <header className="title is-1">{this.state.burger.name}</header>
-                    <p className="subtitle"><span className="has-text-weight-semibold">Price: </span>{this.state.burger.price}</p>
+                    <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £ {this.state.burger.price}</p>
                     <p className="subtitle"><span className="has-text-weight-semibold">Ingredients:</span>
                       {this.state.burger.ingredients.map(ingredient => ' ' + ingredient + ',')}</p>
+                    <p className="subtitle"><span className="has-text-weight-semibold">Vegetarian: </span>
+                      {(!!this.state.burger.isVegetarian || !!this.state.burger.isVegan) && <img src="https://i.imgur.com/8RN8Why.png" className="icon"/>}
+                      {(!this.state.burger.isVegetarian && !this.state.burger.isVegan) && <span className="subtitle">No</span>} </p>
+                    <p className="subtitle"><span className="has-text-weight-semibold">Vegan: </span>
+                      {!this.state.burger.isVegan && <span className="subtitle">No</span>}
+                      {!!this.state.burger.isVegan && <img src="https://i.imgur.com/8RN8Why.png" className="icon"/>} </p>
                     <div className="subtitle">{this.state.burger.description}</div>
                   </div>
                 </article>
