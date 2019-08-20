@@ -15,7 +15,9 @@ class New extends React.Component {
         isVegan: false,
         isVegetarian: false
       },
-      errors: {}
+      errors: {
+        // restaurant: {}
+      }
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -453,7 +455,7 @@ class New extends React.Component {
               value={this.state.formData.restaurant.name || ''}
               onChange={this.handleRestaurantChange}
             />
-            {this.state.errors.restaurant && <small className="help is-danger">{this.state.errors.restaurant}</small>}
+            {this.state.errors['restaurant.name'] && <small className="help is-danger">{this.state.errors['restaurant.name']}</small>}
           </div>
 
           <div className="field">
@@ -465,7 +467,7 @@ class New extends React.Component {
               value={this.state.formData.restaurant.address || ''}
               onChange={this.handleRestaurantChange}
             />
-            {this.state.errors.address && <small className="help is-danger">{this.state.errors.address}</small>}
+            {this.state.errors['restaurant.address'] && <small className="help is-danger">{this.state.errors['restaurant.address']}</small>}
           </div>
 
           <div className="field">
@@ -477,7 +479,7 @@ class New extends React.Component {
               value={this.state.formData.restaurant.postcode|| ''}
               onChange={this.handleRestaurantChange}
             />
-            {this.state.errors.postcode && <small className="help is-danger">{this.state.errors.postcode}</small>}
+            {this.state.errors['restaurant.postcode'] && <small className="help is-danger">{this.state.errors['restaurant.postcode']}</small>}
           </div>
 
 
@@ -490,7 +492,7 @@ class New extends React.Component {
               value={this.state.formData.restaurant.website || ''}
               onChange={this.handleRestaurantChange}
             />
-            {this.state.errors.website && <small className="help is-danger">{this.state.errors.website}</small>}
+            {this.state.errors['restaurant.website'] && <small className="help is-danger">{this.state.errors['restaurant.website']}</small>}
           </div>
 
           <button className="button is-danger">Submit</button>
