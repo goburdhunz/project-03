@@ -89,10 +89,10 @@ class BurgersShow extends React.Component {
                 <div className="column">
                   <div className="buttons are-medium">
                     <div className="control">
-                      <button className="button is-primary is-fullwidth">Book to try it!</button>
+                      <button className="button is-primary is-fullwidth">🍽Book to try it!</button>
                     </div>
                     <div className="control">
-                      <button className="button is-primary is-fullwidth">Find a beer for a perfect match!</button>
+                      <button className="button is-primary is-fullwidth">🍺Find a beer for a perfect match!</button>
                     </div>
                   </div>
                 </div>
