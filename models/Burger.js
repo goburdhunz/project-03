@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const axios = require('axios')
 
 
 const commentSchema = new mongoose.Schema({
@@ -29,6 +30,23 @@ const burgerSchema = new mongoose.Schema({
   isVegetarian: {type: Boolean, default: false},
   restaurant: [restaurantSchema],
   comments: [commentSchema]
+})
+
+
+restaurantSchema.pre('validate', function parsepostcode(done) {
+  if(!this.isModified('postcode')) return done()
+
+  axios.post('https://api.postcodes.io/postcodes', {postcodes: [this.postcode]}, {
+    params: {
+      filter: 'latitude,longitude'
+    }
+  })
+    .then((res) => {
+      if(!res.data.result[0].result) return done()
+      this.latitude = res.data.result[0].result.latitude
+      this.longitude = res.data.result[0].result.longitude
+      done()
+    })
 })
 
 module.exports = mongoose.model('Burger', burgerSchema)
