@@ -63,7 +63,7 @@ class Navbar extends React.Component {
 
               <div className={`navbar-menu ${this.state.navbarOpen ? 'is-active' : ''}`}>
                 <div className="navbar-end">
-                  {Auth.isAuthenticated() && <button onClick={this.logout} className="navbar-item button is-primary">Logout</button>}
+                  {Auth.isAuthenticated() && <a onClick={this.logout} className="navbar-item ">Logout</a>}
 
                   {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">
                     <button className="button is-info registerbutton">Register</button>
