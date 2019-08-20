@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Select from 'react-select'
-import CreatableSelect from 'react-select/creatable'
 import makeAnimated from 'react-select/animated'
 import Card from './Card'
 import axios from 'axios'
@@ -28,12 +27,6 @@ const ingredients = [
   { value: 'Ketchup', label: 'Ketchup' },
   { value: 'Mustard', label: 'Mustard' },
   { value: 'Mayonnaise', label: 'Mayonnaise' }
-]
-const order = [
-  { value: 'price|asc', label: 'Price Low first' },
-  { value: 'price|desc', label: 'Price High first' },
-  { value: 'rating|asc', label: 'Lower Rating first' },
-  { value: 'ating|desc', label: 'Higher Rating first' }
 ]
 
 class BurgersIndex extends React.Component {
