@@ -6,10 +6,22 @@ button.closeModal {
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
 
 .homepage-container {
-  display: flex;
   margin: auto;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: -10px;
+}
+
+.side-map {
+  background-color: grey;
+  margin-right: 25px;
+  border-radius: 5px;
+  background:#f0f0f0;
+
+}
+
+.top-burgers {
+  margin-right: 20px;
 }
 
 .section-new-page {
