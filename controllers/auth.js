@@ -16,7 +16,7 @@ function loginRoute(req, res, next) {
       }
 
       const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '8h' })
-      res.json({ message: `Welcome back ${user.username}!`, token })
+      res.json({ message: `🦖 Welcome back ${user.username}!`, token })
     })
     .catch(next)
 }
