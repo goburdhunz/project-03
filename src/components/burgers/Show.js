@@ -15,7 +15,7 @@ class BurgersShow extends React.Component {
   constructor() {
     super()
     this.state = {
-      formData: { rating: '', content: ''}
+      formData: { userRating: 1, content: ''}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -38,7 +38,7 @@ class BurgersShow extends React.Component {
     axios.post(`/api/burgers/${this.props.match.params.id}/comments`, this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(res => this.setState({burgers: res.data, formData: {rating: '', content: ''}}))
+      .then(res => this.setState({burger: res.data, formData: {userRating: 1, content: ''}}))
   }
 
   handleDelete(e) {
@@ -47,10 +47,8 @@ class BurgersShow extends React.Component {
     axios.delete(`/api/burgers/${this.props.match.params.id}/comments/${e.target.id}`, {
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(res => this.setState({burgers: res.data}))
+      .then(res => this.setState({burger: res.data}))
   }
-
-
 
 
 
@@ -130,7 +128,10 @@ class BurgersShow extends React.Component {
               <div className="columns">
                 <div className="column is-half">
                   {this.state.burger.comments.map(comment =>
-                    <Comment key={comment._id} {...comment} handledelete={this.handleDelete}/>
+                    <Comment
+                      key={comment._id} {...comment} handledelete={this.handleDelete}
+                      userrating={this.userRating}
+                    />
                   )}
                 </div>
               </div>
@@ -151,13 +152,13 @@ class BurgersShow extends React.Component {
                 <div className="field">
                   <label className="label">Rating (1-5)</label>
                   <input
-                    name="rating"
+                    name="userRating"
                     className="input"
                     type="range"
                     min="1"
                     max="5"
                     onChange={this.handleChange}
-                    value={this.state.formData.rating}
+                    value={this.state.formData.userRating}
                   />
                 </div>
 
