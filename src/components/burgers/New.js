@@ -413,30 +413,6 @@ class New extends React.Component {
               </div>
             </div>
 
-
-            <div className="field">
-              <label className="label">Postcode</label>
-              <input
-                className="input"
-                name="postcode"
-                placeholder="eg:WC1 4TT"
-                value={this.state.formData.restaurant.postcode|| ''}
-                onChange={this.handleRestaurantChange}
-              />
-              {this.state.errors.postcode && <small className="help is-danger">{this.state.errors.postcode}</small>}
-            </div>
-
-            <div className="field">
-              <label className="label">Website</label>
-              <input
-                className="input"
-                name="website"
-                placeholder="eg: www.theburgerjoint.com"
-                value={this.state.formData.restaurant.website || ''}
-                onChange={this.handleRestaurantChange}
-              />
-              {this.state.errors.website && <small className="help is-danger">{this.state.errors.website}</small>}
-
             <div className="option">
               <div className="pretty p-default p-curve p-smooth p-round p-bigger">
                 <input
@@ -485,12 +461,25 @@ class New extends React.Component {
             <input
               className="input"
               name="address"
-              placeholder="eg: 56 Lettuce street, WC1 4TT"
+              placeholder="eg: 56 Lettuce street"
               value={this.state.formData.restaurant.address || ''}
               onChange={this.handleRestaurantChange}
             />
             {this.state.errors.address && <small className="help is-danger">{this.state.errors.address}</small>}
           </div>
+
+          <div className="field">
+            <label className="label">Postcode</label>
+            <input
+              className="input"
+              name="postcode"
+              placeholder="eg: WC1 4TT"
+              value={this.state.formData.restaurant.postcode|| ''}
+              onChange={this.handleRestaurantChange}
+            />
+            {this.state.errors.postcode && <small className="help is-danger">{this.state.errors.postcode}</small>}
+          </div>
+
 
           <div className="field">
             <label className="label">Website</label>
