@@ -5,14 +5,82 @@ button.closeModal {
 
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
 
+.homepage-container {
+  margin: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: -10px;
+}
+
+.side-map {
+  background-color: grey;
+  margin-right: 25px;
+  border-radius: 5px;
+  background:#f0f0f0;
+
+}
+
+.top-burgers {
+  margin-right: 20px;
+}
+
+.section-new-page {
+  display: flex;
+  max-width: 750px;
+  margin: auto;
+  padding-top: 30px;
+}
+
 .option {
   padding-bottom: 10px;
-  width: 190px;
+  width: 230px;
+}
+
+.new-page {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.upload-box {
+  width: 270px;
+  height: 184px;
+  background-color: grey;
+  margin-right: 25px;
+  border-radius: 5px;
+  background:#f0f0f0;
+  box-shadow:0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 #FFF;
+}
+
+.Fileinput {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+
+.price-field {
+  margin-left: 20px;
+}
+
+.rating-price {
+  display: flex;
+}
+
+.vegeterian-field {
+  width: 208px;
 }
 
 .ingredients {
   display: flex;
   flex-wrap: wrap;
+}
+.login-button .login-portal{
+  margin: 0px;
+  padding: 0px;
+}
+
+.registerbutton, .loginbutton {
+  width: 80px;
+  margin-top: 5px;
 }
 
 h1.title.toprated {

@@ -70,404 +70,433 @@ class New extends React.Component {
 
 
   render() {
+    console.log(this.state.formData)
     return (
-      <section className="section">
-        <div className="container">
+      <section className="section-new-page">
+        <form onSubmit={this.handleSubmit}>
 
-          <form onSubmit={this.handleSubmit}>
-            <div className="field">
-              <label className="label">Name</label>
-              <input
-                className="input"
-                name="name"
-                placeholder="eg: The Cheeesiest Cheesebuger"
-                value={this.state.formData.name || ''}
-                onChange={this.handleChange}
-              />
-              {this.state.errors.name && <small className="help is-danger">{this.state.errors.name}</small>}
-            </div>
-
-            <div className="field">
-              <label className="label">Rating</label>
-              <input
-                className="input"
-                type="number"
-                name="rating"
-                placeholder="eg: 1 - 5"
-                value={this.state.formData.rating || ''}
-                onChange={this.handleChange}
-              />
-              {this.state.errors.rating && <small className="help is-danger">{this.state.errors.rating}</small>}
-            </div>
-
+          <div className="new-page">
             <div className="field">
               <label className="label">Burger Image</label>
-              <input
-                className="input"
-                name="image"
-                placeholder="eg: https://istockphoto.com/photos/double-cheese-burger-picture.png"
-                onChange={this.handleChange}
-              />
+              <figure className="image is-half">
+                <div className="Dropzone upload-box">
+                  <input
+                    className="Fileinput"
+                    type="file"
+                    name="image"
+                    multiple
+                    onChange={this.handleChange}
+                  />
+                </div>
+              </figure>
               {this.state.errors.image && <small className="help is-danger">{this.state.errors.image}</small>}
             </div>
 
-            <label className="label">Ingredients</label>
-            <div className="field ingredients">
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Beef"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-warning">
-                    <label>Beef</label>
-                  </div>
-                </div>
-              </div>
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Chicken"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-warning">
-                    <label>Chicken</label>
-                  </div>
-                </div>
-              </div>
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Cheese"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-warning">
-                    <label>Cheese</label>
-                  </div>
-                </div>
-              </div>
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Tomato"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-warning">
-                    <label>Tomato</label>
-                  </div>
-                </div>
-              </div>
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Lettuce"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-warning">
-                    <label>Lettuce</label>
-                  </div>
-                </div>
-              </div>
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Gherkin"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-warning">
-                    <label>Gherkin</label>
-                  </div>
-                </div>
-              </div>
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Onion"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-warning">
-                    <label>Onion</label>
-                  </div>
-                </div>
-              </div>
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Jalapeños"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-warning">
-                    <label>Jalapeños</label>
-                  </div>
-                </div>
-              </div>
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Bacon"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-warning">
-                    <label>Bacon</label>
-                  </div>
-                </div>
-              </div>
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Steak"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-warning">
-                    <label>Steak</label>
-                  </div>
-                </div>
+            <div className="burger name-rating-price">
+              <div className="field">
+                <label className="label">Name</label>
+                <input
+                  className="input"
+                  name="name"
+                  placeholder="eg: The Cheeesiest Cheesebuger"
+                  value={this.state.formData.name || ''}
+                  onChange={this.handleChange}
+                />
+                {this.state.errors.name && <small className="help is-danger">{this.state.errors.name}</small>}
               </div>
 
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+              <div className="rating-price">
+                <div className="field rating-field">
+                  <label className="label">Rating</label>
                   <input
-                    type="checkbox"
-                    name="Green pepper"
-                    onChange={this.handleIngredientCheckbox}
+                    className="input"
+                    type="number"
+                    name="rating"
+                    placeholder="eg: 1 - 5"
+                    value={this.state.formData.rating || ''}
+                    onChange={this.handleChange}
                   />
-                  <div className="state p-warning">
-                    <label>Green pepper</label>
-                  </div>
+                  {this.state.errors.rating && <small className="help is-danger">{this.state.errors.rating}</small>}
                 </div>
-              </div>
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+
+                <div className="field price-field">
+                  <label className="label">Price</label>
                   <input
-                    type="checkbox"
-                    name="Mushroom"
-                    onChange={this.handleIngredientCheckbox}
+                    className="input"
+                    type="number"
+                    name="price"
+                    placeholder="eg: £5.60"
+                    value={this.state.formData.price || ''}
+                    onChange={this.handleChange}
                   />
-                  <div className="state p-warning">
-                    <label>Mushroom</label>
-                  </div>
+                  {this.state.errors.price && <small className="help is-danger">{this.state.errors.price}</small>}
                 </div>
-              </div>
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Gravy"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-warning">
-                    <label>Gravy</label>
-                  </div>
-                </div>
-              </div>
 
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Bun"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-danger">
-                    <label>Bun</label>
-                  </div>
-                </div>
               </div>
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Brioche bun"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-danger">
-                    <label>Brioche</label>
-                  </div>
-                </div>
-              </div>
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="BBQ Sauce"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-success">
-                    <label>BBQ Sauce</label>
-                  </div>
-                </div>
-              </div>
-
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Ketchup"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-success">
-                    <label>Ketchup</label>
-                  </div>
-                </div>
-              </div>
-
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Mustard"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-success">
-                    <label>Mustard</label>
-                  </div>
-                </div>
-              </div>
-
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Mayonnaise"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-success">
-                    <label>Mayonnaise</label>
-                  </div>
-                </div>
-              </div>
-
-              <div className="option">
-                <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                  <input
-                    type="checkbox"
-                    name="Weird & Wonderful"
-                    onChange={this.handleIngredientCheckbox}
-                  />
-                  <div className="state p-primary">
-                    <label>Weird & Wonderful</label>
-                  </div>
-                </div>
-              </div>
-
-              {this.state.errors.ingredients && <small className="help is-danger">{this.state.errors.ingredients}</small>}
-            </div>
-
-            <hr/>
-
-
-            <div className ="vegan">
-              <div className="field ingredients">
-                <div className="option">
-                  <label className="label">Vegeterian</label>
-                  <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                    <input
-                      type="checkbox"
-                      name="isVegetarian"
-                      checked={this.state.formData.isVegetarian || false}
-                      onChange={this.handleCheckbox}
-                    />
-                    <div className="state p-warning">
-                      <label> </label>
-                    </div>
-                    {this.state.errors.isVegetarian && <small className="help is-danger">{this.state.errors.isVegetarian}</small>}
-                  </div>
-                </div>
-              </div>
-
-              <div className="field ingredients">
-                <div className="option">
-                  <label className="label">Vegan</label>
-                  <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                    <input
-                      type="checkbox"
-                      name="isVegan"
-                      checked={this.state.formData.isVegan || false}
-                      onChange={this.handleCheckbox}
-                    />
-                    <div className="state p-warning">
-                      <label> </label>
+              <div className ="vegan">
+                <div className="field vegeterian-field">
+                  <div className="optionveg">
+                    <label className="label">Vegeterian</label>
+                    <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                      <input
+                        type="checkbox"
+                        name="isVegetarian"
+                        checked={this.state.formData.isVegetarian || false}
+                        onChange={this.handleCheckbox}
+                      />
+                      <div className="state p-warning">
+                        <label> </label>
+                      </div>
+                      {this.state.errors.isVegetarian && <small className="help is-danger">{this.state.errors.isVegetarian}</small>}
                     </div>
                   </div>
                 </div>
-                {this.state.errors.isVegan && <small className="help is-danger">{this.state.errors.isVegan}</small>}
+
+                <div className="field vegan-field">
+                  <div className="optionveg">
+                    <label className="label">Vegan</label>
+                    <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                      <input
+                        type="checkbox"
+                        name="isVegan"
+                        checked={this.state.formData.isVegan || false}
+                        onChange={this.handleCheckbox}
+                      />
+                      <div className="state p-warning">
+                        <label> </label>
+                      </div>
+                    </div>
+                  </div>
+                  {this.state.errors.isVegan && <small className="help is-danger">{this.state.errors.isVegan}</small>}
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+
+          <hr/>
+
+          <label className="label">Ingredients</label>
+          <div className="field ingredients">
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Beef"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-warning">
+                  <label>Beef</label>
+                </div>
+              </div>
+            </div>
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Chicken"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-warning">
+                  <label>Chicken</label>
+                </div>
+              </div>
+            </div>
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Cheese"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-warning">
+                  <label>Cheese</label>
+                </div>
+              </div>
+            </div>
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Tomato"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-warning">
+                  <label>Tomato</label>
+                </div>
+              </div>
+            </div>
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Lettuce"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-warning">
+                  <label>Lettuce</label>
+                </div>
+              </div>
+            </div>
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Gherkin"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-warning">
+                  <label>Gherkin</label>
+                </div>
+              </div>
+            </div>
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Onion"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-warning">
+                  <label>Onion</label>
+                </div>
+              </div>
+            </div>
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Jalapenos"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-warning">
+                  <label>Jalapeños</label>
+                </div>
+              </div>
+            </div>
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Bacon"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-warning">
+                  <label>Bacon</label>
+                </div>
+              </div>
+            </div>
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Steak"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-warning">
+                  <label>Steak</label>
+                </div>
               </div>
             </div>
 
-            <div className="field">
-              <label className="label">Price</label>
-              <input
-                className="input"
-                type="number"
-                name="price"
-                placeholder="eg: £5.60"
-                value={this.state.formData.price || ''}
-                onChange={this.handleChange}
-              />
-              {this.state.errors.price && <small className="help is-danger">{this.state.errors.price}</small>}
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Green pepper"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-warning">
+                  <label>Green pepper</label>
+                </div>
+              </div>
+            </div>
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Mushroom"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-warning">
+                  <label>Mushroom</label>
+                </div>
+              </div>
+            </div>
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Gravy"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-warning">
+                  <label>Gravy</label>
+                </div>
+              </div>
             </div>
 
-            <div className="field">
-              <label className="label">Description</label>
-              <input
-                className="textarea"
-                name="description"
-                placeholder="eg: This burger is made from 100% Angus beef with Stilton Cheese and a luxurious slather of mayonnaise and mustard. It is complimented by a generous layer of pickles and fied onions."
-                value={this.state.formData.description || ''}
-                onChange={this.handleChange}
-              />
-              {this.state.errors.description && <small className="help is-danger">{this.state.errors.description}</small>}
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Bun"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-danger">
+                  <label>Bun</label>
+                </div>
+              </div>
+            </div>
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Brioche bun"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-danger">
+                  <label>Brioche</label>
+                </div>
+              </div>
+            </div>
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="BBQ Sauce"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-success">
+                  <label>BBQ Sauce</label>
+                </div>
+              </div>
             </div>
 
-            <div className="field">
-              <label className="label">Restaurant</label>
-              <input
-                className="input"
-                name="name"
-                placeholder="eg: The Burger Joint"
-                value={this.state.formData.restaurant.name || ''}
-                onChange={this.handleRestaurantChange}
-              />
-              {this.state.errors.restaurant && <small className="help is-danger">{this.state.errors.restaurant}</small>}
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Ketchup"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-success">
+                  <label>Ketchup</label>
+                </div>
+              </div>
             </div>
 
-            <div className="field">
-              <label className="label">Address</label>
-              <input
-                className="input"
-                name="address"
-                placeholder="eg: 56 Lettuce street, WC1 4TT"
-                value={this.state.formData.restaurant.address || ''}
-                onChange={this.handleRestaurantChange}
-              />
-              {this.state.errors.address && <small className="help is-danger">{this.state.errors.address}</small>}
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Mustard"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-success">
+                  <label>Mustard</label>
+                </div>
+              </div>
             </div>
 
-            <div className="field">
-              <label className="label">Website</label>
-              <input
-                className="input"
-                name="website"
-                placeholder="eg: www.theburgerjoint.com"
-                value={this.state.formData.restaurant.website || ''}
-                onChange={this.handleRestaurantChange}
-              />
-              {this.state.errors.website && <small className="help is-danger">{this.state.errors.website}</small>}
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Mayonnaise"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-success">
+                  <label>Mayonnaise</label>
+                </div>
+              </div>
             </div>
 
-            <button className="button">Submit</button>
-          </form>
-        </div>
+            <div className="option">
+              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                <input
+                  type="checkbox"
+                  name="Weird & Wonderful"
+                  onChange={this.handleIngredientCheckbox}
+                />
+                <div className="state p-primary">
+                  <label>Weird & Wonderful</label>
+                </div>
+              </div>
+
+            </div>
+
+            {this.state.errors.ingredients && <small className="help is-danger">{this.state.errors.ingredients}</small>}
+          </div>
+
+          <hr/>
+
+          <div className="field">
+            <label className="label">Description</label>
+            <input
+              className="textarea"
+              name="description"
+              placeholder="eg: This burger is made from 100% Angus beef with Stilton Cheese and a luxurious slather of mayonnaise and mustard. It is complimented by a generous layer of pickles and fied onions."
+              value={this.state.formData.description || ''}
+              onChange={this.handleChange}
+            />
+            {this.state.errors.description && <small className="help is-danger">{this.state.errors.description}</small>}
+          </div>
+
+          <div className="field">
+            <label className="label">Restaurant</label>
+            <input
+              className="input"
+              name="name"
+              placeholder="eg: The Burger Joint"
+              value={this.state.formData.restaurant.name || ''}
+              onChange={this.handleRestaurantChange}
+            />
+            {this.state.errors['restaurant.name'] && <small className="help is-danger">{this.state.errors['restaurant.name']}</small>}
+          </div>
+
+          <div className="field">
+            <label className="label">Address</label>
+            <input
+              className="input"
+              name="address"
+              placeholder="eg: 56 Lettuce street"
+              value={this.state.formData.restaurant.address || ''}
+              onChange={this.handleRestaurantChange}
+            />
+            {this.state.errors['restaurant.address'] && <small className="help is-danger">{this.state.errors['restaurant.address']}</small>}
+          </div>
+
+          <div className="field">
+            <label className="label">Postcode</label>
+            <input
+              className="input"
+              name="postcode"
+              placeholder="eg: WC1 4TT"
+              value={this.state.formData.restaurant.postcode|| ''}
+              onChange={this.handleRestaurantChange}
+            />
+            {this.state.errors['restaurant.postcode'] && <small className="help is-danger">{this.state.errors['restaurant.postcode']}</small>}
+          </div>
+
+
+          <div className="field">
+            <label className="label">Website</label>
+            <input
+              className="input"
+              name="website"
+              placeholder="eg: www.theburgerjoint.com"
+              value={this.state.formData.restaurant.website || ''}
+              onChange={this.handleRestaurantChange}
+            />
+            {this.state.errors['restaurant.website'] && <small className="help is-danger">{this.state.errors['restaurant.website']}</small>}
+          </div>
+
+          <button className="button is-danger">Submit</button>
+
+        </form>
       </section>
     )
   }

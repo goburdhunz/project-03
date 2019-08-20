@@ -13,7 +13,7 @@ const customStyles = {
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
-    transform: 'translate(-50%, -50%)'
+    transform: 'translate(-50%, -50%)',
   }
 }
 
@@ -72,8 +72,8 @@ class Login extends React.Component {
 
   render() {
     return (
-      <section className="section">
-        {!Auth.isAuthenticated() && <button className="button is-primary is-danger" onClick={this.openModal}>Login</button>}
+      <section className="section login-portal">
+        {!Auth.isAuthenticated() && <button className="button is-primary is-danger loginbutton" onClick={this.openModal}>Login</button>}
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
