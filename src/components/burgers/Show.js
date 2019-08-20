@@ -1,14 +1,19 @@
 import React from 'react'
 import axios from 'axios'
 import Rating  from 'react-rating'
-import 'bulma'
+import Comment from '../common/Comment'
+import Auth from '../../lib/Auth'
 
 class BurgersShow extends React.Component {
 
   constructor() {
     super()
     this.state = {
+      formData: { rating: '', content: ''}
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount() {
@@ -16,9 +21,36 @@ class BurgersShow extends React.Component {
       .then(res => this.setState({ burger: res.data }))
   }
 
+  handleChange(e) {
+    const formData = {...this.state.formData, [e.target.name]: e.target.value}
+    this.setState({formData})
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+
+    axios.post(`/api/burgers/${this.props.match.params.id}/comments`, this.state.formData, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(res => this.setState({burgers: res.data, formData: {rating: '', content: ''}}))
+  }
+
+  handleDelete(e) {
+    e.preventDefault()
+
+    axios.delete(`/api/burgers/${this.props.match.params.id}/comments/${e.target.id}`, {
+      headers: {Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(res => this.setState({burgers: res.data}))
+  }
+
+
+
+
+
   render() {
+    console.log(this.state.formData)
     if(!this.state.burger) return null
-    console.log(this.state.burger)
     return(
       <section className="section">
         <div className="container">
@@ -68,35 +100,46 @@ class BurgersShow extends React.Component {
                   </div>
                 </article>
               </div>
+
+
               <div className="columns">
                 <div className="column is-half">
-                  <div className="tile is-parent">
-                    <article className="media tile is-child notification">
-                      <div className="media-content">
-                        <div className="content">
-                          <p>
-                            <strong>username</strong>
-                            {' '}
-                            <small>date created</small>
-                            <br />
-                            comment comment comment comment
-                          </p>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-                <div className="column">
-                  <div className="buttons are-medium">
-                    <div className="control">
-                      <button className="button is-primary is-fullwidth">Book to try it!</button>
-                    </div>
-                    <div className="control">
-                      <button className="button is-primary is-fullwidth">Find a beer for a perfect match!</button>
-                    </div>
-                  </div>
+                  {this.state.burger.comments.map(comment =>
+                    <Comment key={comment._id} {...comment} handledelete={this.handleDelete}/>
+                  )}
                 </div>
               </div>
+
+              {Auth.isAuthenticated() && <form className="formfield" onSubmit={this.handleSubmit}>
+                <hr />
+                <div className="field">
+                  <label className="label">Comment</label>
+                  <textarea
+                    name="content"
+                    className="textarea"
+                    placeholder="Add a comment..."
+                    onChange={this.handleChange}
+                    value={this.state.formData.content}
+                  />
+                </div>
+
+                <div className="field">
+                  <label className="label">Rating (1-5)</label>
+                  <input
+                    name="rating"
+                    className="input"
+                    type="range"
+                    min="1"
+                    max="5"
+                    onChange={this.handleChange}
+                    value={this.state.formData.rating}
+                  />
+                </div>
+
+                <button className="button is-info">Submit</button>
+              </form>}
+
+
             </div>
           </div>
         </div>
