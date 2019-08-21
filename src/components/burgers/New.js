@@ -3,6 +3,23 @@ import axios from 'axios'
 import Auth from '../../lib/Auth'
 
 import 'pretty-checkbox'
+import ReactFilestack from 'filestack-react'
+
+const imageKEY = process.env.imageKEY
+
+const imageUpload = {
+  accept: 'image/*',
+  options: {
+    resize: {
+      width: 100
+    }
+  },
+  transformations: {
+    crop: false,
+    circle: false,
+    rotate: false
+  }
+}
 
 
 class New extends React.Component {
@@ -23,6 +40,7 @@ class New extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleCheckbox = this.handleCheckbox.bind(this)
     this.handleIngredientCheckbox = this.handleIngredientCheckbox.bind(this)
+    this.handleUploadImages= this.handleUploadImages.bind(this)
   }
 
 
@@ -36,6 +54,11 @@ class New extends React.Component {
     }
 
     const formData = { ...this.state.formData, ingredients }
+    this.setState({ formData })
+  }
+
+  handleUploadImages(e) {
+    const formData = {...this.state.formData, image: e.filesUploaded[0].url}
     this.setState({ formData })
   }
 
@@ -82,6 +105,8 @@ class New extends React.Component {
   }
 
 
+
+
   render() {
     console.log(this.state.formData)
     return (
@@ -93,12 +118,14 @@ class New extends React.Component {
               <label className="label">Burger Image</label>
               <figure className="image is-half">
                 <div className="Dropzone upload-box">
-                  <input
-                    className="Fileinput"
-                    type="file"
-                    name="image"
-                    multiple
-                    onChange={this.handleChange}
+                  <ReactFilestack
+                    mode="transform"
+                    apikey="Av8fuKug5RWK9Fsm8oPEAz"
+                    buttonClass="button"
+                    className="upload-image"
+                    options={imageUpload}
+                    onSuccess={(e) => this.handleUploadImages(e)}
+                    preload={true}
                   />
                 </div>
               </figure>
@@ -425,20 +452,6 @@ class New extends React.Component {
                   <label>Mayonnaise</label>
                 </div>
               </div>
-            </div>
-
-            <div className="option">
-              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                <input
-                  type="checkbox"
-                  name="Weird & Wonderful"
-                  onChange={this.handleIngredientCheckbox}
-                />
-                <div className="state p-primary">
-                  <label>Weird & Wonderful</label>
-                </div>
-              </div>
-
             </div>
 
             {this.state.errors.ingredients && <small className="help is-danger">{this.state.errors.ingredients}</small>}
