@@ -5,6 +5,11 @@ button.closeModal {
 
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
 
+
+.navbar-item{
+  $navbar-item-img-max-height: 100px;
+}
+
 .homepage-container {
   margin: auto;
   padding-left: 30px;
@@ -96,5 +101,13 @@ h1.title.toprated {
 .custom {
   font-size: 48px;
 }
+
+<<<<<<< HEAD
+button.raterbutton {
+  display: block;
+  margin-top: 15px;
+}
+=======
+>>>>>>> d981620127b80f65ed783ce50aff05e7652e4188
 
 @import 'bulma'
