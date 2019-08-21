@@ -102,6 +102,7 @@ h1.title.toprated {
   font-size: 48px;
 }
 
+
 #progress {
   font-size: 8.5px;
 }
@@ -115,16 +116,24 @@ h1.title.toprated {
   width: 150px;
 }
 
+.five{
+  margin-left: 685px;
+}
+
+
+.vegeterian-field-index {
+  width: 150px;
+}
+
 
 button.raterbutton {
   display: block;
   margin-top: 15px;
 }
-
 .uploadbutton {
   margin-left: 105px;
   padding-top: 75px;
 }
 
-
-@import 'bulma'
+@import 'bulma';
+@import 'bulma-slider';
