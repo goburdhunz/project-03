@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import Rating  from 'react-rating'
+import Rating from 'react-rating'
 ​
 import Comment from '../common/Comment'
 import Auth from '../../lib/Auth'
