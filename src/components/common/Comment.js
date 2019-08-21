@@ -12,7 +12,7 @@ const Comment = ({user, createdAt, content, handledelete, _id,    userRating}) =
             <strong>{user.username}</strong>
             {' '}
             <small>{(new Date(createdAt)).toLocaleDateString()}</small>
-            <br />
+            <hr className="linebreaker"/>
             {content}
           </p>
           <span className="title is-2 has-text-centered">
