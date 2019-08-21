@@ -78,7 +78,8 @@ class BurgersShow extends React.Component {
                   fullSymbol= {<img src="https://i.imgur.com/f00MSST.png" className="image is-48x48"/>}
                   fractions={2}
                   initialRating={this.state.burger.rating}
-                  readonly
+                  readonly={true}
+                  quiet={true}
                 />
               </h2>
               <hr />

@@ -41,6 +41,8 @@ class New extends React.Component {
 
 
   handleChange(e) {
+    console.log(e.target.name)
+    console.log(e.target.value)
     const formData = { ...this.state.formData, [e.target.name]: e.target.value }
     this.setState({ formData})
   }
