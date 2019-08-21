@@ -1,7 +1,7 @@
 import React from 'react'
 import Rating  from 'react-rating'
 
-const Card = ({ name, image, rating, restaurant }) => {
+const Card = ({ name, image, rating, restaurant, price }) => {
   return (
     <div className="card">
       <div className="card-image">
@@ -22,6 +22,7 @@ const Card = ({ name, image, rating, restaurant }) => {
             readonly
           />
         </h2>
+        <h2 className="content"><span className="has-text-weight-semibold">£ </span>{parseFloat(price).toFixed(2)}</h2>
         <h2 className="content">{restaurant}</h2>
       </div>
     </div>

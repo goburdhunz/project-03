@@ -1,22 +1,20 @@
 import React from 'react'
 import axios from 'axios'
-import Rating  from 'react-rating'
-
+import Rating from 'react-rating'
 import Comment from '../common/Comment'
 import Auth from '../../lib/Auth'
 import { Link } from 'react-router-dom'
 import ReactMapboxGL, { Marker, ZoomControl } from 'react-mapbox-gl'
 import 'bulma'
-
-
 const Map = ReactMapboxGL({ accessToken: process.env.MAPBOX_TOKEN })
 
 class BurgersShow extends React.Component {
-
   constructor() {
     super()
     this.state = {
-      formData: { userRating: 1, content: ''}
+      formData: { userRating: '', content: ''
+      },
+      errors: {}
     }
     this.normalisePrice = this.normalisePrice.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -35,6 +33,8 @@ class BurgersShow extends React.Component {
   }
 
   handleChange(e) {
+    console.log(e.target.name)
+    console.log(e.target.value)
     const formData = {...this.state.formData, [e.target.name]: e.target.value}
     this.setState({formData})
   }
@@ -45,7 +45,7 @@ class BurgersShow extends React.Component {
     axios.post(`/api/burgers/${this.props.match.params.id}/comments`, this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(res => this.setState({burger: res.data, formData: {userRating: 1, content: ''}}))
+      .then(res => this.setState({burger: res.data, formData: {userRating: '', content: ''}}))
   }
 
   handleDelete(e) {
@@ -56,8 +56,6 @@ class BurgersShow extends React.Component {
     })
       .then(res => this.setState({burger: res.data}))
   }
-
-
 
   render() {
     console.log(this.state.formData)
@@ -78,7 +76,8 @@ class BurgersShow extends React.Component {
                   fullSymbol= {<img src="https://i.imgur.com/f00MSST.png" className="image is-48x48"/>}
                   fractions={2}
                   initialRating={this.state.burger.rating}
-                  readonly
+                  readonly={true}
+                  quiet={false}
                 />
               </h2>
               <hr />
@@ -108,7 +107,6 @@ class BurgersShow extends React.Component {
 
                   </Map>
 
-
                 </article>
               </div>
             </div>
@@ -117,32 +115,37 @@ class BurgersShow extends React.Component {
                 <article className="tile is-child notification is-primary">
                   <div className="content">
                     <header className="title is-1">{this.state.burger.name}</header>
-                    <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £ {this.normalisePrice(this.state.burger.price)}</p>
+                    <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £
+                      {this.normalisePrice(this.state.burger.price)}</p>
                     <p className="subtitle"><span className="has-text-weight-semibold">Ingredients:</span>
                       {this.state.burger.ingredients.map(ingredient => ' ' + ingredient + ',')}</p>
+
                     <p className="subtitle"><span className="has-text-weight-semibold">Vegetarian: </span>
-                      {(!!this.state.burger.isVegetarian || !!this.state.burger.isVegan) && <img src="https://i.imgur.com/8RN8Why.png" className="icon"/>}
-                      {(!this.state.burger.isVegetarian && !this.state.burger.isVegan) && <span className="subtitle">No</span>} </p>
+                      {(!!this.state.burger.isVegetarian || !!this.state.burger.isVegan) && <img src="https:/
+                      i.imgur.com/8RN8Why.png" className="icon"/>}
+                      {(!this.state.burger.isVegetarian && !this.state.burger.isVegan) && <span
+                        className="subtitle">No</span>} </p>
+
                     <p className="subtitle"><span className="has-text-weight-semibold">Vegan: </span>
                       {!this.state.burger.isVegan && <span className="subtitle">No</span>}
-                      {!!this.state.burger.isVegan && <img src="https://i.imgur.com/8RN8Why.png" className="icon"/>} </p>
+                      {!!this.state.burger.isVegan && <img src="https://i.imgur.com/8RN8Why.png" className="icon"
+                      />}
+                    </p>
+
                     <div className="subtitle">{this.state.burger.description}</div>
                   </div>
                 </article>
+
               </div>
-
-
               <div className="columns">
                 <div className="column is-half">
                   {this.state.burger.comments.map(comment =>
                     <Comment
                       key={comment._id} {...comment} handledelete={this.handleDelete}
-                      userrating={this.userRating}
                     />
                   )}
                 </div>
               </div>
-
               {Auth.isAuthenticated() && <form className="formfield" onSubmit={this.handleSubmit}>
                 <hr />
                 <div className="field">
@@ -157,7 +160,7 @@ class BurgersShow extends React.Component {
                 </div>
 
                 <div className="field">
-                  <label className="label">Rating (1-5)</label>
+                  <label className="label">Rate out of 5</label>
                   <input
                     name="userRating"
                     className="input"
@@ -167,21 +170,22 @@ class BurgersShow extends React.Component {
                     onChange={this.handleChange}
                     value={this.state.formData.userRating}
                   />
+                  {this.state.errors.userRating && <small className="help is
+                  danger">{this.state.errors.userRating}</small>}
                 </div>
 
-                <button className="button is-info">Submit</button>
+                <button className="button is-info raterbutton">Submit</button>
               </form>}
 
               <hr />
+
               {Auth.isAuthenticated() && <div className="buttons">
                 <Link
                   className="button"
                   to={`/burgers/${this.state.burger._id}/edit`}
                 >Edit</Link>
-
                 <button className="button is-danger">Delete</button>
               </div>}
-
             </div>
           </div>
         </div>
