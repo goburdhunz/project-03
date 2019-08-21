@@ -10,7 +10,6 @@ import 'bulma'
 
 
 const Map = ReactMapboxGL({ accessToken: process.env.MAPBOX_TOKEN })
-
 class BurgersShow extends React.Component {
 
   constructor() {
@@ -35,6 +34,8 @@ class BurgersShow extends React.Component {
   }
 
   handleChange(e) {
+    console.log(e.target.name)
+    console.log(e.target.value)
     const formData = {...this.state.formData, [e.target.name]: e.target.value}
     this.setState({formData})
   }
@@ -45,7 +46,7 @@ class BurgersShow extends React.Component {
     axios.post(`/api/burgers/${this.props.match.params.id}/comments`, this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(res => this.setState({burger: res.data, formData: {userRating: 1, content: ''}}))
+      .then(res => this.setState({burger: res.data, formData: {userRating: '', content: ''}}))
   }
 
   handleDelete(e) {
@@ -78,7 +79,8 @@ class BurgersShow extends React.Component {
                   fullSymbol= {<img src="https://i.imgur.com/f00MSST.png" className="image is-48x48"/>}
                   fractions={2}
                   initialRating={this.state.burger.rating}
-                  readonly
+                  readonly={true}
+                  quiet={false}
                 />
               </h2>
               <hr />

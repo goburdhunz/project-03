@@ -22,6 +22,7 @@ const imageUpload = {
 }
 
 
+
 class New extends React.Component {
   constructor() {
     super()
@@ -60,12 +61,16 @@ class New extends React.Component {
   handleUploadImages(e) {
     const formData = {...this.state.formData, image: e.filesUploaded[0].url}
     this.setState({ formData })
+    document.getElementById('progress').innerHTML = 'image chosen'
   }
 
 
   handleChange(e) {
+    console.log(e.target.name)
+    console.log(e.target.value)
     const formData = { ...this.state.formData, [e.target.name]: e.target.value }
     this.setState({ formData})
+
   }
 
   handleRestaurantChange(e) {
@@ -106,15 +111,21 @@ class New extends React.Component {
               <label className="label">Burger Image</label>
               <figure className="image is-half">
                 <div className="Dropzone upload-box">
-                  <ReactFilestack
-                    mode="transform"
-                    apikey="Av8fuKug5RWK9Fsm8oPEAz"
-                    buttonClass="button"
-                    className="upload-image"
-                    options={imageUpload}
-                    onSuccess={(e) => this.handleUploadImages(e)}
-                    preload={true}
-                  />
+
+                  <div className="uploadbutton">
+                    <ReactFilestack
+                      mode="transform"
+                      apikey="Av8fuKug5RWK9Fsm8oPEAz"
+                      buttonClass="button"
+                      options={imageUpload}
+                      onSuccess={(e) => this.handleUploadImages(e)}
+                      preload={true}
+                    />
+                    <br/>
+                    <div><span id="progress"></span></div>
+
+                  </div>
+
                 </div>
               </figure>
               {this.state.errors.image && <small className="help is-danger">{this.state.errors.image}</small>}
