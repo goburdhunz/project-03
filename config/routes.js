@@ -13,7 +13,8 @@ router.route('/burgers')
 
 router.route('/burgers/:id')
   .get(burgerController.show)
-  .put(secureRoute, burgerController.update)  
+  .put(secureRoute, burgerController.update)
+  .delete(secureRoute, burgerController.delete)  
 
 router.post('/register', authController.register)
 router.post('/login', authController.login)

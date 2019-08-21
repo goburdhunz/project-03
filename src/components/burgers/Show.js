@@ -20,6 +20,7 @@ class BurgersShow extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
+    this.handleDeleteBurger = this.handleDeleteBurger.bind(this)
   }
 
   componentDidMount() {
@@ -55,6 +56,15 @@ class BurgersShow extends React.Component {
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then(res => this.setState({burger: res.data}))
+  }
+
+  handleDeleteBurger(e) {
+    e.preventDefault()
+
+    axios.delete(`/api/burgers/${this.props.match.params.id}`, {
+      headers: {Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(() => this.props.history.push('/burgers/'))
   }
 
   render() {
@@ -184,7 +194,7 @@ class BurgersShow extends React.Component {
                   className="button"
                   to={`/burgers/${this.state.burger._id}/edit`}
                 >Edit</Link>
-                <button className="button is-danger">Delete</button>
+                <button className="button is-danger" onClick={this.handleDeleteBurger}>Delete</button>
               </div>}
             </div>
           </div>
