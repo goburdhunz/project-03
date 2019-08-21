@@ -84,7 +84,7 @@ class Login extends React.Component {
           shouldCloseOnOverlayClick={true}
         >
           <h2 ref={subtitle => this.subtitle = subtitle}></h2>
-          <button className="closeModal" onClick={this.closeModal}>X</button>
+          <button className="closeModal is-warning" onClick={this.closeModal}>X</button>
           <div className="container">
             <form onSubmit={this.handleSubmit}>
               <div className="field">
@@ -113,7 +113,7 @@ class Login extends React.Component {
                 {this.state.error && <small className="help is-danger">{this.state.error}</small>}
               </div>
 
-              <button className="button">Submit</button>
+              <button className="button is-danger">Submit</button>
             </form>
           </div>
         </Modal>
