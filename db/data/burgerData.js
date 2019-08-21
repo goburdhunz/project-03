@@ -77,7 +77,7 @@ module.exports = [{
     'Brioche',
     'Onion',
     'Carrot',
-    'Jalapeños',
+    'jalapeños',
     'Cheese',
     'BBQ Sauce',
     'Hot sauce'
@@ -128,14 +128,14 @@ module.exports = [{
 },
 {
   name: 'BurgerBear',
-  rating: 5,
+  rating: 4,
   image: 'https://images.squarespace-cdn.com/content/v1/5a1d93f5914e6b0913369e73/1549383574717-EA05LO7F5UI4AOURZVJP/ke17ZwdGBToddI8pDm48kK7ZveHm8pdg6pR1a4N_eTlZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVEP3MwU0KrqINgz5t1HlAV-YeUN3Jr-LO9jY1nwzkfdWl50gd2D5EdtNM4Q3D6aH4U/image1.jpeg?format=750w',
   ingredients: ['Beef' , 'Cheese'],
   price: 10.5,
   description: 'Burger Bear makes some of the best burgers in London. Burger Bear features preparation and flavors thought up by a burger genius. High quality beef, melted cheese, pillowy buns, and bacon jam = melt in your mouth burger win. The passion held by Tom and his team make each burger a masterpiece for your consumption. Be sure to check their website for their location.',
   restaurant: {
     name: 'The Old Nun\'s Head',
-    address: '15 NUNHEAD GREEN, LONDON',
+    address: 'BurgerBear',
     postcode: 'SE15 3QQ',
     latitude: 51.4651205,
     longitude: -0.0592998,
@@ -162,7 +162,7 @@ module.exports = [{
   name: 'Five Guys Hamburger',
   rating: 4.5,
   image: 'http://delight.us/wp-content/uploads/2013/02/fiveguysburger.jpg',
-  ingredients: ['Beef', 'Mayonnaise', 'Lettuce', 'Gherkins', 'Tomato', 'Mushrooms', 'Ketchup', 'Mustard', 'Relish', 'Onions', 'Jalapeños', 'Green Peppers', 'Bun' ],
+  ingredients: ['Beef', 'Mayonnaise', 'Lettuce', 'Gherkins', 'Tomato', 'Mushrooms', 'Ketchup', 'Mustard', 'Relish', 'Onions', 'jalapeños', 'Green Peppers', 'Bun' ],
   price: 5.50,
   description: 'Two fresh, hand formed patties hot off the grill and placed on a soft, toasted bun. Choose as many toppings as you want.',
   restaurant: {
@@ -354,13 +354,13 @@ module.exports = [{
     'Mayonnaise',
     'Mustard',
     'Pickled Cabbage',
-    'Jalapeños',
+    'jalapeños',
     'Dill'
   ],
   isVegan: true,
   isVegetarian: true,
   price: 9.5,
-  description: 'Former meat-eaters, we know there’s often that one dish that makes you crave the bad old days. If your weakness is a crispy chicken burger, totally vegan pub The Spread Eagle has the perfect substitute. Food here comes from plant-based concept Club Mexicana, which has created a fried “chick’n” burger made with ananto-glazed seitan, which comes topped with mustard mayo, pickled cabbage, jalapenos and dill.',
+  description: 'Former meat-eaters, we know there’s often that one dish that makes you crave the bad old days. If your weakness is a crispy chicken burger, totally vegan pub The Spread Eagle has the perfect substitute. Food here comes from plant-based concept Club Mexicana, which has created a fried “chick’n” burger made with ananto-glazed seitan, which comes topped with mustard mayo, pickled cabbage, jalapeños and dill.',
   restaurant: {
     name: 'The Spread Eagle London',
     address: '224 Homerton High Street, E9 6AS',

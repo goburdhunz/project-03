@@ -15,7 +15,7 @@ const ingredients = [
   { value: 'Lettuce', label: 'Lettuce' },
   { value: 'Gherkin', label: 'Gherkin' },
   { value: 'Onion', label: 'Onion' },
-  { value: 'Jalapenos', label: 'Jalapeños' },
+  { value: 'Jalapeños', label: 'Jalapeños' },
   { value: 'Bacon', label: 'Bacon' },
   { value: 'Steak', label: 'Steak' },
   { value: 'Green pepper', label: 'Green pepper' },
@@ -59,7 +59,6 @@ class BurgersIndex extends React.Component {
     const ingredients = selectedIngredients.map(ingredients => ingredients.value)
     const filterData = { ...this.state.filterData, ingredients: ingredients}
     this.setState({ filterData })
-    console.log(filterData)
   }
 
   handleKeyUp(e) {
@@ -88,22 +87,24 @@ class BurgersIndex extends React.Component {
   }
 
   filterBurgers() {
-
-    const re = new RegExp(this.state.filterData.searchTerm, 'i')
-    const reIng = new RegExp(this.state.filterData.searchTermIng, 'i')
-    const [field, order] = this.state.filterData.sortTerm.split('|')
+    const { searchTerm, searchTermIng, ingredients, isVegan, isVegetarian, sortTerm } = this.state.filterData
+    const re = new RegExp(searchTerm, 'i')
+    const reIng = new RegExp(searchTermIng, 'i')
+    const [field, order] = sortTerm.split('|')
     const filterBurgers = _.filter(this.state.burgers, burger => {
-      return (this.state.filterData.ingredients.length ? _.intersection(burger.ingredients, this.state.filterData.ingredients).length : true) &&
+      return (ingredients.length ? _.intersection(burger.ingredients, ingredients).length >= ingredients.length : true) &&
         (re.test(burger.name) || re.test(burger.restaurant.name)) && (reIng.test(burger.ingredients))  &&
-        ((this.state.filterData.isVegan && burger.isVegan) ||
-        (this.state.filterData.isVegetarian && burger.isVegetarian) ||
-        (!this.state.filterData.isVegan && !this.state.filterData.isVegetarian))
+        ((isVegan && burger.isVegan) ||
+        (isVegetarian && burger.isVegetarian) ||
+        (!isVegan && !isVegetarian))
     })
 
     const sortedBurgers = _.orderBy(filterBurgers, [field], [order])
     return sortedBurgers
   }
   render() {
+    console.log(this.state.filterData)
+    console.log(this.filterBurgers())
     return (
       <section className="section">
         <div className="container">
@@ -196,6 +197,7 @@ class BurgersIndex extends React.Component {
                         name={burger.name}
                         image={burger.image}
                         rating={burger.rating}
+                        price={burger.price}
                         restaurant={burger.restaurant.name}/>
                     </Link>
                   </div>

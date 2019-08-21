@@ -119,8 +119,9 @@ class BurgersShow extends React.Component {
                   <div className="content">
                     <header className="title is-1">{this.state.burger.name}</header>
                     <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £ {this.normalisePrice(this.state.burger.price)}</p>
-                    <p className="subtitle"><span className="has-text-weight-semibold">Ingredients:</span>
-                      {this.state.burger.ingredients.map(ingredient => ' ' + ingredient + ',')}</p>
+                    <p className="subtitle"> <span className="has-text-weight-semibold">Ingredients: </span>
+                      <ul>{this.state.burger.ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}</ul>
+                    </p>
                     <p className="subtitle"><span className="has-text-weight-semibold">Vegetarian: </span>
                       {(!!this.state.burger.isVegetarian || !!this.state.burger.isVegan) && <img src="https://i.imgur.com/8RN8Why.png" className="icon"/>}
                       {(!this.state.burger.isVegetarian && !this.state.burger.isVegan) && <span className="subtitle">No</span>} </p>
@@ -135,12 +136,31 @@ class BurgersShow extends React.Component {
 
               <div className="columns">
                 <div className="column is-half">
-                  {this.state.burger.comments.map(comment =>
-                    <Comment
-                      key={comment._id} {...comment} handledelete={this.handleDelete}
-                      userrating={this.userRating}
-                    />
-                  )}
+                  <div className="tile is-parent">
+                    <article className="media tile is-child notification">
+                      <div className="media-content">
+                        <div className="content">
+                          <p>
+                            <strong>username</strong>
+                            {' '}
+                            <small>date created</small>
+                            <br />
+                            comment comment comment comment
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div className="column">
+                  <div className="buttons are-medium">
+                    <div className="control">
+                      <button className="button is-primary is-fullwidth">🍽Book to try it!</button>
+                    </div>
+                    <div className="control">
+                      <button className="button is-primary is-fullwidth">🍺Find a beer for a perfect match!</button>
+                    </div>
+                  </div>
                 </div>
               </div>
 

@@ -47,8 +47,8 @@ class Navbar extends React.Component {
           <nav className="navbar">
             <div className="container">
               <div className="navbar-brand">
-                <Link to ="/" className="navbar-item">
-                  <img src="https://i.imgur.com/uxpLh1c.png" alt="Logo"/>
+                <Link to ="/" className="image is-128x128">
+                  <img src="https://i.imgur.com/Hy4OAXr.png" alt="Logo"/>
                 </Link>
                 <a
                   role="button"
