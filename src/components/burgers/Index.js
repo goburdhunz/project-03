@@ -135,6 +135,9 @@ class BurgersIndex extends React.Component {
                   </div>
                 </div>
 
+                <br/>
+                <hr/>
+
                 {/* INGREDIENTS */}
                 <div className="field">
                   <label className="label">Ingredients</label>
@@ -149,6 +152,7 @@ class BurgersIndex extends React.Component {
                       options={ingredients}
                     />
                   </div>
+                  <br/>
                   <div className="field">
                     <div className="control">
                       <input
@@ -159,28 +163,47 @@ class BurgersIndex extends React.Component {
                   </div>
                 </div>
 
-                {/* VEGETARIAN */}
-                <div className="field">
-                  <label className="label">Vegetarian?</label>
-                  <input
-                    className="checkboxis-primary"
-                    type="checkbox"
-                    name="isVegetarian"
-                    checked={this.state.filterData.isVegetarian || false}
-                    onChange={this.handleCheckbox}
-                  />
+                <br/>
+                <hr/>
+
+                <div className ="vegan">
+                  <div className="field vegeterian-field-index">
+                    <div>
+                      <label className="label">Vegeterian</label>
+                      <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                        <input
+                          type="checkbox"
+                          name="isVegetarian"
+                          checked={this.state.filterData.isVegetarian || false}
+                          onChange={this.handleCheckbox}
+                        />
+                        <div className="state p-warning">
+                          <label> </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="field vegan-field">
+                    <div>
+                      <label className="label">Vegan</label>
+                      <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                        <input
+                          type="checkbox"
+                          name="isVegan"
+                          checked={this.state.filterData.isVegan || false}
+                          onChange={this.handleCheckbox}
+                        />
+                        <div className="state p-warning">
+                          <label> </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                {/* VEGAN */}
-                <div className="field">
-                  <label className="label">Vegan?</label>
-                  <input
-                    className="checkbox is-primary"
-                    type="checkbox"
-                    name="isVegan"
-                    checked={this.state.filterData.isVegan || false}
-                    onChange={this.handleCheckbox}
-                  />
-                </div>
+
+
+
               </form>
             </div>
 

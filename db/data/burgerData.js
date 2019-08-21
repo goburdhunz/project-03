@@ -80,7 +80,7 @@ module.exports = [{
     'Brioche',
     'Onion',
     'Carrot',
-    'Jalapeños',
+    'jalapeños',
     'Cheese',
     'BBQ Sauce',
     'Hot sauce'

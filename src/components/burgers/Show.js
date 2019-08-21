@@ -5,10 +5,10 @@ import Comment from '../common/Comment'
 import Auth from '../../lib/Auth'
 import { Link } from 'react-router-dom'
 import ReactMapboxGL, { Marker, ZoomControl } from 'react-mapbox-gl'
+import 'bulma'
 
 
 const Map = ReactMapboxGL({ accessToken: process.env.MAPBOX_TOKEN })
-
 class BurgersShow extends React.Component {
   constructor() {
     super()
@@ -126,11 +126,10 @@ class BurgersShow extends React.Component {
                 <article className="tile is-child notification is-primary">
                   <div className="content">
                     <header className="title is-1">{this.state.burger.name}</header>
-                    <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £
-                      {this.normalisePrice(this.state.burger.price)}</p>
-                    <p className="subtitle"><span className="has-text-weight-semibold">Ingredients:</span>
-                      {this.state.burger.ingredients.map(ingredient => ' ' + ingredient + ',')}</p>
-
+                    <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £ {this.normalisePrice(this.state.burger.price)}</p>
+                    <p className="subtitle"> <span className="has-text-weight-semibold">Ingredients: </span>
+                      <ul>{this.state.burger.ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}</ul>
+                    </p>
                     <p className="subtitle"><span className="has-text-weight-semibold">Vegetarian: </span>
                       {(!!this.state.burger.isVegetarian || !!this.state.burger.isVegan) && <img src="https:/
                       i.imgur.com/8RN8Why.png" className="icon"/>}
@@ -148,6 +147,8 @@ class BurgersShow extends React.Component {
                 </article>
 
               </div>
+
+
               <div className="columns">
                 <div className="column is-half">
                   {this.state.burger.comments.map(comment =>
