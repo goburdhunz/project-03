@@ -35,13 +35,14 @@ class BurgersShow extends React.Component {
   }
 
   handleChange(e) {
-    console.log(e.target.name)
-    console.log(e.target.value)
+    // console.log(e.target.name)
+    // console.log(e.target.value)
     const formData = {...this.state.formData, [e.target.name]: e.target.value}
     this.setState({formData})
   }
 
   handleSubmit(e) {
+    // console.log(this.state.formData.userRating)
     e.preventDefault()
 
     axios.post(`/api/burgers/${this.props.match.params.id}/comments`, this.state.formData, {
