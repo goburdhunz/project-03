@@ -23,6 +23,7 @@ class Edit extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleCheckbox = this.handleCheckbox.bind(this)
     this.handleIngredientCheckbox = this.handleIngredientCheckbox.bind(this)
+    this.checkForIngredient = this.checkForIngredient.bind(this)
   }
 
   componentDidMount() {
@@ -30,11 +31,18 @@ class Edit extends React.Component {
       .then(res => this.setState({ formData: res.data }))
   }
 
+  checkForIngredient(item) {
+    if(this.state.formData.ingredients.includes(item)) {
+      return true
+    }
+  }
+
   // handleIngredientCheckbox
   handleIngredientCheckbox(e) {
-    const ingredients = [ ...this.state.formData.ingredients ]
+    let ingredients = [ ...this.state.formData.ingredients ]
     if(e.target.checked) {
       ingredients.push(e.target.name)
+      ingredients = [...new Set(ingredients)]
     } else {
       const index = ingredients.indexOf(e.target.name)
       ingredients.splice(index, 1)
@@ -140,7 +148,7 @@ class Edit extends React.Component {
               <div className ="vegan">
                 <div className="field vegeterian-field">
                   <div className="optionveg">
-                    <label className="label">Vegeterian</label>
+                    <label className="label">Vegetarian</label>
                     <div className="pretty p-default p-curve p-smooth p-round p-bigger">
                       <input
                         type="checkbox"
@@ -189,6 +197,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Beef"
+                  checked={this.checkForIngredient('Beef') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-warning">
@@ -201,6 +210,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Chicken"
+                  checked={this.checkForIngredient('Chicken') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-warning">
@@ -213,6 +223,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Cheese"
+                  checked={this.checkForIngredient('Cheese') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-warning">
@@ -225,6 +236,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Tomato"
+                  checked={this.checkForIngredient('Tomato') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-warning">
@@ -237,6 +249,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Lettuce"
+                  checked={this.checkForIngredient('Lettuce') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-warning">
@@ -249,6 +262,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Gherkin"
+                  checked={this.checkForIngredient('Gherkin') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-warning">
@@ -261,6 +275,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Onion"
+                  checked={this.checkForIngredient('Onion') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-warning">
@@ -273,6 +288,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Jalapenos"
+                  checked={this.checkForIngredient('Jalapenos') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-warning">
@@ -285,6 +301,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Bacon"
+                  checked={this.checkForIngredient('Bacon') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-warning">
@@ -297,6 +314,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Steak"
+                  checked={this.checkForIngredient('Steak') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-warning">
@@ -310,6 +328,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Green pepper"
+                  checked={this.checkForIngredient('Green pepper') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-warning">
@@ -322,6 +341,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Mushroom"
+                  checked={this.checkForIngredient('Mushroom') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-warning">
@@ -334,6 +354,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Gravy"
+                  checked={this.checkForIngredient('Gravy') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-warning">
@@ -347,6 +368,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Bun"
+                  checked={this.checkForIngredient('Bun') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-danger">
@@ -359,6 +381,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Brioche bun"
+                  checked={this.checkForIngredient('Brioche bun') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-danger">
@@ -371,6 +394,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="BBQ Sauce"
+                  checked={this.checkForIngredient('BBQ Sauce') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-success">
@@ -384,6 +408,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Ketchup"
+                  checked={this.checkForIngredient('Ketchup') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-success">
@@ -397,6 +422,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Mustard"
+                  checked={this.checkForIngredient('Mustard') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-success">
@@ -410,6 +436,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Mayonnaise"
+                  checked={this.checkForIngredient('Mayonnaise') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-success">
@@ -423,6 +450,7 @@ class Edit extends React.Component {
                 <input
                   type="checkbox"
                   name="Weird & Wonderful"
+                  checked={this.checkForIngredient('Weird & Wonderful') || false}
                   onChange={this.handleIngredientCheckbox}
                 />
                 <div className="state p-primary">
