@@ -5,7 +5,8 @@ import Comment from '../common/Comment'
 import Auth from '../../lib/Auth'
 import { Link } from 'react-router-dom'
 import ReactMapboxGL, { Marker, ZoomControl } from 'react-mapbox-gl'
-import 'bulma'
+
+
 const Map = ReactMapboxGL({ accessToken: process.env.MAPBOX_TOKEN })
 
 class BurgersShow extends React.Component {
@@ -161,9 +162,12 @@ class BurgersShow extends React.Component {
 
                 <div className="field">
                   <label className="label">Rate out of 5</label>
+                  <small>1</small>
+                  <small className="five">5</small>
                   <input
+                    id="sliderWithValue"
                     name="userRating"
-                    className="input"
+                    className="is-success is-fullwidth is-large slider"
                     type="range"
                     min="1"
                     max="5"

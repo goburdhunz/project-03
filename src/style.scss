@@ -102,11 +102,14 @@ h1.title.toprated {
   font-size: 48px;
 }
 
-
+.five{
+  margin-left: 685px;
+}
 
 button.raterbutton {
   display: block;
   margin-top: 15px;
 }
 
-@import 'bulma'
+@import 'bulma';
+@import 'bulma-slider';
