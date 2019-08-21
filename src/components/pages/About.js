@@ -41,7 +41,7 @@ class About extends React.Component {
               <h3 className="title is-4 has-text-primary">Chris Beaney</h3>
               <div className="has-text-centered">
                 <a  href="https://github.com/ChrisBeaney" className="icon is-medium" rel="noopener noreferrer" target="_blank"><img src="https://i.imgur.com/Y0Mskai.png" alt="GithubLogo"/></a>
-                <a  href="https://github.com/ChrisBeaney" className="icon is-medium" rel="noopener noreferrer" target="_blank"><img src="https://i.imgur.com/2IsOkIY.png" alt="LinkedLogo"/></a>
+                <a  href="https://www.linkedin.com/in/chris-beaney-177571186/" className="icon is-medium" rel="noopener noreferrer" target="_blank"><img src="https://i.imgur.com/2IsOkIY.png" alt="LinkedLogo"/></a>
               </div>
             </div>
           </div>
