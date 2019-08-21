@@ -4,7 +4,8 @@ const axios = require('axios')
 
 const commentSchema = new mongoose.Schema({
   content: {type: String, required: true, maxlength: 380},
-  userRating: {type: Number, required: true, min: 1, max: 5}
+  userRating: {type: Number, required: true, min: 1, max: 5},
+  user: { type: mongoose.Schema.ObjectId, ref: 'User' }
 }, {
   timestamps: true
 })
@@ -29,7 +30,8 @@ const burgerSchema = new mongoose.Schema({
   isVegan: {type: Boolean, default: false},
   isVegetarian: {type: Boolean, default: false},
   restaurant: restaurantSchema,
-  comments: [commentSchema]
+  comments: [commentSchema],
+  user: { type: mongoose.Schema.ObjectId, ref: 'User' }
 })
 
 

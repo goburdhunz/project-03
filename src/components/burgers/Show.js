@@ -1,8 +1,13 @@
 import React from 'react'
 import axios from 'axios'
 import Rating  from 'react-rating'
+
+import Comment from '../common/Comment'
+import Auth from '../../lib/Auth'
+import { Link } from 'react-router-dom'
 import ReactMapboxGL, { Marker, ZoomControl } from 'react-mapbox-gl'
 import 'bulma'
+
 
 const Map = ReactMapboxGL({ accessToken: process.env.MAPBOX_TOKEN })
 
@@ -11,7 +16,12 @@ class BurgersShow extends React.Component {
   constructor() {
     super()
     this.state = {
+      formData: { userRating: 1, content: ''}
     }
+    this.normalisePrice = this.normalisePrice.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount() {
@@ -19,9 +29,39 @@ class BurgersShow extends React.Component {
       .then(res => this.setState({ burger: res.data }))
   }
 
+  normalisePrice(price) {
+    const priceResult = parseFloat(price).toFixed(2)
+    return priceResult
+  }
+
+  handleChange(e) {
+    const formData = {...this.state.formData, [e.target.name]: e.target.value}
+    this.setState({formData})
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+
+    axios.post(`/api/burgers/${this.props.match.params.id}/comments`, this.state.formData, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(res => this.setState({burger: res.data, formData: {userRating: 1, content: ''}}))
+  }
+
+  handleDelete(e) {
+    e.preventDefault()
+
+    axios.delete(`/api/burgers/${this.props.match.params.id}/comments/${e.target.id}`, {
+      headers: {Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(res => this.setState({burger: res.data}))
+  }
+
+
+
   render() {
+    console.log(this.state.formData)
     if(!this.state.burger) return null
-    console.log(this.state.burger)
     return(
       <section className="section">
         <div className="container">
@@ -77,9 +117,10 @@ class BurgersShow extends React.Component {
                 <article className="tile is-child notification is-primary">
                   <div className="content">
                     <header className="title is-1">{this.state.burger.name}</header>
-                    <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £ {this.state.burger.price}</p>
-                    <p className="subtitle"><span className="has-text-weight-semibold">Ingredients:</span>
-                      {this.state.burger.ingredients.map(ingredient => ' ' + ingredient + ',')}</p>
+                    <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £ {this.normalisePrice(this.state.burger.price)}</p>
+                    <p className="subtitle"> <span className="has-text-weight-semibold">Ingredients: </span>
+                      <ul>{this.state.burger.ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}</ul>
+                    </p>
                     <p className="subtitle"><span className="has-text-weight-semibold">Vegetarian: </span>
                       {(!!this.state.burger.isVegetarian || !!this.state.burger.isVegan) && <img src="https://i.imgur.com/8RN8Why.png" className="icon"/>}
                       {(!this.state.burger.isVegetarian && !this.state.burger.isVegan) && <span className="subtitle">No</span>} </p>
@@ -90,6 +131,8 @@ class BurgersShow extends React.Component {
                   </div>
                 </article>
               </div>
+
+
               <div className="columns">
                 <div className="column is-half">
                   <div className="tile is-parent">
@@ -111,14 +154,54 @@ class BurgersShow extends React.Component {
                 <div className="column">
                   <div className="buttons are-medium">
                     <div className="control">
-                      <button className="button is-primary is-fullwidth">Book to try it!</button>
+                      <button className="button is-primary is-fullwidth">🍽Book to try it!</button>
                     </div>
                     <div className="control">
-                      <button className="button is-primary is-fullwidth">Find a beer for a perfect match!</button>
+                      <button className="button is-primary is-fullwidth">🍺Find a beer for a perfect match!</button>
                     </div>
                   </div>
                 </div>
               </div>
+
+              {Auth.isAuthenticated() && <form className="formfield" onSubmit={this.handleSubmit}>
+                <hr />
+                <div className="field">
+                  <label className="label">Comment</label>
+                  <textarea
+                    name="content"
+                    className="textarea"
+                    placeholder="Add a comment..."
+                    onChange={this.handleChange}
+                    value={this.state.formData.content}
+                  />
+                </div>
+
+                <div className="field">
+                  <label className="label">Rating (1-5)</label>
+                  <input
+                    name="userRating"
+                    className="input"
+                    type="range"
+                    min="1"
+                    max="5"
+                    onChange={this.handleChange}
+                    value={this.state.formData.userRating}
+                  />
+                </div>
+
+                <button className="button is-info">Submit</button>
+              </form>}
+
+              <hr />
+              {Auth.isAuthenticated() && <div className="buttons">
+                <Link
+                  className="button"
+                  to={`/burgers/${this.state.burger._id}/edit`}
+                >Edit</Link>
+
+                <button className="button is-danger">Delete</button>
+              </div>}
+
             </div>
           </div>
         </div>
