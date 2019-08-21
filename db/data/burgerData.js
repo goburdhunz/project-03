@@ -9,7 +9,8 @@ module.exports = [{
     'Cheese',
     'Gherkin',
     'Onion',
-    'Lettuce'
+    'Lettuce',
+    'Bun'
   ],
   price: 17.00,
   description: 'Consisting of of 100% Longhorn beef, it includes old fashioned cuts like Clod and Sticking and small nuggets of bone marrow.',
@@ -30,8 +31,9 @@ module.exports = [{
   ingredients: [
     'Beef',
     'Cheese',
-    'Smoky Mayo',
-    'Onion'
+    'Mayonnaise',
+    'Onion',
+    'Bun'
   ],
   price: 12.00,
   description: 'Our signature Dry Aged Beef Patty, Double American Cheese, Smoky Mayo and Onion',
@@ -54,7 +56,8 @@ module.exports = [{
     'Cheese',
     'Onion',
     'Bacon',
-    'House sauce'
+    'House sauce',
+    'Bun'
   ],
   price: 11.00,
   description: 'Double beef patty, double cheese, onion, bacon & house sauce.',
@@ -83,7 +86,7 @@ module.exports = [{
     'Hot sauce'
   ],
   price: 10.00,
-  description: 'Vegan crispy fried jackfruit burgers, Chipotle slaw, maple chipotle hot sauce, jalapeños, american cheeze, BBQ sauce in a toasted brioche bun',
+  description: 'Vegan crispy fried jackfruit burgers, chipotle slaw, maple chipotle hot sauce, jalapeños, american cheeze, BBQ sauce in a toasted brioche bun',
   isVegan: true,
   restaurant: {
     name: 'Biff\'s Jack Shack',
@@ -98,7 +101,15 @@ module.exports = [{
   name: 'The Ari Gold',
   rating: 5,
   image: 'https://i2.wp.com/urbanintention.co.uk/wp-content/uploads/2017/07/burger-2.png?fit=900%2C581',
-  ingredients: ['Beef' , 'Cheese', 'Lettuce', 'Tomato', 'Pickled Onions', 'Smokey P&B Mayo', 'Brioche' ],
+  ingredients: [
+    'Beef',
+    'Cheese',
+    'Lettuce',
+    'Tomato',
+    'Onion',
+    'Mayonnaise',
+    'Brioche'
+  ],
   price: 8.75,
   description: 'The BEST BURGER IN THE WORLD is the Ari Gold at Patty & Bun. I\'ve eaten hundreds of burgers in my lifetime and have been in pursuit of the perfect burger for some time. This burger is it. You\'ll see a long line outside of Patty & Bun and that\'s an indication that I\'m not the only one who\'s discovered this secret. The Ari Gold features a perfectly cooked beef patty, gooey melted cheese, lettuce, tomato, pickled onions, ketchup, smokey P&B housemade mayo, and a brioche bun. Don\'t forget to throw on some tasty bacon to add that last bit of flavor heaven. The Ari is a melt in your mouth juicy, cheesy, salty, and tender masterpiece. The pillowy bun seems to melt with each bite and the ratio of the ingredients creates a perfect texture where none of them overpower the burger, while all of them contribute to the flavor profile. The ingredients are well thought out, portioned appropriately, and are high quality. The trick to the Ari is the cheese + bun + beef all being perfect. Add on the bacon, smokey mayo, and the rest of the ingredients that are all amazing too and the Ari Gold takes the definition of 10 out of 10 and turns it up to 11. If you are in London you must go to Patty & Bun. The burger was so great that I couldn\'t believe it...so I had a second to confirm it was indeed the best burger on the planet.',
   restaurant: {
@@ -114,7 +125,13 @@ module.exports = [{
   name: 'The Double Cheeseburger',
   rating: 5,
   image: 'http://luckychip.co.uk/wp-content/uploads/2018/10/21-1024x678.jpg',
-  ingredients: ['Beef' , 'Cheese', 'Ketchup', 'Mustard' ],
+  ingredients: [
+    'Beef',
+    'Cheese',
+    'Ketchup',
+    'Mustard',
+    'Bun'
+  ],
   price: 10.5,
   description: 'Burger Bear makes some of the best burgers in London. Burger Bear features preparation and flavors thought up by a burger genius. High quality beef, melted cheese, The Cheeseburger at the Lucky Chip is what a cheeseburger was meant to be. Perfectly charred beef that is hot off a griddle with gooey cheese melted on top. Add in some shredded lettuce, crinkle cut pickles, and a bun that gives a perfect texture to each bite. It\'s hard to think such a basic combination would be one of the best burgers I\'ve ever had, but this one redefines a cheeseburger. Top quality ingredients and perfect timing by the cooks make each one of these a mastery of burger science. A word of caution that Sebright Arms or the other Lucky Chip locations can be a bit difficult to find, however they are well worth the effort.',
   restaurant: {
@@ -130,7 +147,11 @@ module.exports = [{
   name: 'BurgerBear',
   rating: 4,
   image: 'https://images.squarespace-cdn.com/content/v1/5a1d93f5914e6b0913369e73/1549383574717-EA05LO7F5UI4AOURZVJP/ke17ZwdGBToddI8pDm48kK7ZveHm8pdg6pR1a4N_eTlZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVEP3MwU0KrqINgz5t1HlAV-YeUN3Jr-LO9jY1nwzkfdWl50gd2D5EdtNM4Q3D6aH4U/image1.jpeg?format=750w',
-  ingredients: ['Beef' , 'Cheese'],
+  ingredients: [
+    'Beef',
+    'Cheese',
+    'Bun'
+  ],
   price: 10.5,
   description: 'Burger Bear makes some of the best burgers in London. Burger Bear features preparation and flavors thought up by a burger genius. High quality beef, melted cheese, pillowy buns, and bacon jam = melt in your mouth burger win. The passion held by Tom and his team make each burger a masterpiece for your consumption. Be sure to check their website for their location.',
   restaurant: {
@@ -146,7 +167,16 @@ module.exports = [{
   name: 'Mother Flipper Cheese Burger',
   rating: 5,
   image: 'https://images.squarespace-cdn.com/content/v1/5a607d4990badeabae2604c6/1565806267836-JMHO6J1EO9JDGOCHAB49/ke17ZwdGBToddI8pDm48kHem505q6McQd8XRhQc9zkRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxpEURhgSBEh9ILe0HKIG3CcOCklsxWwam3CdWF6Xw7jwVv5P97BEtB5XaVnmvMtTA/image-asset.jpeg?format=750w',
-  ingredients: ['Ketchup' , 'Mustard', 'Lettuce', 'Onion', 'Gherkin', 'Cheese', 'Steak', 'Brioche'],
+  ingredients: [
+    'Ketchup',
+    'Mustard',
+    'Lettuce',
+    'Onion',
+    'Gherkin',
+    'Cheese',
+    'Steak',
+    'Brioche'
+  ],
   price: 7.5,
   description: 'This burger joint came as a recommendation from the experts in London. A few hour affair that pops up at the Brockley Market on Saturdays. The preparation at Mother Flipper is done right in front of you. I waited in line and my mouth watered at the expertly constructed burgers. A three-man crew consisting of a full-time assembler, full time flipper, and a bun toaster cranks out these tasty delights. I got the Candy Bacon Burger which consists of a tender sesame bun, candied bacon, juicy beef, shredded lettuce, pickles, ketchup, mustard, and thinly sliced red onion. Each of the ingredients on the Candy Bacon Burger are well thought out for flavor. A sweet and crispy bacon, tender and juicy beef, vinegary and tangy ketchup + mustard + pickles, melted cheese, and a toasted but soft bun to soak it all up. My burger disappeared before I had a chance to write too many notes about it. That is a good sign when it comes time to dish out a score. The Candy Bacon Burger is something to be admired for its well distributed and thought out flavors. A smart decision not to use a tomato really helps the texture, and makes this burger very focused on key flavors. Every ingredient contributes, but none overwhelm. Compared to the other top burgers my mouth felt a little dry, but this might be because I did not have a drink at my disposal while enjoying it. This is one of the best burgers in London and there is no doubt about it. A shame that it is not easier to get these burgers more than one day a week.',
   restaurant: {
@@ -162,7 +192,21 @@ module.exports = [{
   name: 'Five Guys Hamburger',
   rating: 4.5,
   image: 'http://delight.us/wp-content/uploads/2013/02/fiveguysburger.jpg',
-  ingredients: ['Beef', 'Mayonnaise', 'Lettuce', 'Gherkins', 'Tomato', 'Mushrooms', 'Ketchup', 'Mustard', 'Relish', 'Onions', 'jalapeños', 'Green Peppers', 'Bun' ],
+  ingredients: [
+    'Beef',
+    'Mayonnaise',
+    'Lettuce',
+    'Gherkin',
+    'Tomato',
+    'Mushroom',
+    'Ketchup',
+    'Mustard',
+    'Relish',
+    'Onion',
+    'Jalapeños',
+    'Green Pepper',
+    'Bun'
+  ],
   price: 5.50,
   description: 'Two fresh, hand formed patties hot off the grill and placed on a soft, toasted bun. Choose as many toppings as you want.',
   restaurant: {
@@ -177,7 +221,16 @@ module.exports = [{
   name: 'Ari Gold Burger',
   rating: 3,
   image: 'https://i.pinimg.com/originals/66/66/56/6666566c074c908d1ac9f027f147a486.jpg',
-  ingredients: ['Beef', 'Cheese', 'Lettuce', 'Tomato', 'Onions', 'Ketchup', 'Mayonnaise', 'Brioche' ],
+  ingredients: [
+    'Beef',
+    'Cheese',
+    'Lettuce',
+    'Tomato',
+    'Onion',
+    'Ketchup',
+    'Mayonnaise',
+    'Brioche'
+  ],
   price: 8.75,
   description: 'The Ari Gold Cheeseburger consists of a beautiful beef patty positively smothered in American cheese, a smokey mayo, pickled red onion, slices of juicy tomato and some crisp lettuce leaves.',
   restaurant: {
@@ -192,7 +245,15 @@ module.exports = [{
   name: 'Big Mac',
   rating: 2,
   image: 'https://beef2live.com/images/668/author/995/2016/8/big_mac_fun_facts_1_636063544989118436.jpg',
-  ingredients: ['Beef', 'Special Sauce', 'Cheese', 'Gherkin', 'Onion', 'Lettuce', 'Bun' ],
+  ingredients: [
+    'Beef',
+    'Special Sauce',
+    'Cheese',
+    'Gherkin',
+    'Onion',
+    'Lettuce',
+    'Bun'
+  ],
   price: 3.50,
   description: 'The Big Mac consists of two 1.6 oz (45.4 g) beef patties, "special sauce" (a variant of Thousand Island dressing), iceberg lettuce, American cheese, pickles, and onions, served in a three-part sesame seed bun.',
   restaurant: {
@@ -214,8 +275,9 @@ module.exports = [{
     'Beef',
     'Lettuce',
     'Cheese',
-    'Pickle',
+    'Gherkin',
     'Onion',
+    'Bun',
     'Dead hippie sauce'
   ],
   price: 9.50,
@@ -240,7 +302,8 @@ module.exports = [{
     'Onion',
     'Gherkin',
     'Mustard',
-    'Ketchup'
+    'Ketchup',
+    'Bun'
   ],
   price: 9.00,
   description: 'Two beef patties, pastrami, swiss cheese, sauerkraut & russian dressing',
@@ -264,7 +327,8 @@ module.exports = [{
     'Tomato',
     'Gherkin',
     'Onion',
-    'Secret sauce'
+    'Secret sauce',
+    'Bun'
   ],
   price: 11.50,
   description: 'Nebraskan beef patty with lettuce, tomato, house-made pickles, onions and Burger & Lobster\'s secret burger sauce.',
@@ -283,11 +347,12 @@ module.exports = [{
   ingredients: [
     'Beef',
     'Bacon',
-    'Cheddar',
+    'Cheese',
     'Lettuce',
     'Tomato',
     'Onion',
-    'Byron Sauce'
+    'Byron Sauce',
+    'Bun'
   ],
   price: 13.50,
   description: 'The Byron Burger at Byron comes down to simple execution. The Byron Sauce is salty and tangy and the beef I ordered was cooked a juicy medium. The bun is soft and savory and complements the cured bacon. Melted mature cheddar holds it all together and a classic combination of tomato, lettuce, pickle, and red onion top it off. Finely tuned ingredients and complementary pairings of sweet, salty, and savory along with a good texture make you hope each bite is not the last.',
@@ -310,7 +375,8 @@ module.exports = [{
     'Honey',
     'Onion',
     'Balsamic Glaze',
-    'Mushrooms'
+    'Mushroom',
+    'Bun'
   ],
   price: 8.89,
   description: 'Meat & Shake serves up a great burger experience combining gourmet burgers and some of the best shakes in London. A creative burger menu features burgers with names like Truffle Shuffle, Smoking Bandit, and the Luchador. Flavorful ingredients like smokey chipotle mayo, Gruyere, sauteed onions are used to build these burgers into tasty morsels with amazing flavor profiles. Add in a soft and tender bakery bun and premium beef patties and get ready to enjoy. We\'ll take a Smoking Bandit and a chocolate shake please!',
@@ -332,7 +398,8 @@ module.exports = [{
     'Lettuce',
     'Tomato',
     'Gherkin',
-    'Mayonnaise'
+    'Mayonnaise',
+    'Bun'
   ],
   price: 8.95,
   description: 'The Burger here was a simple cheeseburger and that is all you can get on the menu. Simple and to the point, you knwo what you are going to get, because that is all that is available. The burger alongside, Chips or Onion Fries (or both) are the options and the only options and at £5.50 for the burger and £2.50 for either sides, it is decently priced too. The burger had cheese, tomato, bacon and a bit pf lettuce, with a lovely mustard dressing too. The taste was really really good and the smokey bacon too added to it. You order at the bar and then your order gets called out so very simplistic in this aspect too as are the surroundings ( a shack around the back of Highgate road). The burger is definitely recommended and with the onion fries which were lightly coated with pepper were delicious. This is now joint up there for me with Patty & Bun and Honest Burger. As mentioned earlier, deciding whether a place is good or not depends on many, many factors. These include the hype, the atmosphere, the ambiance (if with friends or not) and the expectancy too. Obviously the food is the most important factor but the others take it from a 7/10 to a 9/10. For example. last night, the hype, being with family and friends and having consumed 3 pints all made it a 9/10 in terms of my top burgers. Whereas, after Fridays second experience at Patty & Bun, i wasn\'t overly impressed as first time round. Maybe the hype wasn\'t there or maybe I had expected too much. Either way, i need to go back to Dirty Burger to see if it is still great.',
@@ -346,7 +413,7 @@ module.exports = [{
   }
 }, {
   name: 'The MFC (Mexican Fried Chick’n)',
-  rating: 3,
+  rating: 2,
   image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/05/15/12/club-mexicana-burger-1505-jade-nina-sarkhel.jpg?w660',
   ingredients: [
     'Annatto',
@@ -354,8 +421,9 @@ module.exports = [{
     'Mayonnaise',
     'Mustard',
     'Pickled Cabbage',
-    'jalapeños',
-    'Dill'
+    'Jalapeños',
+    'Dill',
+    'Bun'
   ],
   isVegan: true,
   isVegetarian: true,
@@ -376,10 +444,10 @@ module.exports = [{
   ingredients: [
     'Fritter',
     'Cheese',
-    'Chipotle Mayo',
+    'Mayonnaise',
     'Coleslaw',
-    'Onions',
-    'Gherkins'
+    'Onion',
+    'Gherkin'
   ],
   isVegan: false,
   isVegetarian: true,
@@ -423,8 +491,8 @@ module.exports = [{
   ingredients: [
     'Black beans',
     'Quinoa',
-    'Vegan Cheese',
-    'Onions',
+    'Cheese',
+    'Onion',
     'Mooshies Sauce',
     'Gherkin',
     'Lettuce'
@@ -449,7 +517,7 @@ module.exports = [{
     'Tofu',
     'Hot Sauce',
     'Cheese',
-    'Onions',
+    'Onion',
     'House Sauce',
     'Lettuce'
   ],
@@ -474,13 +542,14 @@ module.exports = [{
     'Black Bean',
     'Mushroom',
     'Aquafaba Aioli',
-    'Goji Ketchup',
+    'Ketchup',
     'Carrot',
     'Celeriac remoulade',
-    'Pickles',
+    'Gherkin',
     'Tomato',
     'Carrot',
-    'Lettuce'
+    'Lettuce',
+    'Bun'
   ],
   isVegan: true,
   isVegetarian: true,
@@ -501,11 +570,12 @@ module.exports = [{
   ingredients: [
     'Halloumi',
     'Mushroom',
-    'Onions',
-    'Pickles',
+    'Onion',
+    'Gherkin',
     'Lettuce',
     'Ketchup',
-    'Mustard'
+    'Mustard',
+    'Bun'
   ],
   isVegan: false,
   isVegetarian: true,
@@ -524,12 +594,14 @@ module.exports = [{
   rating: 3,
   image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/01/05/15/af396c6b-f14f-493f-9b73-c214c3072799.jpg?w660',
   ingredients: [
+    'Beef',
     'Garlic',
     'Mushroom',
     'Thyme',
     'Cheese',
     'Rocket',
-    'Gherkin'
+    'Gherkin',
+    'Bun'
   ],
   isVegan: false,
   isVegetarian: true,
@@ -555,7 +627,8 @@ module.exports = [{
     'Tomato',
     'Cheese',
     'Gherkin',
-    'Gravy'
+    'Gravy',
+    'Bun'
   ],
   price: 9.95,
   description: 'Dip & Flip has identified the one thing missing from the nouveau burger movement: gravy (obviously). Dip & Flip\'s signature "Dip & Flip Burger” contains a patty, cheese and sliced roast beef (lest you feel under-cowed) and comes served, in an inspired manoeuvre, with a side of thick, rich jus. It shouldn’t be allowed. But it is.',
@@ -575,10 +648,11 @@ module.exports = [{
   image: 'https://media.gq-magazine.co.uk/photos/5d13aed683b0d22f741e7f2f/master/w_1440%2cc_limit/joe-allen-burger-gq-28aug18-pr_b.jpg',
   ingredients: [
     'Beef',
-    'Totamto',
+    'Tomato',
     'Bacon',
     'Cheese',
-    'BBQ sauce'
+    'BBQ Sauce',
+    'Bun'
   ],
   price: 11.50,
   description: 'The tastiest burger this side of the Atlantic. All-Scottish beef, supported by a fresh slice of tomato, smokey bacon and a layer of gooey melted cheese, plus a healthy side of BBQ sauce, make for an enjoyably messy-but-non-stop-chomp.',
@@ -600,7 +674,8 @@ module.exports = [{
     'Beef',
     'Bacon',
     'Cheese',
-    'Lettuce'
+    'Lettuce',
+    'Bun'
   ],
   price: 11.95,
   description: 'Two of our Classic Dirty Burgers with a thick cut of maple glazed bacon',
@@ -622,10 +697,11 @@ module.exports = [{
     'Beef',
     'Cheese',
     'Tomato',
-    'Onion'
+    'Onion',
+    'Bun'
   ],
   price: 20.00,
-  description: 'Live fire grilled burgerd topped with ogleshield cheese, tomato and red onions.',
+  description: 'Live fire grilled burger topped with ogleshield cheese, tomato and red onions.',
   restaurant: {
     name: 'Gridiron',
     address: 'Metropolitan, 19 Old Park Lane, London',

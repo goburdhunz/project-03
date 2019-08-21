@@ -32,9 +32,7 @@ class Edit extends React.Component {
   }
 
   checkForIngredient(item) {
-    if(this.state.formData.ingredients.includes(item)) {
-      return true
-    }
+    return this.state.formData.ingredients.includes(item)
   }
 
   // handleIngredientCheckbox
