@@ -22,6 +22,7 @@ class BurgersShow extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
     this.handleDeleteBurger = this.handleDeleteBurger.bind(this)
+    this.calculateUserRatingAverage = this.calculateUserRatingAverage.bind(this)
   }
 
   componentDidMount() {
@@ -34,6 +35,11 @@ class BurgersShow extends React.Component {
     return priceResult
   }
 
+  calculateUserRatingAverage() {
+    if(this.comments.length === 0) return 0
+    return this.comments.userRating.reduce((acc, rating) => rating + acc, 0) / this.comments.length
+  }
+
   handleChange(e) {
     // console.log(e.target.name)
     // console.log(e.target.value)
@@ -42,7 +48,6 @@ class BurgersShow extends React.Component {
   }
 
   handleSubmit(e) {
-    // console.log(this.state.formData.userRating)
     e.preventDefault()
 
     axios.post(`/api/burgers/${this.props.match.params.id}/comments`, this.state.formData, {
