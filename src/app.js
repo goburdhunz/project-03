@@ -9,6 +9,7 @@ import './style.scss'
 import { HashRouter, Route , Switch} from 'react-router-dom'
 
 import Home from './components/pages/Home'
+import About from './components/pages/About'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import BurgersIndex from './components/burgers/Index'
@@ -37,6 +38,7 @@ class App extends React.Component {
           <Route path="/burgers" component={BurgersIndex} />
           <Route path= "/register" component={Register}/>
           <Route path="/login" component={Login} />
+          <Route path="/about" component={About} />
           <Route path= "/" component={Home}/>
         </Switch>
       </HashRouter>
