@@ -31,7 +31,8 @@ class Home extends React.Component {
           <div className="columns">
             <div className=" column is-two-thirds-tablet is-two-thirds-widescreen is-two-thirds-desktop top-burgers">
               <br/>
-              <h1 className="title">Top Rated</h1>
+              <h1 className="title">Hungry for our top rated?</h1>
+              <h2 className="subtitle"><a href="/#/register">Join us</a> to vote for your top rated burger or nominate your own</h2>
               <div className="columns is-multiline">
                 {this.state.burgers.map(burger =>
                   <div
@@ -52,7 +53,9 @@ class Home extends React.Component {
             </div>
 
             <div className="column side-map">
-              <h2 clssName="subtitle">Find our top rated</h2>
+              <h2 className="subtitle">Find our top rated burgers as voted by you</h2>
+              <hr className="homepagebreak"/>
+              <p>Use our interactive map to find the best burgers in town</p>
               <br/>
               <Map
                 style="mapbox://styles/mapbox/streets-v9"
