@@ -51,12 +51,25 @@ class New extends React.Component {
     this.setState({ formData })
   }
 
+  // handlePostcodeChange(e) {
+  //   const restaurant = { ...this.state.formData.restaurant, [e.target.name]: e.target.value }
+  //   const formData = { ...this.state.formData, restaurant }
+  //
+  //   const re = /([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\s?[0-9][A-Za-z]{2})/
+  //
+  //   const valid = re.exec(e.target.value)
+  //
+  //   if(!valid) {
+  //     // ???
+  //   } else {
+  //     this.setState({ formData })
+  //   }
+  // }
+
   handleCheckbox(e) {
     const formData = { ...this.state.formData, [e.target.name]: e.target.checked }
     this.setState({ formData })
   }
-
-
 
   handleSubmit(e) {
     e.preventDefault()
