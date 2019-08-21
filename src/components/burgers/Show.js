@@ -121,7 +121,19 @@ class BurgersShow extends React.Component {
               <div className="tile is-ancestor">
                 <article className="tile is-child notification is-primary">
                   <div className="content">
-                    <header className="title is-1">{this.state.burger.name}</header>
+                    <div className="levels">
+                      <header className="title is-1 level-left">
+                        {this.state.burger.name}
+                      </header>
+                      {Auth.isAuthenticated() && <div className="buttons level-right">
+                        <Link
+                          className="button"
+                          to={`/burgers/${this.state.burger._id}/edit`}
+                        >Edit</Link>
+
+                        <button className="button is-danger">Delete</button>
+                      </div>}
+                    </div>
                     <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £ {this.normalisePrice(this.state.burger.price)}</p>
                     <p className="subtitle"><span className="has-text-weight-semibold">Ingredients:</span>
                       {this.state.burger.ingredients.map(ingredient => ' ' + ingredient + ',')}</p>
@@ -180,17 +192,6 @@ class BurgersShow extends React.Component {
 ​
                 <button className="button is-info raterbutton">Submit</button>
               </form>}
-​
-              <hr />
-              {Auth.isAuthenticated() && <div className="buttons">
-                <Link
-                  className="button"
-                  to={`/burgers/${this.state.burger._id}/edit`}
-                >Edit</Link>
-​
-                <button className="button is-danger">Delete</button>
-              </div>}
-​
             </div>
           </div>
         </div>
