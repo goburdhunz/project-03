@@ -19,7 +19,6 @@ class BurgersShow extends React.Component {
       formData: { userRating: 1, content: ''}
     }
     this.normalisePrice = this.normalisePrice.bind(this)
-    this.ingredientsList = this.ingredientsList.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
@@ -33,11 +32,6 @@ class BurgersShow extends React.Component {
   normalisePrice(price) {
     const priceResult = parseFloat(price).toFixed(2)
     return priceResult
-  }
-
-  ingredientsList(burgerIngredients) {
-    const listOfIngredients = burgerIngredients.map((ingredient) => <li>ingredient</li>)
-    return <ul>{listOfIngredients}</ul>
   }
 
   handleChange(e) {
