@@ -4,6 +4,7 @@ import Rating from 'react-rating'
 import Comment from '../common/Comment'
 import Auth from '../../lib/Auth'
 import { Link } from 'react-router-dom'
+import BeerMatch from './BeerMatch'
 import ReactMapboxGL, { Marker, ZoomControl } from 'react-mapbox-gl'
 import 'bulma'
 
@@ -204,6 +205,12 @@ class BurgersShow extends React.Component {
             </div>
           </div>
         </div>
+
+        <span className="beer-button">
+          <BeerMatch/>
+        </span>
+
+
       </section>
     )
   }
