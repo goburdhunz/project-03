@@ -44,7 +44,10 @@ restaurantSchema.pre('validate', function parsepostcode(done) {
     }
   })
     .then((res) => {
-      if(!res.data.result[0].result) return done()
+      if(!res.data.result[0].result) {
+        this.invalidate('postcode', 'Invalid postcode')
+        return done()
+      }
       this.latitude = res.data.result[0].result.latitude
       this.longitude = res.data.result[0].result.longitude
       done()

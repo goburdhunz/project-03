@@ -21,8 +21,7 @@ const Comment = ({user, createdAt, content, handledelete, _id,    userRating}) =
               fullSymbol= {<img src="https://i.imgur.com/f00MSST.png" className="image is-24x24"/>}
               fractions={2}
               initialRating={userRating}
-              readonly={true}
-              quiet={false}
+              readonly
             />
           </span>
         </div>
