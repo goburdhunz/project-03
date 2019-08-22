@@ -32,12 +32,12 @@ class Home extends React.Component {
             <div className=" column is-two-thirds-tablet is-two-thirds-widescreen is-two-thirds-desktop top-burgers">
               <br/>
               <h1 className="title">Hungry for our top rated?</h1>
-              <h2 className="subtitle"><a href="/#/register">Join us</a> to vote for your top rated burger or nominate your own</h2>
+              <h2 className="subtitle is-a-5"><a href="/#/register">Join us</a> to vote for your top rated burger or nominate your own</h2>
               <div className="columns is-multiline">
                 {this.state.burgers.map(burger =>
                   <div
                     key={burger._id}
-                    className="column"
+                    className="column is-one-third-desktop"
                   >
                     <Link to={`/burgers/${burger._id}`}>
                       <Card

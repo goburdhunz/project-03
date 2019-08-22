@@ -3,10 +3,10 @@ import Rating  from 'react-rating'
 
 const Card = ({ name, image, rating, restaurant, price }) => {
   return (
-    <div className="card">
+    <div className="card card-equal-height">
       <div className="card-image">
-        <figure className="image is-4by3">
-          <img src={image} alt={name} />
+        <figure className="image">
+          <img src={image} alt={name} className="card-image-size"/>
         </figure>
       </div>
       <div className="card-header">

@@ -389,29 +389,6 @@ module.exports = [{
     website: 'http://meatandshake.com/'
   }
 }, {
-  name: 'The Signature Dirty Burger',
-  rating: 3,
-  image: 'http://meatandshake.com/wp-content/uploads/2015/07/Truffle_Shuffle_2989.jpg',
-  ingredients: [
-    'Beef',
-    'Cheese',
-    'Lettuce',
-    'Tomato',
-    'Gherkin',
-    'Mayonnaise',
-    'Bun'
-  ],
-  price: 8.95,
-  description: 'The Burger here was a simple cheeseburger and that is all you can get on the menu. Simple and to the point, you knwo what you are going to get, because that is all that is available. The burger alongside, Chips or Onion Fries (or both) are the options and the only options and at £5.50 for the burger and £2.50 for either sides, it is decently priced too. The burger had cheese, tomato, bacon and a bit pf lettuce, with a lovely mustard dressing too. The taste was really really good and the smokey bacon too added to it. You order at the bar and then your order gets called out so very simplistic in this aspect too as are the surroundings ( a shack around the back of Highgate road). The burger is definitely recommended and with the onion fries which were lightly coated with pepper were delicious. This is now joint up there for me with Patty & Bun and Honest Burger. As mentioned earlier, deciding whether a place is good or not depends on many, many factors. These include the hype, the atmosphere, the ambiance (if with friends or not) and the expectancy too. Obviously the food is the most important factor but the others take it from a 7/10 to a 9/10. For example. last night, the hype, being with family and friends and having consumed 3 pints all made it a 9/10 in terms of my top burgers. Whereas, after Fridays second experience at Patty & Bun, i wasn\'t overly impressed as first time round. Maybe the hype wasn\'t there or maybe I had expected too much. Either way, i need to go back to Dirty Burger to see if it is still great.',
-  restaurant: {
-    name: 'Dirty Burger',
-    address: '13 Bethnal Green Rd,',
-    postcode: 'E1 6LA',
-    latitude: 51.5237407,
-    longitude: -0.0783317,
-    website: 'http://www.eatdirtyburger.com'
-  }
-}, {
   name: 'The MFC (Mexican Fried Chick’n)',
   rating: 2,
   image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/05/15/12/club-mexicana-burger-1505-jade-nina-sarkhel.jpg?w660',
