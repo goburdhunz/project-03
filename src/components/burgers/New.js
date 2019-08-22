@@ -42,9 +42,13 @@ class New extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleCheckbox = this.handleCheckbox.bind(this)
     this.handleIngredientCheckbox = this.handleIngredientCheckbox.bind(this)
-    this.handleUploadImages= this.handleUploadImages.bind(this)
+    this.handleUploadImages = this.handleUploadImages.bind(this)
+    this.handleNegativePrices = this.handleNegativePrices.bind(this)
   }
 
+  handleNegativePrices(price) {
+    return Math.abs(price)
+  }
 
   handleIngredientCheckbox(e) {
     const ingredients = [ ...this.state.formData.ingredients ]
@@ -80,20 +84,6 @@ class New extends React.Component {
     this.setState({ formData })
   }
 
-  // handlePostcodeChange(e) {
-  //   const restaurant = { ...this.state.formData.restaurant, [e.target.name]: e.target.value }
-  //   const formData = { ...this.state.formData, restaurant }
-  //
-  //   const re = /([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\s?[0-9][A-Za-z]{2})/
-  //
-  //   const valid = re.exec(e.target.value)
-  //
-  //   if(!valid) {
-  //     // ???
-  //   } else {
-  //     this.setState({ formData })
-  //   }
-  // }
 
   handleCheckbox(e) {
     const formData = { ...this.state.formData, [e.target.name]: e.target.checked }
@@ -181,7 +171,7 @@ class New extends React.Component {
                     type="number"
                     name="price"
                     placeholder="eg: £5.60"
-                    value={this.state.formData.price || ''}
+                    value={this.handleNegativePrices(this.state.formData.price) || ''}
                     onChange={this.handleChange}
                   />
                   {this.state.errors.price && <small className="help is-danger">{this.state.errors.price}</small>}
@@ -191,7 +181,7 @@ class New extends React.Component {
               <div className ="vegan">
                 <div className="field vegeterian-field">
                   <div className="optionveg">
-                    <label className="label">Vegeterian</label>
+                    <label className="label">Vegetarian</label>
                     <div className="pretty p-default p-curve p-smooth p-round p-bigger">
                       <input
                         type="checkbox"
@@ -536,7 +526,7 @@ class New extends React.Component {
           </div>
 
           <button className="button is-danger">Submit</button>
-
+          <hr />
         </form>
       </section>
     )

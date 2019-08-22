@@ -42,6 +42,7 @@ class Edit extends React.Component {
     this.handleIngredientCheckbox = this.handleIngredientCheckbox.bind(this)
     this.checkForIngredient = this.checkForIngredient.bind(this)
     this.handleUploadImages= this.handleUploadImages.bind(this)
+    this.handleNegativePrices = this.handleNegativePrices.bind(this)
   }
 
   componentDidMount() {
@@ -51,6 +52,10 @@ class Edit extends React.Component {
 
   checkForIngredient(item) {
     return this.state.formData.ingredients.includes(item)
+  }
+
+  handleNegativePrices(price) {
+    return Math.abs(price)
   }
 
   // handleIngredientCheckbox
@@ -170,7 +175,7 @@ class Edit extends React.Component {
                     type="number"
                     name="price"
                     placeholder="eg: £5.60"
-                    value={this.state.formData.price || ''}
+                    value={this.handleNegativePrices(this.state.formData.price) || ''}
                     onChange={this.handleChange}
                   />
                   {this.state.errors.price && <small className="help is-danger">{this.state.errors.price}</small>}
