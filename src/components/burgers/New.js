@@ -472,7 +472,7 @@ class New extends React.Component {
 
           <div className="field">
             <label className="label">Description</label>
-            <input
+            <textarea
               className="textarea"
               name="description"
               placeholder="eg: This burger is made from 100% Angus beef with Stilton Cheese and a luxurious slather of mayonnaise and mustard. It is complimented by a generous layer of pickles and fied onions."
