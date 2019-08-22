@@ -566,8 +566,9 @@ class Edit extends React.Component {
           </div>
 
           <button className="button is-danger">Submit</button>
-
+          <hr />
         </form>
+
       </section>
     )
   }
