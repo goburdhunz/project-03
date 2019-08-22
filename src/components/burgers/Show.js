@@ -182,7 +182,7 @@ class BurgersShow extends React.Component {
               </div>
 
               <div className="columns">
-                <div className="column is-half">
+                <div className="column is-half commentsview">
                   {this.state.burger.comments.map(comment =>
                     <Comment
                       key={comment._id} {...comment} handledelete={this.handleDeleteComment}
