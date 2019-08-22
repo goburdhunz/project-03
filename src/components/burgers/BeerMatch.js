@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-import { toast } from 'react-toastify'
 import { withRouter } from 'react-router-dom'
 import Modal from 'react-modal'
 import 'react-toastify/dist/ReactToastify.css'

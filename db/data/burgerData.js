@@ -73,7 +73,7 @@ module.exports = [{
 
 {
   name: 'The Samuel Hell Jackson',
-  rating: 4,
+  rating: 5,
   image: 'https://f3e6t7k9.stackpathcdn.com/wp-content/uploads/2018/10/biffsjackshack-loti.jpg?x66545',
   ingredients: [
     'Jackfruit',
@@ -99,7 +99,7 @@ module.exports = [{
 },
 {
   name: 'The Ari Gold',
-  rating: 5,
+  rating: 4.5,
   image: 'https://i2.wp.com/urbanintention.co.uk/wp-content/uploads/2017/07/burger-2.png?fit=900%2C581',
   ingredients: [
     'Beef',
@@ -155,7 +155,7 @@ module.exports = [{
   price: 10.5,
   description: 'Burger Bear makes some of the best burgers in London. Burger Bear features preparation and flavors thought up by a burger genius. High quality beef, melted cheese, pillowy buns, and bacon jam = melt in your mouth burger win. The passion held by Tom and his team make each burger a masterpiece for your consumption. Be sure to check their website for their location.',
   restaurant: {
-    name: 'The Old Nun\'s Head',
+    name: '15 Nunhead Green',
     address: 'BurgerBear',
     postcode: 'SE15 3QQ',
     latitude: 51.4651205,
@@ -165,7 +165,7 @@ module.exports = [{
 },
 {
   name: 'Mother Flipper Cheese Burger',
-  rating: 5,
+  rating: 3,
   image: 'https://images.squarespace-cdn.com/content/v1/5a607d4990badeabae2604c6/1565806267836-JMHO6J1EO9JDGOCHAB49/ke17ZwdGBToddI8pDm48kHem505q6McQd8XRhQc9zkRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxpEURhgSBEh9ILe0HKIG3CcOCklsxWwam3CdWF6Xw7jwVv5P97BEtB5XaVnmvMtTA/image-asset.jpeg?format=750w',
   ingredients: [
     'Ketchup',
@@ -217,31 +217,7 @@ module.exports = [{
     longitude: -0.104790,
     website: 'http://www.fiveguys.com'
   }
-},{
-  name: 'Ari Gold Burger',
-  rating: 3,
-  image: 'https://i.pinimg.com/originals/66/66/56/6666566c074c908d1ac9f027f147a486.jpg',
-  ingredients: [
-    'Beef',
-    'Cheese',
-    'Lettuce',
-    'Tomato',
-    'Onion',
-    'Ketchup',
-    'Mayonnaise',
-    'Brioche'
-  ],
-  price: 8.75,
-  description: 'The Ari Gold Cheeseburger consists of a beautiful beef patty positively smothered in American cheese, a smokey mayo, pickled red onion, slices of juicy tomato and some crisp lettuce leaves.',
-  restaurant: {
-    name: 'Patty & Bun',
-    address: '54 James St, Marylebone, London',
-    postcode: 'W1U 1HE',
-    latitude: 51.515740,
-    longitude: -0.150850,
-    website: 'https://www.pattyandbun.co.uk'
-  }
-},{
+}, {
   name: 'Big Mac',
   rating: 2,
   image: 'https://beef2live.com/images/668/author/995/2016/8/big_mac_fun_facts_1_636063544989118436.jpg',
@@ -319,7 +295,7 @@ module.exports = [{
 
 {
   name: 'Original Burger',
-  rating: 4.5,
+  rating: 5,
   image: 'https://www.burgerandlobster.com/Images/placeholder.jpg?anchor=center&mode=crop&heightratio=0.66&width=1600&rnd=131472915860000000',
   ingredients: [
     'Beef',
@@ -342,7 +318,7 @@ module.exports = [{
   }
 }, {
   name: 'The Byron Burger',
-  rating: 4,
+  rating: 5,
   image: 'https://images.ctfassets.net/yvxng0wjdenp/7yi2bpzorCqvIMlLWBuZfI/ba8b68f2c1f391d2d162c78bce1dc0b0/Truffler_YELLOWBG_2560.jpg',
   ingredients: [
     'Beef',
@@ -488,7 +464,7 @@ module.exports = [{
   }
 }, {
   name: 'Veggie Burger',
-  rating: 3,
+  rating: 2,
   image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/01/04/16/bleeckers-burger-veggie.jpg?w660',
   ingredients: [
     'Tofu',
