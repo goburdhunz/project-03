@@ -117,7 +117,7 @@ class BurgersIndex extends React.Component {
                   <div className="control">
                     <input
                       placeholder="Search"
-                      className="input  is-fullwidth is-primary"
+                      className="input  is-fullwidth"
                       onKeyUp={this.handleKeyUp}/>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ class BurgersIndex extends React.Component {
                 {/* ORDER BY */}
                 <div className="field">
                   <label className="label">Order by:</label>
-                  <div className="select is-fullwidth is-primary">
+                  <div className="select is-fullwidth">
                     <select onChange={this.handleChangeOrder}>
                       <option value="rating|desc">Higher Rating first</option>
                       <option value="rating|asc">Lower Rating first</option>
@@ -157,7 +157,7 @@ class BurgersIndex extends React.Component {
                     <div className="control">
                       <input
                         placeholder="Search for weird and wonderful ingredients"
-                        className="input  is-fullwidth is-primary"
+                        className="input  is-fullwidth is-warning"
                         onKeyUp={this.handleKeyUpIngredients}/>
                     </div>
                   </div>

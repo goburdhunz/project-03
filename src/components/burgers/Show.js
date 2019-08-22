@@ -147,18 +147,11 @@ class BurgersShow extends React.Component {
 
               </div>
             </div>
-            <div className="column ">
+            <div className="column is-half-desktop">
               <div className="tile is-ancestor">
                 <article className="tile is-child">
                   <div className="content burgerdescription">
                     <header className="title is-1">{this.state.burger.name}</header>
-                    {Auth.isAuthenticated() && <div className="buttons is-right">
-                      <Link
-                        className="button"
-                        to={`/burgers/${this.state.burger._id}/edit`}
-                      >Edit</Link>
-                      <button className="button is-danger" onClick={this.handleDeleteBurger}>Delete</button>
-                    </div>}
                     <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £ {this.normalisePrice(this.state.burger.price)}</p>
                     <hr/>
                     <p className="subtitle"> <span className="has-text-weight-semibold">Ingredients: </span>
@@ -181,9 +174,18 @@ class BurgersShow extends React.Component {
 
               </div>
 
+              <br/>
+
+              {Auth.isAuthenticated() && <div className="buttons is-right">
+                <Link
+                  className="button"
+                  to={`/burgers/${this.state.burger._id}/edit`}
+                >Edit</Link>
+                <button className="button is-danger" onClick={this.handleDeleteBurger}>Delete</button>
+              </div>}
 
               <div className="columns">
-                <div className="column is-half">
+                <div className="column is-half-desktop">
                   {this.state.burger.comments.map(comment =>
                     <Comment
                       key={comment._id} {...comment} handledelete={this.handleDeleteComment}

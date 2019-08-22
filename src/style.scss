@@ -31,6 +31,28 @@ button.closeModal {
   background:#f0f0f0;
 }
 
+div.column.is-two-thirds-tablet.is-two-thirds-widescreen.is-two-thirds-desktop.top-burgers {
+  margin-left: 25px;
+}
+
+div.card-content {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 5px;
+}
+
+div.card-header-title {
+  padding: 8px;
+}
+
+span {
+img.icon{
+ margin-left: 2px;
+ margin-right: 2px;
+}
+}
+
 
 .top-burgers {
   margin-right: 20px;
@@ -477,4 +499,8 @@ $circle: 50%;
 .linebreaker {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.aboutus {
+  margin-top: 25px;
 }
