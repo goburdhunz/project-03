@@ -47,7 +47,8 @@ class Home extends React.Component {
                         rating={burger.rating}
                         price={burger.price}
                         restaurant={burger.restaurant.name}
-                      />
+                        isVegetarian={burger.isVegetarian}
+                        isVegan={burger.isVegan}/>
                     </Link>
                   </div>
                 )}
