@@ -127,13 +127,8 @@ class BurgersIndex extends React.Component {
                   <label className="label">Order by:</label>
                   <div className="select is-fullwidth is-primary">
                     <select onChange={this.handleChangeOrder}>
-<<<<<<< HEAD
                       <option value="rating|desc">Higher Rating first</option>
                       <option value="rating|asc">Lower Rating first</option>
-=======
-                    <option value="rating|asc">Lower Rating first</option>
-                    <option value="rating|desc">Higher Rating first</option>
->>>>>>> cd239a1ac18d71532e90ed252a477cff51392c33
                       <option value="price|asc">Price Low first</option>
                       <option value="price|desc">Price High first</option>
                     </select>
