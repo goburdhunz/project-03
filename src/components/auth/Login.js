@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const customStyles = {
   content: {
+    width: '25%',
     top: '50%',
     left: '50%',
     right: 'auto',
@@ -84,9 +85,9 @@ class Login extends React.Component {
           shouldCloseOnOverlayClick={true}
         >
           <h2 ref={subtitle => this.subtitle = subtitle}></h2>
-          <button className="closeModal is-warning" onClick={this.closeModal}>X</button>
+          <button className="closeModal is-warning" onClick={this.closeModal}>☓</button>
           <div className="container">
-            <form onSubmit={this.handleSubmit}>
+            <form className="loginform" onSubmit={this.handleSubmit}>
               <div className="field">
                 <label className="label">Email</label>
                 <div className="control">
@@ -113,7 +114,7 @@ class Login extends React.Component {
                 {this.state.error && <small className="help is-danger">{this.state.error}</small>}
               </div>
 
-              <button className="button is-danger">Submit</button>
+              <button className="button is-danger loginsubmit">Submit</button>
             </form>
           </div>
         </Modal>

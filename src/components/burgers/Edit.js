@@ -499,13 +499,15 @@ class Edit extends React.Component {
 
           <div className="field">
             <label className="label">Description</label>
-            <input
-              className="textarea"
-              name="description"
-              placeholder="eg: This burger is made from 100% Angus beef with Stilton Cheese and a luxurious slather of mayonnaise and mustard. It is complimented by a generous layer of pickles and fied onions."
-              value={this.state.formData.description || ''}
-              onChange={this.handleChange}
-            />
+            <div className="control">
+              <textarea
+                className="textarea"
+                name="description"
+                placeholder="eg: This burger is made from 100% Angus beef with Stilton Cheese and a luxurious slather of mayonnaise and mustard. It is complimented by a generous layer of pickles and fied onions."
+                value={this.state.formData.description || ''}
+                onChange={this.handleChange}
+              />
+            </div>
             {this.state.errors.description && <small className="help is-danger">{this.state.errors.description}</small>}
           </div>
 
