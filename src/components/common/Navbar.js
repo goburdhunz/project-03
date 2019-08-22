@@ -42,7 +42,7 @@ class Navbar extends React.Component {
     }
 
     return (
-      <section className="hero is-dark is-bold is-small">
+      <section className="hero is-bold is-small">
         <div className="hero-head">
           <nav className="navbar">
             <div className="container">
@@ -61,7 +61,7 @@ class Navbar extends React.Component {
                 </a>
               </div>
               <div className="container hero-body">
-                <h1 className="title headertitlesize font-effect-neon">
+                <h1 className="title is-primary headertitlesize ">
                  BurgerRator
                 </h1>
                 <h2 className="subtitle headersubtitlesize">
@@ -90,7 +90,7 @@ class Navbar extends React.Component {
         <div className="hero-foot">
           <nav className="tabs is-boxed ">
             <div className="container">
-              <ul>
+              <ul className="navigationlinks">
                 <li className={activeClass('/')}><Link to ="/">Home</Link></li>
                 <li className={activeClass('/nominate')}>{Auth.isAuthenticated() &&<Link to ="/nominate">Nominate</Link>}</li>
                 <li className={activeClass('/burgers')}><Link to ="/burgers">Browse</Link></li>

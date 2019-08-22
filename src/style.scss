@@ -8,7 +8,8 @@ button.closeModal {
   margin-top: 10px;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT|Pacifico&display=swap');
+
 
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
 
@@ -412,6 +413,9 @@ $circle: 50%;
   margin-bottom: 5px;
 }
 
+h1.title.headertitlesize:hover {
+  color: #fdc3bc;
+}
 
 h1.headertitlesize {
   font-size: 50px;
@@ -419,19 +423,23 @@ h1.headertitlesize {
 
 h2.headersubtitlesize {
   padding-top: 10px;
-  margin-left: 75px;
+  margin-left: 70px;
+  font-family: 'Pacifico';
 }
 
-.hero-body {
-
+.navigationlinks{
+  font-weight: bold;
 }
 
-.font-effect-neon {
-  font-family: 'Lato';
-  font-size: 8em;
-  text-align: center;
-  margin-right: 150px;
+.hero {
+background-color:#94b4b3;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT|Pacifico&display=swap');
+
+$family-primary: 'Old Standard TT';
 
 @import 'bulma';
+
+
 @import 'bulma-slider';

@@ -74,7 +74,7 @@ class Login extends React.Component {
   render() {
     return (
       <section className="section login-portal">
-        {!Auth.isAuthenticated() && <button className="button is-primary is-danger loginbutton" onClick={this.openModal}>Login</button>}
+        {!Auth.isAuthenticated() && <button className="button is-success loginbutton" onClick={this.openModal}>Login</button>}
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -85,7 +85,7 @@ class Login extends React.Component {
           shouldCloseOnOverlayClick={true}
         >
           <h2 ref={subtitle => this.subtitle = subtitle}></h2>
-          <button className="closeModal is-warning" onClick={this.closeModal}>☓</button>
+          <button className="closeModal is-warning" onClick={this.closeModal}>X</button>
           <div className="container">
             <form className="loginform" onSubmit={this.handleSubmit}>
               <div className="field">
