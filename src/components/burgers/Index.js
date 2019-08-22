@@ -37,7 +37,7 @@ class BurgersIndex extends React.Component {
       filterData: {
         searchTerm: '',
         searchTermIng: '',
-        sortTerm: 'price|asc',
+        sortTerm: 'rating|asc',
         ingredients: []
       },
       burgers: []
