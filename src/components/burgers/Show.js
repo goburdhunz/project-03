@@ -4,6 +4,7 @@ import Rating from 'react-rating'
 import Comment from '../common/Comment'
 import Auth from '../../lib/Auth'
 import { Link } from 'react-router-dom'
+import BeerMatch from './BeerMatch'
 import ReactMapboxGL, { Marker, ZoomControl } from 'react-mapbox-gl'
 import 'bulma'
 
@@ -112,6 +113,7 @@ class BurgersShow extends React.Component {
                   <div className="columns is-centered">
                     <div className="column has-text-centered">
                       <Map
+                        className="map"
                         style="mapbox://styles/mapbox/streets-v9"
                         containerStyle={{
                           height: '350px',
@@ -183,7 +185,7 @@ class BurgersShow extends React.Component {
                       <a className="button is-primary is-fullwidth"  href={this.state.burger.restaurant.website} rel="noopener noreferrer" target="_blank">🍽Try it!</a>
                     </div>
                     <div className="control">
-                      <button className="button is-primary is-fullwidth">🍺Find a beer for a perfect match!</button>
+                      <span><BeerMatch/></span>
                     </div>
                   </div>
                 </div>

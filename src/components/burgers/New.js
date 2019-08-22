@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
-
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import 'pretty-checkbox'
 import ReactFilestack from 'filestack-react'
 
@@ -105,7 +106,10 @@ class New extends React.Component {
     axios.post('/api/burgers', this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push('/burgers'))
+      .then(() => {
+        this.props.history.push('/burgers')
+        toast.success('Burger Nominated!')
+      })
       .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 

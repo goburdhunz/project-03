@@ -1,7 +1,13 @@
 
 button.closeModal {
-  margin-left: 180px;
+  margin-left: 255px;
 }
+
+.loginsubmit {
+  width: 280px;
+  margin-top: 10px;
+}
+
 
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
 
@@ -92,7 +98,7 @@ button.closeModal {
   display: flex;
   flex-wrap: wrap;
 }
-.login-button .login-portal{
+.login-button.login-portal{
   margin: 0px;
   padding: 0px;
 }
@@ -139,6 +145,10 @@ h1.title.toprated {
   width: 150px;
 }
 
+.map {
+  margin: auto;
+}
+
 h3.title.name {
   margin-bottom: 0;
 }
@@ -152,10 +162,254 @@ button.raterbutton {
   padding-top: 75px;
 }
 
+
+
+// Beer PopOut Styles
+
+.containerModalBeer {
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #FF3860;
+  color: white;
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:700px;
+  height: auto;
+  z-index: 1;
+}
+
+@media (max-width: 375px) {
+.containerModalBeer {
+    width:auto;
+  }
+}
+
+/* !!!BEWARE - Removes blue Chrome default border but creates ACCESSIBILITY issues BEWARE!!!*/
+.containerModalBeer:focus {
+  outline: 0;
+}
+
+
+
+
+.closeModalbeer {
+  background-color: #FFDD57;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  float: right;
+  border-style: none;
+  height: 20px;
+}
+
+.titlebeerModal {
+  color: white;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.subtitlebeer {
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+
+//pour beer
+$white: #FFFBEF;
+$drink: #FAAF25;
+$circle: 50%;
+
+* {
+  box-sizing: border-box;
+}
+
+.beerbox {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: none;
+  display: block;
+  margin: 10% auto 0;
+}
+
+.beer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+
+.cup {
+  position: absolute;
+  left: 15%;
+  bottom: 0;
+  width: 60%;
+  height: 75%;
+  background: none;
+  border: 8px solid $white;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 10px;
+}
+
+.liquid {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 90%;
+  height: 80%;
+  background: $drink;
+  border-bottom-right-radius: 35px;
+  border-bottom-left-radius: 35px;
+}
+
+.stripe-1 {
+  position: absolute;
+  bottom: 19%;
+  left: 18%;
+  width: 8%;
+  height: 60%;
+  border-radius: 50px;
+  background: $white;
+}
+
+.stripe-2 {
+  position: absolute;
+  bottom: 19%;
+  left: 45%;
+  width: 9%;
+  height: 60%;
+  border-radius: 50px;
+  background: $white;
+}
+
+.stripe-3 {
+  position: absolute;
+  bottom: 19%;
+  right: 18%;
+  width: 8%;
+  height: 60%;
+  border-radius: 50px;
+  background: $white;
+}
+
+.cup-holder {
+  position: absolute;
+  top: 35%;
+  right: 10%;
+  width: 35%;
+  height: 45%;
+  background: none;
+  border: 8px solid $white;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: $circle;
+  -webkit-clip-path: polygon(56% 0, 100% 0, 100% 100%, 56% 100%);
+  clip-path: polygon(56% 0, 100% 0, 100% 100%, 56% 100%);
+}
+
+.foam {
+  position: absolute;
+  left: 15%;
+  top: 8%;
+  width: 60%;
+  height: 25%;
+  transform: scale(1.1);
+}
+
+.foam-1 {
+  position: absolute;
+  left: 8%;
+  bottom: -2%;
+  width: 32%;
+  height: 70%;
+  border-radius: $circle;
+  border-bottom-left-radius: 0;
+  border: 8px solid $white;
+  -webkit-clip-path: polygon(0 65%, 0 0, 75% 0, 75% 25%);
+  clip-path: polygon(0 65%, 0 0, 75% 0, 75% 25%);
+}
+
+.foam-2 {
+  position: absolute;
+  left: 29%;
+  bottom: 0;
+  width: 40%;
+  height: 85%;
+  border-radius: $circle;
+  border: 8px solid $white;
+  -webkit-clip-path: polygon(0 45%, 0 0, 100% 0, 100% 45%);
+  clip-path: polygon(0 45%, 0 0, 100% 0, 100% 45%);
+}
+
+.foam-3 {
+  position: absolute;
+  right: 10%;
+  bottom: -2%;
+  width: 32%;
+  height: 70%;
+  border-radius: $circle;
+  border-bottom-left-radius: 0;
+  border: 8px solid $white;
+  -webkit-clip-path: polygon(0 65%, 0 0, 75% 0, 75% 25%);
+  clip-path: polygon(0 65%, 0 0, 75% 0, 75% 25%);
+  transform: scaleX(-1);
+}
+
+.bubbles-1 {
+  position: absolute;
+  top: 5%;
+  right: 38%;
+  width: 8%;
+  height: 8%;
+  background: $white;
+  border-radius: $circle;
+  transition: all 0.5s;
+  animation: bubbling 2s infinite linear;
+}
+
+.bubbles-2 {
+  position: absolute;
+  top: 0%;
+  left: 38%;
+  width: 8%;
+  height: 8%;
+  background: $white;
+  border-radius: $circle;
+  transition: all 0.5s;
+  animation: bubbling 1s infinite linear;
+}
+
+.bubbles-3 {
+  position: absolute;
+  top: 0%;
+  left: 25%;
+  width: 8%;
+  height: 8%;
+  background: $white;
+  border-radius: $circle;
+  transition: all 0.5s;
+  animation: bubbling 2s infinite linear;
+}
+
+@keyframes bubbling {
+  0% {
+    transform: scale(1) tanslateY(0);
+  }
+
+  100%{
+     transform: scale(0) translate(0, -250px)
+  }
+}
+
 .linebreaker {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+
+
 
 @import 'bulma';
 @import 'bulma-slider';
