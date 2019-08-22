@@ -188,19 +188,6 @@ class BurgersShow extends React.Component {
                     />
                   )}
                 </div>
-<<<<<<< HEAD
-=======
-                <div className="column">
-                  <div className="buttons are-medium">
-                    <div className="control">
-                      <a className="button is-primary is-fullwidth"  href={this.state.burger.restaurant.website} rel="noopener noreferrer" target="_blank">🍽Try it!</a>
-                    </div>
-                    <div className="control">
-                      <span><BeerMatch/></span>
-                    </div>
-                  </div>
-                </div>
->>>>>>> development
               </div>
               {Auth.isAuthenticated() && <form className="formfield" onSubmit={this.handleSubmit}>
                 <hr />
