@@ -22,7 +22,6 @@ class BurgersShow extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
     this.handleDeleteBurger = this.handleDeleteBurger.bind(this)
-    this.calculateUserRatingAverage = this.calculateUserRatingAverage.bind(this)
   }
 
   componentDidMount() {
@@ -35,14 +34,7 @@ class BurgersShow extends React.Component {
     return priceResult
   }
 
-  calculateUserRatingAverage() {
-    if(this.comments.length === 0) return 0
-    return this.comments.userRating.reduce((acc, rating) => rating + acc, 0) / this.comments.length
-  }
-
   handleChange(e) {
-    // console.log(e.target.name)
-    // console.log(e.target.value)
     const formData = {...this.state.formData, [e.target.name]: e.target.value}
     this.setState({formData})
   }
@@ -75,7 +67,7 @@ class BurgersShow extends React.Component {
   }
 
   render() {
-    console.log(this.state.formData)
+    console.log(this.state.formData.userRating)
     if(!this.state.burger) return null
     return(
       <section className="section">
@@ -87,7 +79,21 @@ class BurgersShow extends React.Component {
                   <img src={this.state.burger.image} alt={this.state.burger.name} />
                 </figure>
               </div>
-              <h2 className="title is-2 has-text-centered">
+              <h2 className="title is-3 has-text-centered">
+                <h3>User Rating:</h3>
+                <Rating
+                  emptySymbol= {<img src="https://i.imgur.com/931P2ih.png" className="image is-48x48"/>}
+                  fullSymbol= {<img src="https://i.imgur.com/f00MSST.png" className="image is-48x48"/>}
+                  fractions={2}
+                  initialRating={this.state.burger.avgUserRating}
+                  readonly={true}
+                  quiet={false}
+                />
+                <h5>Based on {this.state.burger.totalUsers} ratings</h5>
+              </h2>
+              <hr />
+              <h2 className="title is-3 has-text-centered">
+                <h3>Our Rating:</h3>
                 <Rating
                   emptySymbol= {<img src="https://i.imgur.com/931P2ih.png" className="image is-48x48"/>}
                   fullSymbol= {<img src="https://i.imgur.com/f00MSST.png" className="image is-48x48"/>}
@@ -134,6 +140,8 @@ class BurgersShow extends React.Component {
                     <header className="title is-1">{this.state.burger.name}</header>
                     <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £
                       {this.normalisePrice(this.state.burger.price)}</p>
+                    <p className="subtitle"><span className="has-text-weight-semibold">Average User Rating: </span>
+                      {this.state.burger.avgUserRating}</p>
                     <p className="subtitle"><span className="has-text-weight-semibold">Ingredients:</span>
                       {this.state.burger.ingredients.map(ingredient => ' ' + ingredient + ',')}</p>
 

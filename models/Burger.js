@@ -32,8 +32,27 @@ const burgerSchema = new mongoose.Schema({
   restaurant: restaurantSchema,
   comments: [commentSchema],
   user: { type: mongoose.Schema.ObjectId, ref: 'User' }
+}, {
+  toJSON: {
+    virtuals: true
+  }
 })
 
+function roundToHalf(num) {
+  return Math.round(num * 2) / 2
+}
+
+burgerSchema.virtual('avgUserRating')
+  .get(function getAvgUserRating() {
+    if(!this.comments) return 0
+    return roundToHalf(this.comments.reduce((total, comment) => total + comment.userRating, 0) / this.comments.length)
+  })
+
+burgerSchema.virtual('totalUsers')
+  .get(function getTotalUsers() {
+    if(!this.comments) return 0
+    return this.comments.length
+  })
 
 restaurantSchema.pre('validate', function parsepostcode(done) {
   if(!this.isModified('postcode')) return done()
