@@ -100,6 +100,7 @@ class BurgersShow extends React.Component {
                   <div className="columns is-centered">
                     <div className="column has-text-centered">
                       <Map
+                        className="map"
                         style="mapbox://styles/mapbox/streets-v9"
                         containerStyle={{
                           height: '350px',
