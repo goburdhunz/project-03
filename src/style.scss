@@ -8,6 +8,7 @@ button.closeModal {
   margin-top: 10px;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
 
@@ -104,8 +105,11 @@ button.closeModal {
 }
 
 .registerbutton, .loginbutton {
-  width: 80px;
-  margin-top: 5px;
+  width: 100px;
+}
+
+div.navbar-menu {
+  margin-bottom: 100px;
 }
 
 h1.title.toprated {
@@ -409,7 +413,25 @@ $circle: 50%;
 }
 
 
+h1.headertitlesize {
+  font-size: 50px;
+}
 
+h2.headersubtitlesize {
+  padding-top: 10px;
+  margin-left: 75px;
+}
+
+.hero-body {
+
+}
+
+.font-effect-neon {
+  font-family: 'Lato';
+  font-size: 8em;
+  text-align: center;
+  margin-right: 150px;
+}
 
 @import 'bulma';
 @import 'bulma-slider';

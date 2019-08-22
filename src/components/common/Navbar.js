@@ -42,7 +42,7 @@ class Navbar extends React.Component {
     }
 
     return (
-      <section className="hero is-primary is-bold is-small">
+      <section className="hero is-dark is-bold is-small">
         <div className="hero-head">
           <nav className="navbar">
             <div className="container">
@@ -61,10 +61,10 @@ class Navbar extends React.Component {
                 </a>
               </div>
               <div className="container hero-body">
-                <h1 className="title">
+                <h1 className="title headertitlesize font-effect-neon">
                  BurgerRator
                 </h1>
-                <h2 className="subtitle">
+                <h2 className="subtitle headersubtitlesize">
                  Burgers Rated by YOU
                 </h2>
                 <br/>
