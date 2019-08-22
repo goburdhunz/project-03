@@ -1,3 +1,5 @@
+@import 'bulma';
+@import 'bulma-slider';
 
 button.closeModal {
   margin-left: 255px;
@@ -29,11 +31,28 @@ button.closeModal {
   background:#f0f0f0;
 }
 
-.homepagebreak {
-  background-color: grey;
-  margin-top: 0px;
-  margin-bottom: 2px;
+div.column.is-two-thirds-tablet.is-two-thirds-widescreen.is-two-thirds-desktop.top-burgers {
+  margin-left: 25px;
 }
+
+div.card-content {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 5px;
+}
+
+div.card-header-title {
+  padding: 8px;
+}
+
+span {
+img.icon{
+ margin-left: 2px;
+ margin-right: 2px;
+}
+}
+
 
 .top-burgers {
   margin-right: 20px;
@@ -173,6 +192,19 @@ button.raterbutton {
   padding-top: 75px;
 }
 
+a.button.is-warning.is-fullwidth {
+  font-size: 20px;
+}
+
+span {
+img.image.is-48x48 {
+ margin-left: 2px;
+ margin-right: 2px;
+ margin-top: 10px;
+ margin-bottom: 10px;
+}
+}
+
 
 
 // Beer PopOut Styles
@@ -204,6 +236,10 @@ button.raterbutton {
   }
 }
 
+article.tile.is-child.notification {
+  padding: 20px 20px 20px 20px;
+}
+
 .ReactModal__Overlay{
   z-index: 10;
 }
@@ -217,6 +253,31 @@ button.button.is-success {
   height: 100px;
   width: 100px;
   border-radius: 50px;
+}
+
+section.section.login-portal {
+  padding: 0px;
+}
+
+@media (min-width: 1000px) {
+button.button.is-primary.is-danger.loginbutton {
+  margin-top: -45px;
+  }
+button.button.is-info.registerbutton {
+  margin-top: -78px;
+}
+}
+
+.burgerdescription {
+  padding-left: 20px;
+}
+
+.tags {
+  margin-top: 10px;
+
+  .tag {
+    font-size: 20px;
+  }
 }
 
 
@@ -284,6 +345,14 @@ $circle: 50%;
   border-bottom-right-radius: 50px;
   border-bottom-left-radius: 50px;
   border-top-right-radius: 10px;
+}
+
+div.card-content {
+  padding: 8px;
+}
+
+div.card-header-title {
+  padding: 8px;
 }
 
 .liquid {
@@ -440,8 +509,6 @@ $circle: 50%;
   margin-bottom: 5px;
 }
 
-
-
-
-@import 'bulma';
-@import 'bulma-slider';
+.aboutus {
+  margin-top: 25px;
+}

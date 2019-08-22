@@ -6,7 +6,7 @@ class About extends React.Component {
   render() {
     return (
       <div className="container">
-        <header className="title is-1">Meet the team behind BurgerRator!</header>
+        <header className="title is-1 has-text-centered aboutus">Meet the team behind BurgerRator!</header>
         <div className="columns is-centered">
           <div className="column is-one-fifth">
             <div className="box card-equal-height">
