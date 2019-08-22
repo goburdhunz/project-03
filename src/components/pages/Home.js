@@ -61,7 +61,7 @@ class Home extends React.Component {
               <Map
                 style="mapbox://styles/mapbox/streets-v9"
                 containerStyle={{
-                  height: '700px',
+                  height: '400px',
                   width: '400px'
                 }}
                 center = {[-0.1240,51.5117]}
