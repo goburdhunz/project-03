@@ -22,7 +22,7 @@ class BeerMatch extends React.Component {
 
     super()
     this.state = {
-      beer: [] ,
+      beer: {},
       modalIsOpen: false
     }
 
@@ -40,7 +40,7 @@ class BeerMatch extends React.Component {
 
   componentDidMount() {
     axios.get('https://api.punkapi.com/v2/beers/random')
-      .then(res => this.setState({ beer: res.data }))
+      .then(res => this.setState({ beer: res.data[0] }))
   }
 
 
@@ -59,17 +59,49 @@ class BeerMatch extends React.Component {
           contentLabel="Example Modal"
           shouldCloseOnEsc={true}
           shouldCloseOnOverlayClick={true}
+          className="containerModalBeer"
         >
-          <h2 ref={subtitle => this.subtitle = subtitle}></h2>
-          <button className="closeModal is-warning" onClick={this.closeModal}>X</button>
+
           <div className="container">
 
 
-            <div><span id="beername">{`${this.state.beer.name}`}</span></div>
-            <div><span id="beerdescripton">{`${this.state.beer.description}`}</span></div>
-            <div><span id="beerfood">{`${this.state.beer.food_pairing}`}</span></div>
+            <div className="columns">
+              <div className="column is-two-thirds">
+                <h1 className="titlebeerModal">{`${this.state.beer.name}`}</h1>
+                <br/>
+                <p>{`${this.state.beer.description}`}</p>
+              </div>
+              <div className="column is-auto">
+                <button className="closeModalbeer" onClick={this.closeModal}><i className="fa fa-times" aria-hidden="true"></i></button>
+
+                <div className="beerbox">
+                  <div className="beer">
+                    <div className="cup">
+                      <div className="liquid"></div>
+                      <div className="stripe-1"></div>
+                      <div className="stripe-2"></div>
+                      <div className="stripe-3"></div>
+                    </div>
+
+                    <div className="cup-holder"></div>
+
+                    <div className="foam">
+                      <div className="foam-1"></div>
+                      <div className="foam-2"></div>
+                      <div className="foam-3"></div>
+                    </div>
+                    <div className="bubbles-1"></div>
+                    <div className="bubbles-2"></div>
+                    <div className="bubbles-3"></div>
+                  </div>
+                </div>
 
 
+              </div>
+            </div>
+            <hr/>
+            <h2 className="subtitlebeer">Other foods to match your meal with</h2>
+            <p>{`${this.state.beer.food_pairing}`}</p>
           </div>
         </Modal>
 
