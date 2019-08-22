@@ -103,10 +103,16 @@ class BurgersShow extends React.Component {
                   readonly={true}
                   quiet={false}
                 />
+                <span className="beerbutton">
+                  <BeerMatch/>
+                </span>
+
               </h2>
-              <hr />
+
+              <hr/>
+
               <div className="tile is-parent">
-                <article className="tile is-child notification is-primary ">
+                <article className="tile is-child notification">
                   <p className="subtitle is-3">Find it at</p>
                   <p className="title is-2 has-text-dark"> {this.state.burger.restaurant.name}</p>
                   <p className="subtitle">{this.state.burger.restaurant.address}</p>
@@ -117,7 +123,7 @@ class BurgersShow extends React.Component {
                         style="mapbox://styles/mapbox/streets-v9"
                         containerStyle={{
                           height: '350px',
-                          width: '350px'
+                          width: 'auto'
                         }}
                         center = {[this.state.burger.restaurant.longitude, this.state.burger.restaurant.latitude]}
                         zoom = {[13]}
@@ -134,12 +140,15 @@ class BurgersShow extends React.Component {
                       </Map>
                     </div>
                   </div>
+                  <a className="button is-warning is-fullwidth"  href={this.state.burger.restaurant.website} rel="noopener noreferrer" target="_blank">Try it!</a>
                 </article>
+
+
               </div>
             </div>
             <div className="column">
               <div className="tile is-ancestor">
-                <article className="tile is-child notification is-primary">
+                <article className="tile is-child">
                   <div className="content">
                     <header className="title is-1">{this.state.burger.name}</header>
                     {Auth.isAuthenticated() && <div className="buttons is-right">
@@ -178,16 +187,6 @@ class BurgersShow extends React.Component {
                       key={comment._id} {...comment} handledelete={this.handleDeleteComment}
                     />
                   )}
-                </div>
-                <div className="column">
-                  <div className="buttons are-medium">
-                    <div className="control">
-                      <a className="button is-primary is-fullwidth"  href={this.state.burger.restaurant.website} rel="noopener noreferrer" target="_blank">🍽Try it!</a>
-                    </div>
-                    <div className="control">
-                      <span><BeerMatch/></span>
-                    </div>
-                  </div>
                 </div>
               </div>
               {Auth.isAuthenticated() && <form className="formfield" onSubmit={this.handleSubmit}>
