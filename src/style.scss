@@ -1,3 +1,6 @@
+body {
+  background-color:  white;
+}
 
 button.closeModal {
   margin-left: 255px;
@@ -7,8 +10,6 @@ button.closeModal {
   width: 280px;
   margin-top: 10px;
 }
-
-@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT|Pacifico&display=swap');
 
 
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
@@ -20,21 +21,99 @@ button.closeModal {
 .homepage-container {
   margin: auto;
   padding-left: 30px;
-  padding-right: 30px;
-  padding-top: -10px;
 }
 
 .side-map {
-  background-color: grey;
-  margin-right: 25px;
+  margin-left: 260px;
+  margin-top: 30px;
   border-radius: 5px;
-  background:#f0f0f0;
+  padding-bottom: 40px;
 }
 
-.homepagebreak {
-  background-color: grey;
-  margin-top: 0px;
-  margin-bottom: 2px;
+.mapgif {
+  display: flex;
+}
+
+.side-map.h2 {
+  margin-left: 260px;
+}
+
+.side-map {
+  margin-left: 28px;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+.burgervan {
+  width: 500px;
+  height: 400px;
+  display: flex;
+  margin-left: 35px;
+}
+
+div.container.registercontainer {
+  max-width: 400px;
+}
+
+button.button.registersubmitbutton {
+  margin-top: 10px;
+  width: 400px;
+}
+
+header.title.is-1 {
+  margin-top: 30px;
+  text-align: center;
+  font-family: 'Pacifico'
+}
+
+header.title.is-3 {
+  margin-top: 30px;
+  text-align: center;
+  font-family: 'Pacifico'
+}
+
+
+div.main-show-container {
+  width: 500px;
+  margin-left: 150px;
+  margin-top: 10px;
+}
+
+article.main-show-container-2 {
+  width: 350px;
+  height: 650px;
+  text-align: center;
+}
+
+a.button.editbutton {
+  width: 150px;
+  margin-left: 90px;
+}
+
+button.button.deleteburgerbutton.is-danger {
+  width: 150px;
+}
+
+p.subtitle.priceincard {
+  padding-top: 15px;
+}
+
+div.burgersecondaryinfo {
+  margin-top: 50px;
+  height: auto;
+  margin-left: 150px;
+  width: 500px;
+  font-weight: bold;
+}
+div.burgersecondaryinfo.content {
+  font-weight: bold;
+  height: 400px;
+  width: 500px;
+}
+
+div.buttons.are-medium.externalfeaturebuttons {
+  height: 80px;
+  margin-left: 90px;
 }
 
 .top-burgers {
@@ -435,11 +514,11 @@ h2.headersubtitlesize {
 background-color:#94b4b3;
 }
 
+
 @import url('https://fonts.googleapis.com/css?family=Old+Standard+TT|Pacifico&display=swap');
 
-$family-primary: 'Old Standard TT';
+$family-primary: "Old Standard TT";
 
 @import 'bulma';
-
 
 @import 'bulma-slider';

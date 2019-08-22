@@ -6,7 +6,7 @@ import Auth from '../../lib/Auth'
 import { Link } from 'react-router-dom'
 import BeerMatch from './BeerMatch'
 import ReactMapboxGL, { Marker, ZoomControl } from 'react-mapbox-gl'
-import 'bulma'
+// import 'bulma'
 
 
 const Map = ReactMapboxGL({ accessToken: process.env.MAPBOX_TOKEN })
@@ -106,7 +106,7 @@ class BurgersShow extends React.Component {
               </h2>
               <hr />
               <div className="tile is-parent">
-                <article className="tile is-child notification is-primary ">
+                <article className="tile is-child notification is-primary">
                   <p className="subtitle is-3">Find it at</p>
                   <p className="title is-2 has-text-dark"> {this.state.burger.restaurant.name}</p>
                   <p className="subtitle">{this.state.burger.restaurant.address}</p>
@@ -137,22 +137,17 @@ class BurgersShow extends React.Component {
                 </article>
               </div>
             </div>
-            <div className="column">
-              <div className="tile is-ancestor">
-                <article className="tile is-child notification is-primary">
-                  <div className="content">
-                    <header className="title is-1">{this.state.burger.name}</header>
-                    {Auth.isAuthenticated() && <div className="buttons is-right">
-                      <Link
-                        className="button"
-                        to={`/burgers/${this.state.burger._id}/edit`}
-                      >Edit</Link>
-                      <button className="button is-danger" onClick={this.handleDeleteBurger}>Delete</button>
-                    </div>}
-                    <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £ {this.normalisePrice(this.state.burger.price)}</p>
+            <div>
+              <div className="tile main-show-container">
+                <article className="tile is-child notification is-primary main-show-container-2">
+                  <div className="burgervitalinfo">
+                    <header className="title is-3">{this.state.burger.name}</header>
+
+                    <p className="subtitle priceincard"><span className="has-text-weight-semibold">Price: </span> £ {this.normalisePrice(this.state.burger.price)}</p>
                     <p className="subtitle"> <span className="has-text-weight-semibold">Ingredients: </span>
                       <ul>{this.state.burger.ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}</ul>
                     </p>
+
                     <p className="subtitle"><span className="has-text-weight-semibold">Vegetarian: </span>
                       {(!!this.state.burger.isVegetarian || !!this.state.burger.isVegan) && <img src="https:/i.imgur.com/8RN8Why.png" className="icon"/>}
                       {(!this.state.burger.isVegetarian && !this.state.burger.isVegan) && <span
@@ -163,13 +158,28 @@ class BurgersShow extends React.Component {
                       {!!this.state.burger.isVegan && <img src="https://i.imgur.com/8RN8Why.png" className="icon"
                       />}
                     </p>
-
-                    <div className="subtitle">{this.state.burger.description}</div>
+                    <div className="buttons are-medium externalfeaturebuttons">
+                      <div className="control">
+                        <a className="button is-black is-fullwidth"  href={this.state.burger.restaurant.website} rel="noopener noreferrer" target="_blank">🍽Try it!</a>
+                      </div>
+                      <div className="control">
+                        <span><BeerMatch/></span>
+                      </div>
+                    </div>
+                    {Auth.isAuthenticated() && <div className="buttons is-center">
+                      <Link
+                        className="button editbutton"
+                        to={`/burgers/${this.state.burger._id}/edit`}
+                      >Edit</Link>
+                      <button className="button deleteburgerbutton is-danger" onClick={this.handleDeleteBurger}>Delete</button>
+                    </div>}
                   </div>
                 </article>
-
               </div>
-
+              <hr />
+              <div className="burgersecondaryinfo">
+                <div className="content">{this.state.burger.description}</div>
+              </div>
 
               <div className="columns">
                 <div className="column is-half">
@@ -178,16 +188,6 @@ class BurgersShow extends React.Component {
                       key={comment._id} {...comment} handledelete={this.handleDeleteComment}
                     />
                   )}
-                </div>
-                <div className="column">
-                  <div className="buttons are-medium">
-                    <div className="control">
-                      <a className="button is-primary is-fullwidth"  href={this.state.burger.restaurant.website} rel="noopener noreferrer" target="_blank">🍽Try it!</a>
-                    </div>
-                    <div className="control">
-                      <span><BeerMatch/></span>
-                    </div>
-                  </div>
                 </div>
               </div>
               {Auth.isAuthenticated() && <form className="formfield" onSubmit={this.handleSubmit}>

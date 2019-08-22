@@ -61,7 +61,7 @@ class Navbar extends React.Component {
                 </a>
               </div>
               <div className="container hero-body">
-                <h1 className="title is-primary headertitlesize ">
+                <h1 className="title headertitlesize ">
                  BurgerRator
                 </h1>
                 <h2 className="subtitle headersubtitlesize">
