@@ -20,7 +20,7 @@ class BurgersShow extends React.Component {
     this.normalisePrice = this.normalisePrice.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleDelete = this.handleDelete.bind(this)
+    this.handleDeleteComment = this.handleDeleteComment.bind(this)
     this.handleDeleteBurger = this.handleDeleteBurger.bind(this)
   }
 
@@ -50,7 +50,7 @@ class BurgersShow extends React.Component {
       .then(res => this.setState({burger: res.data, formData: {userRating: '', content: ''}}))
   }
 
-  handleDelete(e) {
+  handleDeleteComment(e) {
     e.preventDefault()
 
     axios.delete(`/api/burgers/${this.props.match.params.id}/comments/${e.target.id}`, {
@@ -153,7 +153,7 @@ class BurgersShow extends React.Component {
                 <div className="column is-half">
                   {this.state.burger.comments.map(comment =>
                     <Comment
-                      key={comment._id} {...comment} handledelete={this.handleDelete}
+                      key={comment._id} {...comment} handledelete={this.handleDeleteComment}
                     />
                   )}
                 </div>

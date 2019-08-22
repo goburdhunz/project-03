@@ -26,7 +26,7 @@ const Comment = ({user, createdAt, content, handledelete, _id,    userRating}) =
           </span>
         </div>
       </div>
-      {Auth.isAuthenticated() && <div className="media-right">
+      {Auth.isCurrentUser(user) && <div className="media-right">
         <button id={_id} onClick={handledelete} className="delete"></button>
       </div>}
     </article>
