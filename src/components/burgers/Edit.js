@@ -3,6 +3,23 @@ import axios from 'axios'
 import Auth from '../../lib/Auth'
 
 import 'pretty-checkbox'
+import ReactFilestack from 'filestack-react'
+
+const imageKEY = process.env.imageKEY
+
+const imageUpload = {
+  accept: 'image/*',
+  options: {
+    resize: {
+      width: 100
+    }
+  },
+  transformations: {
+    crop: false,
+    circle: false,
+    rotate: false
+  }
+}
 
 class Edit extends React.Component {
 
@@ -24,6 +41,7 @@ class Edit extends React.Component {
     this.handleCheckbox = this.handleCheckbox.bind(this)
     this.handleIngredientCheckbox = this.handleIngredientCheckbox.bind(this)
     this.checkForIngredient = this.checkForIngredient.bind(this)
+    this.handleUploadImages= this.handleUploadImages.bind(this)
   }
 
   componentDidMount() {
@@ -49,6 +67,14 @@ class Edit extends React.Component {
     const formData = { ...this.state.formData, ingredients }
     this.setState({ formData })
   }
+
+  // handle Image Change
+  handleUploadImages(e) {
+    const formData = {...this.state.formData, image: e.filesUploaded[0].url}
+    this.setState({ formData })
+    document.getElementById('progressonedit').innerHTML = 'image changed'
+  }
+
 
   // handleChange
   handleChange(e) {
@@ -90,13 +116,21 @@ class Edit extends React.Component {
               <label className="label">Burger Image</label>
               <figure className="image is-half">
                 <div className="Dropzone upload-box">
-                  <input
-                    className="Fileinput"
-                    type="file"
-                    name="image"
-                    multiple
-                    onChange={this.handleChange}
-                  />
+
+                  <div className="uploadbutton">
+                    <ReactFilestack
+                      mode="transform"
+                      apikey={imageKEY}
+                      buttonClass="button"
+                      options={imageUpload}
+                      onSuccess={(e) => this.handleUploadImages(e)}
+                      preload={true}
+                    />
+                    <br/>
+                    <div><span id="progressonedit">{`${this.state.formData.name} image`}</span></div>
+
+                  </div>
+
                 </div>
               </figure>
               {this.state.errors.image && <small className="help is-danger">{this.state.errors.image}</small>}
