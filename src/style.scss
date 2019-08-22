@@ -1,7 +1,13 @@
 
 button.closeModal {
-  margin-left: 180px;
+  margin-left: 255px;
 }
+
+.loginsubmit {
+  width: 280px;
+  margin-top: 10px;
+}
+
 
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
 
@@ -92,7 +98,7 @@ button.closeModal {
   display: flex;
   flex-wrap: wrap;
 }
-.login-button .login-portal{
+.login-button.login-portal{
   margin: 0px;
   padding: 0px;
 }
@@ -397,11 +403,12 @@ $circle: 50%;
   }
 }
 
-
 .linebreaker {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+
 
 
 @import 'bulma';
