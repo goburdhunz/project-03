@@ -4,7 +4,7 @@ const { secret } = require('../config/environment')
 
 function registerRoute(req, res, next) {
   User.create(req.body)
-    .then(() => res.json({ message: 'Registration successful'}))
+    .then(() => res.json({ message: 'Registration successful. Login now to create, edit and comment on burgers!'}))
     .catch(next)
 }
 

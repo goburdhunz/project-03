@@ -1,8 +1,27 @@
 import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
-
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import 'pretty-checkbox'
+import ReactFilestack from 'filestack-react'
+
+const imageKEY = process.env.imageKEY
+
+const imageUpload = {
+  accept: 'image/*',
+  options: {
+    resize: {
+      width: 100
+    }
+  },
+  transformations: {
+    crop: false,
+    circle: false,
+    rotate: false
+  }
+}
+
 
 
 class New extends React.Component {
@@ -23,6 +42,7 @@ class New extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleCheckbox = this.handleCheckbox.bind(this)
     this.handleIngredientCheckbox = this.handleIngredientCheckbox.bind(this)
+    this.handleUploadImages= this.handleUploadImages.bind(this)
   }
 
 
@@ -39,10 +59,19 @@ class New extends React.Component {
     this.setState({ formData })
   }
 
+  handleUploadImages(e) {
+    const formData = {...this.state.formData, image: e.filesUploaded[0].url}
+    this.setState({ formData })
+    document.getElementById('progress').innerHTML = 'image chosen'
+  }
+
 
   handleChange(e) {
+    console.log(e.target.name)
+    console.log(e.target.value)
     const formData = { ...this.state.formData, [e.target.name]: e.target.value }
     this.setState({ formData})
+
   }
 
   handleRestaurantChange(e) {
@@ -51,12 +80,25 @@ class New extends React.Component {
     this.setState({ formData })
   }
 
+  // handlePostcodeChange(e) {
+  //   const restaurant = { ...this.state.formData.restaurant, [e.target.name]: e.target.value }
+  //   const formData = { ...this.state.formData, restaurant }
+  //
+  //   const re = /([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\s?[0-9][A-Za-z]{2})/
+  //
+  //   const valid = re.exec(e.target.value)
+  //
+  //   if(!valid) {
+  //     // ???
+  //   } else {
+  //     this.setState({ formData })
+  //   }
+  // }
+
   handleCheckbox(e) {
     const formData = { ...this.state.formData, [e.target.name]: e.target.checked }
     this.setState({ formData })
   }
-
-
 
   handleSubmit(e) {
     e.preventDefault()
@@ -64,9 +106,14 @@ class New extends React.Component {
     axios.post('/api/burgers', this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push('/burgers'))
+      .then(() => {
+        this.props.history.push('/burgers')
+        toast.success('Burger Nominated!')
+      })
       .catch(err => this.setState({ errors: err.response.data.errors }))
   }
+
+
 
 
   render() {
@@ -80,13 +127,21 @@ class New extends React.Component {
               <label className="label">Burger Image</label>
               <figure className="image is-half">
                 <div className="Dropzone upload-box">
-                  <input
-                    className="Fileinput"
-                    type="file"
-                    name="image"
-                    multiple
-                    onChange={this.handleChange}
-                  />
+
+                  <div className="uploadbutton">
+                    <ReactFilestack
+                      mode="transform"
+                      apikey={imageKEY}
+                      buttonClass="button"
+                      options={imageUpload}
+                      onSuccess={(e) => this.handleUploadImages(e)}
+                      preload={true}
+                    />
+                    <br/>
+                    <div><span id="progress"></span></div>
+
+                  </div>
+
                 </div>
               </figure>
               {this.state.errors.image && <small className="help is-danger">{this.state.errors.image}</small>}
@@ -414,20 +469,6 @@ class New extends React.Component {
               </div>
             </div>
 
-            <div className="option">
-              <div className="pretty p-default p-curve p-smooth p-round p-bigger">
-                <input
-                  type="checkbox"
-                  name="Weird & Wonderful"
-                  onChange={this.handleIngredientCheckbox}
-                />
-                <div className="state p-primary">
-                  <label>Weird & Wonderful</label>
-                </div>
-              </div>
-
-            </div>
-
             {this.state.errors.ingredients && <small className="help is-danger">{this.state.errors.ingredients}</small>}
           </div>
 
@@ -435,7 +476,7 @@ class New extends React.Component {
 
           <div className="field">
             <label className="label">Description</label>
-            <input
+            <textarea
               className="textarea"
               name="description"
               placeholder="eg: This burger is made from 100% Angus beef with Stilton Cheese and a luxurious slather of mayonnaise and mustard. It is complimented by a generous layer of pickles and fied onions."

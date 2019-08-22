@@ -1,12 +1,12 @@
 import React from 'react'
 import Rating  from 'react-rating'
 
-const Card = ({ name, image, rating, restaurant }) => {
+const Card = ({ name, image, rating, restaurant, price }) => {
   return (
-    <div className="card">
+    <div className="card card-equal-height">
       <div className="card-image">
-        <figure className="image is-4by3">
-          <img src={image} alt={name} />
+        <figure className="image">
+          <img src={image} alt={name} className="card-image-size"/>
         </figure>
       </div>
       <div className="card-header">
@@ -22,6 +22,7 @@ const Card = ({ name, image, rating, restaurant }) => {
             readonly
           />
         </h2>
+        <h2 className="content"><span className="has-text-weight-semibold">£ </span>{parseFloat(price).toFixed(2)}</h2>
         <h2 className="content">{restaurant}</h2>
       </div>
     </div>

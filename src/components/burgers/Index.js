@@ -127,13 +127,21 @@ class BurgersIndex extends React.Component {
                   <label className="label">Order by:</label>
                   <div className="select is-fullwidth is-primary">
                     <select onChange={this.handleChangeOrder}>
+<<<<<<< HEAD
                       <option value="rating|desc">Higher Rating first</option>
                       <option value="rating|asc">Lower Rating first</option>
+=======
+                    <option value="rating|asc">Lower Rating first</option>
+                    <option value="rating|desc">Higher Rating first</option>
+>>>>>>> cd239a1ac18d71532e90ed252a477cff51392c33
                       <option value="price|asc">Price Low first</option>
                       <option value="price|desc">Price High first</option>
                     </select>
                   </div>
                 </div>
+
+                <br/>
+                <hr/>
 
                 {/* INGREDIENTS */}
                 <div className="field">
@@ -149,6 +157,7 @@ class BurgersIndex extends React.Component {
                       options={ingredients}
                     />
                   </div>
+                  <br/>
                   <div className="field">
                     <div className="control">
                       <input
@@ -159,28 +168,47 @@ class BurgersIndex extends React.Component {
                   </div>
                 </div>
 
-                {/* VEGETARIAN */}
-                <div className="field">
-                  <label className="label">Vegetarian?</label>
-                  <input
-                    className="checkboxis-primary"
-                    type="checkbox"
-                    name="isVegetarian"
-                    checked={this.state.filterData.isVegetarian || false}
-                    onChange={this.handleCheckbox}
-                  />
+                <br/>
+                <hr/>
+
+                <div className ="vegan">
+                  <div className="field vegeterian-field-index">
+                    <div>
+                      <label className="label">Vegetarian</label>
+                      <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                        <input
+                          type="checkbox"
+                          name="isVegetarian"
+                          checked={this.state.filterData.isVegetarian || false}
+                          onChange={this.handleCheckbox}
+                        />
+                        <div className="state p-warning">
+                          <label> </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="field vegan-field">
+                    <div>
+                      <label className="label">Vegan</label>
+                      <div className="pretty p-default p-curve p-smooth p-round p-bigger">
+                        <input
+                          type="checkbox"
+                          name="isVegan"
+                          checked={this.state.filterData.isVegan || false}
+                          onChange={this.handleCheckbox}
+                        />
+                        <div className="state p-warning">
+                          <label> </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                {/* VEGAN */}
-                <div className="field">
-                  <label className="label">Vegan?</label>
-                  <input
-                    className="checkbox is-primary"
-                    type="checkbox"
-                    name="isVegan"
-                    checked={this.state.filterData.isVegan || false}
-                    onChange={this.handleCheckbox}
-                  />
-                </div>
+
+
+
               </form>
             </div>
 
@@ -197,6 +225,7 @@ class BurgersIndex extends React.Component {
                         name={burger.name}
                         image={burger.image}
                         rating={burger.rating}
+                        price={burger.price}
                         restaurant={burger.restaurant.name}/>
                     </Link>
                   </div>
