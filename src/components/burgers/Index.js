@@ -221,7 +221,9 @@ class BurgersIndex extends React.Component {
                         image={burger.image}
                         rating={burger.rating}
                         price={burger.price}
-                        restaurant={burger.restaurant.name}/>
+                        restaurant={burger.restaurant.name}
+                        isVegetarian={burger.isVegetarian}
+                        isVegan={burger.isVegan}/>
                     </Link>
                   </div>
                 )}
