@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-import { toast } from 'react-toastify'
 import { withRouter } from 'react-router-dom'
 import Modal from 'react-modal'
 import 'react-toastify/dist/ReactToastify.css'
@@ -50,7 +49,7 @@ class BeerMatch extends React.Component {
     console.log(this.state)
     return (
       <section className="section beer-match">
-        <button className="button is-primary is-danger loginbutton" onClick={this.openModal}>Beer Match</button>
+        <button className="button is-success" onClick={this.openModal}>Beer Match</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

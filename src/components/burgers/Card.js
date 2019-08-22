@@ -1,6 +1,7 @@
 import React from 'react'
 import Rating  from 'react-rating'
 
+
 const Card = ({ name, image, rating, restaurant, price }) => {
   return (
     <div className="card card-equal-height">
