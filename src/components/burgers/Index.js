@@ -37,7 +37,7 @@ class BurgersIndex extends React.Component {
       filterData: {
         searchTerm: '',
         searchTermIng: '',
-        sortTerm: 'price|asc',
+        sortTerm: 'rating|desc',
         ingredients: []
       },
       burgers: []
@@ -127,10 +127,10 @@ class BurgersIndex extends React.Component {
                   <label className="label">Order by:</label>
                   <div className="select is-fullwidth is-primary">
                     <select onChange={this.handleChangeOrder}>
+                      <option value="rating|desc">Higher Rating first</option>
+                      <option value="rating|asc">Lower Rating first</option>
                       <option value="price|asc">Price Low first</option>
                       <option value="price|desc">Price High first</option>
-                      <option value="rating|asc">Lower Rating first</option>
-                      <option value="rating|desc">Higher Rating first</option>
                     </select>
                   </div>
                 </div>
