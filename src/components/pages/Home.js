@@ -3,6 +3,7 @@ import Card from '../burgers/Card'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import ReactMapboxGL, { Marker } from 'react-mapbox-gl'
+import BeerMatch from '../burgers/BeerMatch'
 
 const Map = ReactMapboxGL({ accessToken: process.env.MAPBOX_TOKEN })
 
@@ -54,32 +55,39 @@ class Home extends React.Component {
             </div>
 
             <div className="column side-map">
-              <h2 className="subtitle">Find our top rated burgers as voted by you</h2>
-              <hr className="homepagebreak"/>
-              <p>Use our interactive map to find the best burgers in town</p>
-              <br/>
-              <Map
-                style="mapbox://styles/mapbox/streets-v9"
-                containerStyle={{
-                  height: '400px',
-                  width: '400px'
-                }}
-                center = {[-0.1240,51.5117]}
-                zoom = {[10]}
-                scrollZoom = {true}
-              >
+              <div className="tile is-parent">
+                <article className="tile is-child">
+                  <p className="subtitle is-5 has-text-centered">Find our</p>
+                  <p className="title has-text-centered">Top Three</p>
+                  <p className="subtitle is-5 has-text-centered">with our interactive map</p>
+                  <div className="columns is-centered">
+                    <div className="column has-text-centered">
+                      <Map
+                        style="mapbox://styles/mapbox/streets-v9"
+                        containerStyle={{
+                          height: '370px',
+                          width: 'auto'
+                        }}
+                        center = {[-0.1240,51.5117]}
+                        zoom = {[10]}
+                        scrollZoom = {true}
+                      >
 
-                {this.state.burgers.map((burger) => (
-                  <Marker
-                    key={burger._id}
-                    coordinates={[burger.restaurant.longitude, burger.restaurant.latitude]}
-                    anchor="bottom">
-                    <img src='https://i.imgur.com/WGtyz8g.png' width='50px' height='50px'/>
-                  </Marker>
-                ))}
-              </Map>
+                        {this.state.burgers.map((burger) => (
+                          <Marker
+                            key={burger._id}
+                            coordinates={[burger.restaurant.longitude, burger.restaurant.latitude]}
+                            anchor="bottom">
+                            <img src='https://i.imgur.com/WGtyz8g.png' width='50px' height='50px'/>
+                          </Marker>
+                        ))}
+                      </Map>
+                    </div>
+                  </div>
+                  <a className="button is-warning is-fullwidth"  href="/#/burgers">Find more!</a>
+                </article>
 
-
+              </div>
 
             </div>
           </div>

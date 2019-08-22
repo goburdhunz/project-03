@@ -80,8 +80,9 @@ class BurgersShow extends React.Component {
                   <img src={this.state.burger.image} alt={this.state.burger.name} />
                 </figure>
               </div>
-              <h2 className="title is-3 has-text-centered">
-                <h3>User Rating:</h3>
+              <br/>
+              <h2 className="title is-5 has-text-centered">
+                <h3>User Rating</h3>
                 <Rating
                   emptySymbol= {<img src="https://i.imgur.com/931P2ih.png" className="image is-48x48"/>}
                   fullSymbol= {<img src="https://i.imgur.com/f00MSST.png" className="image is-48x48"/>}
@@ -92,9 +93,9 @@ class BurgersShow extends React.Component {
                 />
                 <h5>Based on {this.state.burger.totalUsers} ratings</h5>
               </h2>
-              <hr />
-              <h2 className="title is-3 has-text-centered">
-                <h3>Our Rating:</h3>
+
+              <h2 className="title is-5 has-text-centered">
+                <h3>Our Rating</h3>
                 <Rating
                   emptySymbol= {<img src="https://i.imgur.com/931P2ih.png" className="image is-48x48"/>}
                   fullSymbol= {<img src="https://i.imgur.com/f00MSST.png" className="image is-48x48"/>}
@@ -146,10 +147,10 @@ class BurgersShow extends React.Component {
 
               </div>
             </div>
-            <div className="column">
+            <div className="column ">
               <div className="tile is-ancestor">
                 <article className="tile is-child">
-                  <div className="content">
+                  <div className="content burgerdescription">
                     <header className="title is-1">{this.state.burger.name}</header>
                     {Auth.isAuthenticated() && <div className="buttons is-right">
                       <Link
@@ -159,8 +160,9 @@ class BurgersShow extends React.Component {
                       <button className="button is-danger" onClick={this.handleDeleteBurger}>Delete</button>
                     </div>}
                     <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £ {this.normalisePrice(this.state.burger.price)}</p>
+                    <hr/>
                     <p className="subtitle"> <span className="has-text-weight-semibold">Ingredients: </span>
-                      <ul>{this.state.burger.ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}</ul>
+                      <div className="tags">{this.state.burger.ingredients.map(ingredient => <div className="tag" key={ingredient}>{ingredient}</div>)}</div>
                     </p>
                     <p className="subtitle"><span className="has-text-weight-semibold">Vegetarian: </span>
                       {(!!this.state.burger.isVegetarian || !!this.state.burger.isVegan) && <img src="https:/i.imgur.com/8RN8Why.png" className="icon"/>}
@@ -188,19 +190,6 @@ class BurgersShow extends React.Component {
                     />
                   )}
                 </div>
-<<<<<<< HEAD
-=======
-                <div className="column">
-                  <div className="buttons are-medium">
-                    <div className="control">
-                      <a className="button is-primary is-fullwidth"  href={this.state.burger.restaurant.website} rel="noopener noreferrer" target="_blank">🍽Try it!</a>
-                    </div>
-                    <div className="control">
-                      <span><BeerMatch/></span>
-                    </div>
-                  </div>
-                </div>
->>>>>>> development
               </div>
               {Auth.isAuthenticated() && <form className="formfield" onSubmit={this.handleSubmit}>
                 <hr />
