@@ -21,7 +21,13 @@ module.exports = [{
     latitude: 51.5097213,
     longitude: -0.1383511,
     website: 'https://thehawksmoor.com/'
-  }
+  },
+  comments: [
+    {
+      content: 'One of our favourite burgers.',
+      userRating: 4.5
+    }
+  ]
 },
 
 {
@@ -44,7 +50,13 @@ module.exports = [{
     latitude: 51.5256932,
     longitude: -0.0796717,
     website: 'https://burgerandbeyond.co.uk'
-  }
+  },
+  comments: [
+    {
+      content: 'Top notch - super soft bun, gooey cheese and perfectly pink meat.',
+      userRating: 4
+    }
+  ]
 },
 
 {
@@ -68,7 +80,13 @@ module.exports = [{
     latitude: 51.5185314,
     longitude: -0.0766692,
     website: 'bleeker.co.uk'
-  }
+  },
+  comments: [
+    {
+      content: 'Perfectly sized juicy patties with generous amounts of melted American cheese. Perfect with a lager.',
+      userRating: 3.5
+    }
+  ]
 },
 
 {
@@ -95,8 +113,15 @@ module.exports = [{
     latitude: 51.5234906,
     longitude: -0.0785956,
     website: 'https://biffsjackshack.com'
-  }
+  },
+  comments: [
+    {
+      content: 'The best vegan burger in London.',
+      userRating: 5
+    }
+  ]
 },
+
 {
   name: 'The Ari Gold',
   rating: 4.5,
@@ -119,8 +144,15 @@ module.exports = [{
     latitude: 51.5052552,
     longitude: -0.0913023,
     website: 'https://www.pattyandbun.co.uk'
-  }
+  },
+  comments: [
+    {
+      content: 'Close to perfection.',
+      userRating: 4.5
+    }
+  ]
 },
+
 {
   name: 'The Double Cheeseburger',
   rating: 5,
@@ -141,8 +173,15 @@ module.exports = [{
     latitude: 51.5969403,
     longitude: -0.0702837,
     website: 'http://luckychip.co.uk'
-  }
+  },
+  comments: [
+    {
+      content: 'Amonst the best burgers in town.',
+      userRating: 5
+    }
+  ]
 },
+
 {
   name: 'BurgerBear',
   rating: 4,
@@ -155,14 +194,21 @@ module.exports = [{
   price: 10.5,
   description: 'Burger Bear makes some of the best burgers in London. Burger Bear features preparation and flavors thought up by a burger genius. High quality beef, melted cheese, pillowy buns, and bacon jam = melt in your mouth burger win. The passion held by Tom and his team make each burger a masterpiece for your consumption. Be sure to check their website for their location.',
   restaurant: {
-    name: '15 Nunhead Green',
-    address: 'BurgerBear',
+    name: 'BurgerBear',
+    address: '15 Nunhead Green',
     postcode: 'SE15 3QQ',
     latitude: 51.4651205,
     longitude: -0.0592998,
     website: 'https://www.theoldnunshead.co.uk'
-  }
+  },
+  comments: [
+    {
+      content: 'Absolutely filthy in all the right ways, could take a bath in their relish - yum.',
+      userRating: 4
+    }
+  ]
 },
+
 {
   name: 'Mother Flipper Cheese Burger',
   rating: 3,
@@ -186,8 +232,15 @@ module.exports = [{
     latitude: 51.5079556,
     longitude: -0.0272613,
     website: 'https://motherflipper.co.uk/'
-  }
+  },
+  comments: [
+    {
+      content: 'Good sized, tasty burger.',
+      userRating: 3
+    }
+  ]
 },
+
 {
   name: 'Five Guys Hamburger',
   rating: 4.5,
@@ -216,8 +269,16 @@ module.exports = [{
     latitude: 51.534530,
     longitude: -0.104790,
     website: 'http://www.fiveguys.com'
-  }
-}, {
+  },
+  comments: [
+    {
+      content: 'Great selection of toppings. Lettuce, pickle, grilled onions and grilled mushrooms, jalapeño peppers, hot sauce, green peppers, mustard – a mouthwatering mixture that can all be heaped on, muddled up and pressed down into a great bowling ball of munchy burger bliss.',
+      userRating: 4.5
+    }
+  ]
+},
+
+{
   name: 'Big Mac',
   rating: 2,
   image: 'https://beef2live.com/images/668/author/995/2016/8/big_mac_fun_facts_1_636063544989118436.jpg',
@@ -239,7 +300,13 @@ module.exports = [{
     latitude: 51.510160,
     longitude: -0.130530,
     website: 'https://www.mcdonalds.com/'
-  }
+  },
+  comments: [
+    {
+      content: 'Tried and tested, good value burger.',
+      userRating: 2
+    }
+  ]
 
 },
 
@@ -265,7 +332,13 @@ module.exports = [{
     latitude: 51.5305558,
     longitude: -0.1218897,
     website: 'https://meatliquor.com'
-  }
+  },
+  comments: [
+    {
+      content: 'yes, Yes, YES!!!.',
+      userRating: 4
+    }
+  ]
 },
 
 {
@@ -290,7 +363,13 @@ module.exports = [{
     latitude: 51.5305558,
     longitude: -0.1218897,
     website: 'https://meatliquor.com'
-  }
+  },
+  comments: [
+    {
+      content: 'Very messy, very tasty burger.',
+      userRating: 3.5
+    }
+  ]
 },
 
 {
@@ -315,8 +394,16 @@ module.exports = [{
     latitude: 51.5135521,
     longitude: -0.0967106,
     website: 'burgerandlobster.com'
-  }
-}, {
+  },
+  comments: [
+    {
+      content: 'Juicy flavoursome beef that melts in the mouth with light and ever so creamy cheese to break up the softness of the burger.',
+      userRating: 5
+    }
+  ]
+},
+
+{
   name: 'The Byron Burger',
   rating: 5,
   image: 'https://images.ctfassets.net/yvxng0wjdenp/7yi2bpzorCqvIMlLWBuZfI/ba8b68f2c1f391d2d162c78bce1dc0b0/Truffler_YELLOWBG_2560.jpg',
@@ -339,8 +426,16 @@ module.exports = [{
     latitude: 51.2487717,
     longitude: -0.7660406,
     website: 'https://www.byronhamburgers.com'
-  }
-}, {
+  },
+  comments: [
+    {
+      content: 'A classic.',
+      userRating: 5
+    }
+  ]
+},
+
+{
   name: 'Truffle Shuffle',
   rating: 3,
   image: 'http://meatandshake.com/wp-content/uploads/2015/07/Truffle_Shuffle_2989.jpg',
@@ -363,8 +458,16 @@ module.exports = [{
     latitude: 51.4345624,
     longitude: -0.1636726,
     website: 'http://meatandshake.com/'
-  }
-}, {
+  },
+  comments: [
+    {
+      content: 'Very mushroomy.',
+      userRating: 3
+    }
+  ]
+},
+
+{
   name: 'The MFC (Mexican Fried Chick’n)',
   rating: 2,
   image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/05/15/12/club-mexicana-burger-1505-jade-nina-sarkhel.jpg?w660',
@@ -389,8 +492,16 @@ module.exports = [{
     latitude: 51.5486661,
     longitude: -0.0429207,
     website: 'https://www.thespreadeaglelondon.co.uk'
-  }
-}, {
+  },
+  comments: [
+    {
+      content: 'Reasonable chicken burger, could do with some beef.',
+      userRating: 2
+    }
+  ]
+},
+
+{
   name: 'Fritter',
   rating: 4,
   image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/05/15/12/honest-fitter-burger-1505.jpg?w660',
@@ -413,8 +524,16 @@ module.exports = [{
     latitude: 51.517983,
     longitude: -0.0802009,
     website: 'https://www.honestburgers.co.uk'
-  }
-}, {
+  },
+  comments: [
+    {
+      content: 'Fantastic vegetarian variation on the burger.',
+      userRating: 4
+    }
+  ]
+},
+
+{
   name: 'Portobello ‘Dig It’ Mushroom Burger',
   rating: 4,
   image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/01/04/16/patty-burger-burger-veggie-burger.jpg?w660',
@@ -436,8 +555,16 @@ module.exports = [{
     latitude: 51.5052552,
     longitude: -0.0913023,
     website: 'https://www.pattyandbun.co.uk'
-  }
-}, {
+  },
+  comments: [
+    {
+      content: 'One of the most enjoyable veggie burger experiences in London.',
+      userRating: 4
+    }
+  ]
+},
+
+{
   name: 'What’s Ur Beef?',
   rating: 4,
   image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/05/15/12/whatsurbeef.jpg?w660',
@@ -461,8 +588,16 @@ module.exports = [{
     latitude: 51.5224366,
     longitude: -0.074008,
     website: 'https://veganburger.org/'
-  }
-}, {
+  },
+  comments: [
+    {
+      content: 'Impressive burger - well pressed and stayed whole till the end as did the bun.',
+      userRating: 4
+    }
+  ]
+},
+
+{
   name: 'Veggie Burger',
   rating: 2,
   image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/01/04/16/bleeckers-burger-veggie.jpg?w660',
@@ -485,8 +620,16 @@ module.exports = [{
     latitude: 51.5196444,
     longitude: -0.0777992,
     website: 'https://www.bleecker.co.uk/'
-  }
-}, {
+  },
+  comments: [
+    {
+      content: 'Good value for money.',
+      userRating: 2
+    }
+  ]
+},
+
+{
   name: 'Farmacy Burger',
   rating: 4,
   image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2017/10/31/10/vegan-farmacy.jpg?w660',
@@ -515,8 +658,16 @@ module.exports = [{
     latitude: 51.5154074,
     longitude: -0.1950003,
     website: 'https://farmacylondon.com'
-  }
-}, {
+  },
+  comments: [
+    {
+      content: 'Delicious burger, healthy too!',
+      userRating: 4
+    }
+  ]
+},
+
+{
   name: 'Halloumi Mushroom Burger',
   rating: 4,
   image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/01/04/17/meatliquor-burger-veggie.jpg?w660',
@@ -541,10 +692,18 @@ module.exports = [{
     latitude: 51.5305558,
     longitude: -0.1218897,
     website: 'https://meatliquor.com'
-  }
-}, {
+  },
+  comments: [
+    {
+      content: 'Yum. Generous portions of halloumi and mushroom.',
+      userRating: 4
+    }
+  ]
+},
+
+{
   name: 'The Dirty Cop Out',
-  rating: 3,
+  rating: 2.5,
   image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/01/05/15/af396c6b-f14f-493f-9b73-c214c3072799.jpg?w660',
   ingredients: [
     'Beef',
@@ -567,7 +726,13 @@ module.exports = [{
     latitude: 51.5237407,
     longitude: -0.0783317,
     website: 'http://www.eatdirtyburger.com'
-  }
+  },
+  comments: [
+    {
+      content: 'Nope, it\'s fungus flopping around in bread.',
+      userRating: 2.5
+    }
+  ]
 },
 
 {
@@ -586,13 +751,19 @@ module.exports = [{
   price: 9.95,
   description: 'Dip & Flip has identified the one thing missing from the nouveau burger movement: gravy (obviously). Dip & Flip\'s signature "Dip & Flip Burger” contains a patty, cheese and sliced roast beef (lest you feel under-cowed) and comes served, in an inspired manoeuvre, with a side of thick, rich jus. It shouldn’t be allowed. But it is.',
   restaurant: {
-    name: 'Dill & Flip',
+    name: 'Dip & Flip',
     address: '87 Battersea Rise, London',
     postcode: 'SW11 1HW',
     latitude: 51.4606987,
     longitude: -1696967,
     website: 'https://www.dipandflip.co.uk/'
-  }
+  },
+  comments: [
+    {
+      content: 'Burgers and gravy, who knew it was a thing!',
+      userRating: 3.5
+    }
+  ]
 },
 
 {
@@ -616,7 +787,13 @@ module.exports = [{
     latitude: 51.5110689,
     longitude: -122463,
     website: 'https://www.joeallen.co.uk'
-  }
+  },
+  comments: [
+    {
+      content: '\'Secret\' off-menu burger that\'s amongst the best in London.',
+      userRating: 4
+    }
+  ]
 },
 
 {
@@ -639,7 +816,13 @@ module.exports = [{
     latitude: 51.4858303,
     longitude: -1246067,
     website: 'http://www.eatdirtyburger.com/'
-  }
+  },
+  comments: [
+    {
+      content: 'Top notch!.',
+      userRating: 4
+    }
+  ]
 },
 
 {
@@ -662,6 +845,12 @@ module.exports = [{
     latitude: 51.5049557,
     longitude: -1521125,
     website: 'https://www.gridironlondon.com'
-  }
+  },
+  comments: [
+    {
+      content: 'Pricey but damn fine.',
+      userRating: 4
+    }
+  ]
 }
 ]

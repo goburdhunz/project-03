@@ -81,7 +81,7 @@ class BurgersShow extends React.Component {
                 </figure>
               </div>
               <h2 className="title is-3 has-text-centered">
-                <h3>User Rating:</h3>
+                <h2>User Rating:</h2>
                 <Rating
                   emptySymbol= {<img src="https://i.imgur.com/931P2ih.png" className="image is-48x48"/>}
                   fullSymbol= {<img src="https://i.imgur.com/f00MSST.png" className="image is-48x48"/>}
@@ -90,7 +90,7 @@ class BurgersShow extends React.Component {
                   readonly={true}
                   quiet={false}
                 />
-                <h5>Based on {this.state.burger.totalUsers} ratings</h5>
+                <h2>Based on {this.state.burger.totalUsers} ratings</h2>
               </h2>
               <hr />
               <h2 className="title is-3 has-text-centered">
