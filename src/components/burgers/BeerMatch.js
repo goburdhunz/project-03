@@ -50,7 +50,7 @@ class BeerMatch extends React.Component {
     console.log(this.state)
     return (
       <section className="section beer-match">
-        <button className="button is-primary is-danger loginbutton" onClick={this.openModal}>Beer Match</button>
+        <button className="button is-primary is-fullwidth loginbutton" onClick={this.openModal}> 🍺Beer Match</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

@@ -185,7 +185,7 @@ class BurgersShow extends React.Component {
                       <a className="button is-primary is-fullwidth"  href={this.state.burger.restaurant.website} rel="noopener noreferrer" target="_blank">🍽Try it!</a>
                     </div>
                     <div className="control">
-                      <button className="button is-primary is-fullwidth">🍺Find a beer for a perfect match!</button>
+                      <span><BeerMatch/></span>
                     </div>
                   </div>
                 </div>
@@ -226,12 +226,6 @@ class BurgersShow extends React.Component {
             </div>
           </div>
         </div>
-
-        <span className="beer-button">
-          <BeerMatch/>
-        </span>
-
-
       </section>
     )
   }
