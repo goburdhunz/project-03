@@ -60,6 +60,15 @@ class Navbar extends React.Component {
                   <span aria-hidden="true"></span>
                 </a>
               </div>
+              <div className="container hero-body">
+                <h1 className="title">
+                 BurgerRator
+                </h1>
+                <h2 className="subtitle">
+                 Burgers Rated by YOU
+                </h2>
+                <br/>
+              </div>
 
               <div className={`navbar-menu ${this.state.navbarOpen ? 'is-active' : ''}`}>
                 <div className="navbar-end">
@@ -78,18 +87,6 @@ class Navbar extends React.Component {
             </div>
           </nav>
         </div>
-        <div className="hero-body">
-          <div className="container">
-            <h1 className="title">
-             BurgerRator
-            </h1>
-            <h2 className="subtitle">
-             Burgers Rated by YOU
-            </h2>
-            <br/>
-          </div>
-        </div>
-
         <div className="hero-foot">
           <nav className="tabs is-boxed ">
             <div className="container">

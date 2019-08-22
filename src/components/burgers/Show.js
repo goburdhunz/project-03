@@ -21,7 +21,7 @@ class BurgersShow extends React.Component {
     this.normalisePrice = this.normalisePrice.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleDelete = this.handleDelete.bind(this)
+    this.handleDeleteComment = this.handleDeleteComment.bind(this)
     this.handleDeleteBurger = this.handleDeleteBurger.bind(this)
   }
 
@@ -36,8 +36,6 @@ class BurgersShow extends React.Component {
   }
 
   handleChange(e) {
-    console.log(e.target.name)
-    console.log(e.target.value)
     const formData = {...this.state.formData, [e.target.name]: e.target.value}
     this.setState({formData})
   }
@@ -51,7 +49,7 @@ class BurgersShow extends React.Component {
       .then(res => this.setState({burger: res.data, formData: {userRating: '', content: ''}}))
   }
 
-  handleDelete(e) {
+  handleDeleteComment(e) {
     e.preventDefault()
 
     axios.delete(`/api/burgers/${this.props.match.params.id}/comments/${e.target.id}`, {
@@ -70,7 +68,7 @@ class BurgersShow extends React.Component {
   }
 
   render() {
-    console.log(this.state.formData)
+    console.log(this.state.formData.userRating)
     if(!this.state.burger) return null
     return(
       <section className="section">
@@ -82,7 +80,21 @@ class BurgersShow extends React.Component {
                   <img src={this.state.burger.image} alt={this.state.burger.name} />
                 </figure>
               </div>
-              <h2 className="title is-2 has-text-centered">
+              <h2 className="title is-3 has-text-centered">
+                <h3>User Rating:</h3>
+                <Rating
+                  emptySymbol= {<img src="https://i.imgur.com/931P2ih.png" className="image is-48x48"/>}
+                  fullSymbol= {<img src="https://i.imgur.com/f00MSST.png" className="image is-48x48"/>}
+                  fractions={2}
+                  initialRating={this.state.burger.avgUserRating}
+                  readonly={true}
+                  quiet={false}
+                />
+                <h5>Based on {this.state.burger.totalUsers} ratings</h5>
+              </h2>
+              <hr />
+              <h2 className="title is-3 has-text-centered">
+                <h3>Our Rating:</h3>
                 <Rating
                   emptySymbol= {<img src="https://i.imgur.com/931P2ih.png" className="image is-48x48"/>}
                   fullSymbol= {<img src="https://i.imgur.com/f00MSST.png" className="image is-48x48"/>}
@@ -95,30 +107,33 @@ class BurgersShow extends React.Component {
               <hr />
               <div className="tile is-parent">
                 <article className="tile is-child notification is-primary ">
-                  <p className="title ">Find it at</p>
-                  <a className="subtitle is-2" href={this.state.burger.restaurant.website} rel="noopener noreferrer" target="_blank"> {this.state.burger.restaurant.name}</a>
+                  <p className="subtitle is-3">Find it at</p>
+                  <p className="title is-2 has-text-dark"> {this.state.burger.restaurant.name}</p>
                   <p className="subtitle">{this.state.burger.restaurant.address}</p>
+                  <div className="columns is-centered">
+                    <div className="column has-text-centered">
+                      <Map
+                        className="map"
+                        style="mapbox://styles/mapbox/streets-v9"
+                        containerStyle={{
+                          height: '350px',
+                          width: '350px'
+                        }}
+                        center = {[this.state.burger.restaurant.longitude, this.state.burger.restaurant.latitude]}
+                        zoom = {[13]}
+                        scrollZoom = {true}
+                      >
+                        <Marker
+                          coordinates={[this.state.burger.restaurant.longitude, this.state.burger.restaurant.latitude]}
+                          anchor="bottom">
+                          <img src='https://i.imgur.com/WGtyz8g.png' width='100px' height='100px'/>
+                        </Marker>
+                        <ZoomControl
+                          isEnabled = 'true' />
 
-                  <Map
-                    style="mapbox://styles/mapbox/streets-v9"
-                    containerStyle={{
-                      height: '350px',
-                      width: '350px'
-                    }}
-                    center = {[this.state.burger.restaurant.longitude, this.state.burger.restaurant.latitude]}
-                    zoom = {[13]}
-                    scrollZoom = {true}
-                  >
-                    <Marker
-                      coordinates={[this.state.burger.restaurant.longitude, this.state.burger.restaurant.latitude]}
-                      anchor="bottom">
-                      <img src='https://i.imgur.com/WGtyz8g.png' width='100px' height='100px'/>
-                    </Marker>
-                    <ZoomControl
-                      isEnabled = 'true' />
-
-                  </Map>
-
+                      </Map>
+                    </div>
+                  </div>
                 </article>
               </div>
             </div>
@@ -127,13 +142,19 @@ class BurgersShow extends React.Component {
                 <article className="tile is-child notification is-primary">
                   <div className="content">
                     <header className="title is-1">{this.state.burger.name}</header>
+                    {Auth.isAuthenticated() && <div className="buttons is-right">
+                      <Link
+                        className="button"
+                        to={`/burgers/${this.state.burger._id}/edit`}
+                      >Edit</Link>
+                      <button className="button is-danger" onClick={this.handleDeleteBurger}>Delete</button>
+                    </div>}
                     <p className="subtitle"><span className="has-text-weight-semibold">Price: </span> £ {this.normalisePrice(this.state.burger.price)}</p>
                     <p className="subtitle"> <span className="has-text-weight-semibold">Ingredients: </span>
                       <ul>{this.state.burger.ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}</ul>
                     </p>
                     <p className="subtitle"><span className="has-text-weight-semibold">Vegetarian: </span>
-                      {(!!this.state.burger.isVegetarian || !!this.state.burger.isVegan) && <img src="https:/
-                      i.imgur.com/8RN8Why.png" className="icon"/>}
+                      {(!!this.state.burger.isVegetarian || !!this.state.burger.isVegan) && <img src="https:/i.imgur.com/8RN8Why.png" className="icon"/>}
                       {(!this.state.burger.isVegetarian && !this.state.burger.isVegan) && <span
                         className="subtitle">No</span>} </p>
 
@@ -154,9 +175,19 @@ class BurgersShow extends React.Component {
                 <div className="column is-half">
                   {this.state.burger.comments.map(comment =>
                     <Comment
-                      key={comment._id} {...comment} handledelete={this.handleDelete}
+                      key={comment._id} {...comment} handledelete={this.handleDeleteComment}
                     />
                   )}
+                </div>
+                <div className="column">
+                  <div className="buttons are-medium">
+                    <div className="control">
+                      <a className="button is-primary is-fullwidth"  href={this.state.burger.restaurant.website} rel="noopener noreferrer" target="_blank">🍽Try it!</a>
+                    </div>
+                    <div className="control">
+                      <button className="button is-primary is-fullwidth">🍺Find a beer for a perfect match!</button>
+                    </div>
+                  </div>
                 </div>
               </div>
               {Auth.isAuthenticated() && <form className="formfield" onSubmit={this.handleSubmit}>
@@ -192,16 +223,6 @@ class BurgersShow extends React.Component {
 
                 <button className="button is-info raterbutton">Submit</button>
               </form>}
-
-              <hr />
-
-              {Auth.isAuthenticated() && <div className="buttons">
-                <Link
-                  className="button"
-                  to={`/burgers/${this.state.burger._id}/edit`}
-                >Edit</Link>
-                <button className="button is-danger" onClick={this.handleDeleteBurger}>Delete</button>
-              </div>}
             </div>
           </div>
         </div>

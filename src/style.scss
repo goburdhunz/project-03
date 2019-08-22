@@ -5,7 +5,6 @@ button.closeModal {
 
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
 
-
 .navbar-item{
   $navbar-item-img-max-height: 100px;
 }
@@ -32,6 +31,21 @@ button.closeModal {
 
 .top-burgers {
   margin-right: 20px;
+}
+
+.card-equal-height {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+
+.card .card-image,{
+  height: 200px;
+}
+
+.card .card-image .image img {
+   height: 200px;
+   object-fit: cover;
 }
 
 .section-new-page {
@@ -125,6 +139,13 @@ h1.title.toprated {
   width: 150px;
 }
 
+.map {
+  margin: auto;
+}
+
+h3.title.name {
+  margin-bottom: 0;
+}
 
 button.raterbutton {
   display: block;
@@ -190,7 +211,7 @@ button.raterbutton {
 
 
 //pour beer
-$brown: #FFFBEF;
+$white: #FFFBEF;
 $drink: #FAAF25;
 $circle: 50%;
 
@@ -221,7 +242,7 @@ $circle: 50%;
   width: 60%;
   height: 75%;
   background: none;
-  border: 8px solid $brown;
+  border: 8px solid $white;
   border-bottom-right-radius: 50px;
   border-bottom-left-radius: 50px;
   border-top-right-radius: 10px;
@@ -245,7 +266,7 @@ $circle: 50%;
   width: 8%;
   height: 60%;
   border-radius: 50px;
-  background: $brown;
+  background: $white;
 }
 
 .stripe-2 {
@@ -255,7 +276,7 @@ $circle: 50%;
   width: 9%;
   height: 60%;
   border-radius: 50px;
-  background: $brown;
+  background: $white;
 }
 
 .stripe-3 {
@@ -265,7 +286,7 @@ $circle: 50%;
   width: 8%;
   height: 60%;
   border-radius: 50px;
-  background: $brown;
+  background: $white;
 }
 
 .cup-holder {
@@ -275,7 +296,7 @@ $circle: 50%;
   width: 35%;
   height: 45%;
   background: none;
-  border: 8px solid $brown;
+  border: 8px solid $white;
   border-top-right-radius: 20px;
   border-bottom-right-radius: $circle;
   -webkit-clip-path: polygon(56% 0, 100% 0, 100% 100%, 56% 100%);
@@ -299,7 +320,7 @@ $circle: 50%;
   height: 70%;
   border-radius: $circle;
   border-bottom-left-radius: 0;
-  border: 8px solid $brown;
+  border: 8px solid $white;
   -webkit-clip-path: polygon(0 65%, 0 0, 75% 0, 75% 25%);
   clip-path: polygon(0 65%, 0 0, 75% 0, 75% 25%);
 }
@@ -311,7 +332,7 @@ $circle: 50%;
   width: 40%;
   height: 85%;
   border-radius: $circle;
-  border: 8px solid $brown;
+  border: 8px solid $white;
   -webkit-clip-path: polygon(0 45%, 0 0, 100% 0, 100% 45%);
   clip-path: polygon(0 45%, 0 0, 100% 0, 100% 45%);
 }
@@ -324,7 +345,7 @@ $circle: 50%;
   height: 70%;
   border-radius: $circle;
   border-bottom-left-radius: 0;
-  border: 8px solid $brown;
+  border: 8px solid $white;
   -webkit-clip-path: polygon(0 65%, 0 0, 75% 0, 75% 25%);
   clip-path: polygon(0 65%, 0 0, 75% 0, 75% 25%);
   transform: scaleX(-1);
@@ -336,7 +357,7 @@ $circle: 50%;
   right: 38%;
   width: 8%;
   height: 8%;
-  background: $brown;
+  background: $white;
   border-radius: $circle;
   transition: all 0.5s;
   animation: bubbling 2s infinite linear;
@@ -348,7 +369,7 @@ $circle: 50%;
   left: 38%;
   width: 8%;
   height: 8%;
-  background: $brown;
+  background: $white;
   border-radius: $circle;
   transition: all 0.5s;
   animation: bubbling 1s infinite linear;
@@ -360,7 +381,7 @@ $circle: 50%;
   left: 25%;
   width: 8%;
   height: 8%;
-  background: $brown;
+  background: $white;
   border-radius: $circle;
   transition: all 0.5s;
   animation: bubbling 2s infinite linear;
@@ -374,6 +395,12 @@ $circle: 50%;
   100%{
      transform: scale(0) translate(0, -250px)
   }
+}
+
+
+.linebreaker {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 
