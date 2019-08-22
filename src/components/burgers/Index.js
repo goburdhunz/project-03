@@ -169,7 +169,7 @@ class BurgersIndex extends React.Component {
                 <div className ="vegan">
                   <div className="field vegeterian-field-index">
                     <div>
-                      <label className="label">Vegeterian</label>
+                      <label className="label">Vegetarian</label>
                       <div className="pretty p-default p-curve p-smooth p-round p-bigger">
                         <input
                           type="checkbox"
