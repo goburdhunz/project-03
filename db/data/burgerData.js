@@ -169,7 +169,7 @@ module.exports = [{
   restaurant: {
     name: 'Lucky Chip',
     address: '614 High Rd, London',
-    postcode: 'N17 9TB',
+    postcode: 'N17 9TS',
     latitude: 51.5969403,
     longitude: -0.0702837,
     website: 'http://luckychip.co.uk'
