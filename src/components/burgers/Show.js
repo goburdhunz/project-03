@@ -176,7 +176,7 @@ class BurgersShow extends React.Component {
 
               <br/>
 
-              {Auth.isAuthenticated() && <div className="buttons is-right">
+              {Auth.isAuthenticated() && Auth.isCurrentUser(this.state.burger.user) && <div className="buttons is-right">
                 <Link
                   className="button"
                   to={`/burgers/${this.state.burger._id}/edit`}
