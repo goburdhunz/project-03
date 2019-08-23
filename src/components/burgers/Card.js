@@ -11,7 +11,7 @@ const Card = ({ name, image, rating, restaurant, price, isVegetarian, isVegan })
         </figure>
       </div>
       <div className="card-header">
-        <div className="card-header-title">{name}  {(!!isVegetarian || !!isVegan) && <img src="https:/i.imgur.com/8RN8Why.png" className="icon"/>}</div>
+        <div className="card-header-title">{name}  {(!!isVegetarian || !!isVegan) && <img src="https://i.imgur.com/8RN8Why.png" className="icon"/>}</div>
       </div>
       <div className="card-content">
         <h2 className="content text">

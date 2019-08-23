@@ -158,7 +158,7 @@ class BurgersShow extends React.Component {
                       <div className="tags">{this.state.burger.ingredients.map(ingredient => <div className="tag" key={ingredient}>{ingredient}</div>)}</div>
                     </p>
                     <p className="subtitle"><span className="has-text-weight-semibold">Vegetarian: </span>
-                      {(!!this.state.burger.isVegetarian || !!this.state.burger.isVegan) && <img src="https:/i.imgur.com/8RN8Why.png" className="icon"/>}
+                      {(!!this.state.burger.isVegetarian || !!this.state.burger.isVegan) && <img src="https://i.imgur.com/8RN8Why.png" className="icon"/>}
                       {(!this.state.burger.isVegetarian && !this.state.burger.isVegan) && <span
                         className="subtitle">No</span>} </p>
 
