@@ -166,7 +166,7 @@ class BurgersShow extends React.Component {
                         <span><BeerMatch/></span>
                       </div>
                     </div>
-                    {Auth.isAuthenticated() && <div className="buttons is-center">
+                    {Auth.isAuthenticated() && Auth.isCurrentUser(this.state.burger.user) && <div className="buttons is-center">
                       <Link
                         className="button editbutton"
                         to={`/burgers/${this.state.burger._id}/edit`}
