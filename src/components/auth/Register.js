@@ -38,7 +38,7 @@ class Register extends React.Component {
   render() {
     return (
       <section className="section">
-        <div className="container">
+        <div className="container registercontainer">
           <form onSubmit={this.handleSubmit}>
             <div className="field">
               <label className="label">Username</label>
@@ -96,7 +96,7 @@ class Register extends React.Component {
               {this.state.errors.passwordConfirmation && <small className="help is-danger">{this.state.errors.passwordConfirmation}</small>}
             </div>
 
-            <button className="button">Submit</button>
+            <button className="button registersubmitbutton">Submit</button>
           </form>
         </div>
       </section>
