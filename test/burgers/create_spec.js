@@ -19,6 +19,7 @@ const testData = {
   restaurant: [{
     name: 'restaurant',
     address: 'next door',
+    postcode: 'sa1 0sh',
     latitude: 1,
     longitude: 2,
     website: 'https://restaurant.com'
@@ -105,6 +106,7 @@ describe('POST /burgers', () => {
         expect(res.body.restaurant._id).to.eq(testData.restaurant._id)
         expect(res.body.restaurant.name).to.eq(testData.restaurant.name)
         expect(res.body.restaurant.address).to.eq(testData.restaurant.address)
+        expect(res.body.restaurant.postcode).to.eq(testData.restaurant.postcode)
         expect(res.body.restaurant.latitude).to.eq(testData.restaurant.latitude)
         expect(res.body.restaurant.longitude).to.eq(testData.restaurant.longitude)
         expect(res.body.rating).to.eq(testData.rating)

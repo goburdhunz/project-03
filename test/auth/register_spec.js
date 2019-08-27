@@ -37,7 +37,7 @@ describe('POST /register', () => {
     api.post('/api/register')
       .send(testData)
       .end((err, res) => {
-        expect(res.body.message).to.eq('Registration successful')
+        expect(res.body.message).to.eq('Registration successful. Login now to create, edit and comment on burgers!')
         done()
       })
   })
