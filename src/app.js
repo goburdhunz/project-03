@@ -17,7 +17,6 @@ import BurgersShow from './components/burgers/Show'
 import BurgersEdit from './components/burgers/Edit'
 import Navbar from './components/common/Navbar'
 import New from './components/burgers/New'
-import './style.scss'
 import SecureRoute from './components/common/SecureRoute'
 
 
