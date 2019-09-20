@@ -91,3 +91,6 @@ After the initial project setup, we started to look at the database models and s
 
 - Working as a team on a group project using github and git branches
 - Managing work and tickets using Trello
+- Practice with React and Node.js/Express.js
+- Mongoose Models
+- Embedded / referenced data within the models
