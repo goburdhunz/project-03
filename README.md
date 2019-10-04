@@ -77,7 +77,6 @@ After the initial project setup, we started to look at the database models and s
 
 ## Pitch deck/presentation
 
-![alt text](https://i.imgur.com/s3MevfC.png "Presentation slides")
 ![alt text](https://i.imgur.com/Cnf9fXt.png "Presentation slides")
 ![alt text](https://i.imgur.com/3y1qWdQ.png "Presentation slides")
 ![alt text](https://i.imgur.com/AssJ1Fg.png "Presentation slides")
