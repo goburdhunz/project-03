@@ -69,9 +69,9 @@ After the initial project setup, we started to look at the database models and s
 ## Installation instructions
 
 - Fork repo
-- Run yarn to install dependencies
-- Run yarn serve:backend on one terminal tab
-- Run yarn serve:frontend on another terminal tab
+- Run 'yarn' to install dependencies
+- Run 'yarn serve:backend' on one terminal tab
+- Run 'yarn serve:frontend' on another terminal tab
 
 ---
 
