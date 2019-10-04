@@ -81,15 +81,26 @@ After the initial project setup, we started to look at the database models and s
 ![alt text](https://i.imgur.com/3y1qWdQ.png "Presentation slides")
 ![alt text](https://i.imgur.com/AssJ1Fg.png "Presentation slides")
 
+---
+
 ## Unsolved problems or Major hurdle
 
 - The main problem was time - I was ill for 3 days during the main project week which meant my team was down by one person so in the end, we implemented less than we had originally wanted. 
 - Another issue was not agreeing beforehand what we wanted the website styling to look like, so it was left a bit late in the week.
 
-## Learnings
+---
 
-- Working as a team on a group project using github and git branches
-- Managing work and tickets using Trello
-- Practice with React and Node.js/Express.js
-- Mongoose Models
-- Embedded / referenced data within the models
+## Wins 
+
+- Building a full-stack app in 7 days!
+- Working as a team with others on Github and working through problems together
+- Understanding React and Node that much more.
+- Used NPM packages more and learnt how powerful and convenient they can be
+
+## Key Learnings
+
+- Working as a team on a group project using github and git branches - this is a key component of working a software development team and it was great practice to manage the development process all on Github. 
+- Managing work and tickets using Trello - I was used to working with Jira and managing work with tickets so it made sense to use the same system on Trello - However, the process only works when people use the tickets as they should be used - to let others know what they are working on and their progress - this needs to be a uniformed approach, otherwise the management system does not work.
+- React and Node.js/Express.js - Building a full-stack app with React and Node felt like a culmination of everything we had been working on for he past couple of weeks. I persoanlly really enjoyed Node - it seemed very accessible and simple to get started with. 
+- MongoDB/NOSQL / Mongoose Models - Also really enjoyed MongoDB - it felt and looked like JSON which is what we use all the time. This made it easier to work with and to understand. Also, the Mongoose ORM layer really helped to show how the backend communicates with the database and how simple it really can be. 
+- Embedded / referenced data within the models - Simple compared to SQL and Mongoose really made it very readable. 
