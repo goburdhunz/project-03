@@ -52,14 +52,18 @@ Link to deployed website - https://burgerrator.herokuapp.com/#/
 ## Approach
 
 
-We started off with discussing ideas within the group and as soon as we had settled on a burger rating website, we started wireframing on a whiteboard. 
+We started off with discussing ideas within the group and as soon as we had settled on a burger rating website, we started wireframing on a whiteboard. We knew we wanted to have the CRUD routes and mostly list views to display cards with info on burgers. We wanted users to be able to view, create and comment on burgers. 
 
 
 ![alt text](https://i.imgur.com/O4fJ8q3.jpg "Wireframe")
 ![alt text](https://i.imgur.com/tbnflWe.jpg "Wireframe")
 
 
-After the initial project setup, we started to look at the database models and schema. Then we started to build out the back-end. With every endpoint we created, the other half of the team would build out the connected front-end. We also used NPM packages for some features such as the modals and rating slider.  I chose to work on the Express backend, setting up the backend of the app; controllers, routing, mongoose models and basic token authentication. I also implemented a modal display on the frontend using a specific NPM package component and implemented comments on the details page of the app. 
+After the initial project setup, we started to look at the database models and schema. We wanted to have a good idea of what the data models would look like before we started coding anything. We discussed what fields we wanted anf how they should be displayed which i think really saved us time in the long-run. 
+
+Then we started to build out the back-end, starting with the index page, a list of the top three rated burgers. At the start, we populated the backend with seed data until users could write their own entries into the database. With every endpoint we created, the other half of the team would build out the connected front-end. We also used NPM packages for some features such as the modals and rating slider.  
+
+I chose to work on the Express backend, setting up the backend of the app; controllers, CRUD routing, mongoose models and basic token authentication. I also implemented a modal display on the frontend using a specific NPM package component and implemented comments on the details page of the app. 
 
 
 ![alt text](https://i.imgur.com/tGGVgrF.png "Homepage")
